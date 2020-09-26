@@ -1,11 +1,35 @@
 {
   "name": "electoral-college",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "license": "See LICENSE.md",
+  "description": "An application to track and predict Electoral College results in U.S. Presidential Elections",
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/helper-plugin-utils": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.1",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.3.1",
+    "browserslist": "^4.0.0",
+    "core-js": "^3.0.0",
+    "eslint": "^6.1.0",
+    "prop-types": "^15.7.0",
+    "webpack": "4.39.1",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-sources": "^1.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -13,6 +37,12 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "keywords": [
+    "react",
+    "electoral college",
+    "elections"
+  ],
+  "author": "Brian Armstrong",
   "eslintConfig": {
     "extends": "react-app"
   },
