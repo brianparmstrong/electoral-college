@@ -1,6 +1,6 @@
 {
   "name": "electoral-college",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "See LICENSE.md",
   "description": "An application to track and predict Electoral College results in U.S. Presidential Elections",
   "dependencies": {
@@ -56,5 +56,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brianparmstrong/electoral-college.git"
   }
 }

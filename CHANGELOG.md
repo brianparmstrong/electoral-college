@@ -3,6 +3,12 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.0.3]
+
+### UDPATE
+
+- Add git repo to package.json
+
 [1.0.2]
 
 ### FIX / UPDATE
