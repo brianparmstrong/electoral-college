@@ -1,4 +1,4 @@
-The first Electoral College application available in open source!
+An Electoral College application available in open source!  (publishing to NPM soon)
 
 This is currently configured for the 2020 Presidential Election.  The following candidates are shown:
 
