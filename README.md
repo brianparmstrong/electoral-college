@@ -77,6 +77,8 @@ I'd like to support passing in state-by-state voting data so you don't have to m
 CRA Info
 ========
 
+Yes, yes, I know, I know.  I'm using CRA.  This was a for-fun project that I started in 2016 and then only just now got back around to in time for the 2020 election.  Would this be better without CRA, latest of React, Webpack, etc.?  Yup.  For now this is what it is.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

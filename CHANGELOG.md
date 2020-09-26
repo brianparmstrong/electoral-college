@@ -3,6 +3,13 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.0.1]
+
+### UPDATE
+
+- remove `private` tag from package.json
+- update README
+
 [1.0.0]
 
 - Initial publication
