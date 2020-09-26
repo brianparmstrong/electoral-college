@@ -57,8 +57,9 @@ No winner if the Proportional System was used!  This would have thrown the elect
 
 The point, though, is that even though Trump won comfortably using the current system, his actual level of support wasn't so wide-spread.  Keep in mind, though, that Clinton's margin of victories in CA and NY were substantial, which accounts entirely for this discrepancy.
 
-Why should we care about Proportional Representation "What If?"
-===============================================================
+Why should we care about the Electoral College and Proportional Representation "What If?"
+=========================================================================================
+
 No electoral system is perfect.  Each one has its pros and cons.  It is my belief the Electoral College is a vital part of our Republic's electoral system, rather than an outdated relic.  It requires the winning candidate for President to have broad support across the country and its different regions, cultures, and socio-economic differences.  It balances majority rule with protection of minority rights -- something a direct, national, popular-vote-only election would not do.
 
 But a winner-take-all system is not the most representative.  It allows the two major parties, Republicans and Democrats, to have a stranglehold on elections.  Awarding EVs proportionally would lead to a much more accurate reflection of each candidate's actual support.  It would also begin to break the hold of the two major parties, enabling third-party candidates to win EVs.  It might even cause elections to be thrown to Congress because it would increase the likelihood no one would receive a majority of EVs.  This would have happened in 2016!  And it just might result in better candidates -- from all parties -- rather than a constant "lesser of two evils" system in which we are stuck today.  For third parties to start gaining traction in American politics, voters have to see third-party candidates as viable.  Imagine if they started winning a few EVs -- voters would see actual results rather than be told they're wasting their votes.  Imagine what could happen.  And I believe this is a system the Founders would have approved of as it would maintain the integrity of the Electoral College by continuing to balance majority rule with protection of minority rights.
@@ -73,11 +74,13 @@ What Else Would I Like To Do With This Module?
 
 I'd like to support passing in state-by-state voting data so you don't have to manually enter the vote percentages in each state.  Maybe in version 2.x.
 
+Add full unit testing.
+
 
 CRA Info
 ========
 
-Yes, yes, I know, I know.  I'm using CRA.  This was a for-fun project that I started in 2016 and then only just now got back around to in time for the 2020 election.  Would this be better without CRA, latest of React, Webpack, etc.?  Yup.  For now this is what it is.
+Yes, yes, I know, I know.  I'm using CRA.  This was a for-fun project that I quickly built in 2016, forgot about after the election, and only just now got back around to in time for the 2020 election.  Would this be better without CRA, latest of React, Webpack, etc.?  Yup.  For now this is what it is.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

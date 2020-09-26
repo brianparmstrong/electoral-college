@@ -3,6 +3,13 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.0.2]
+
+### FIX / UPDATE
+
+- Fix bug where Washington, D.C. wasn't working in the map
+- Add credit for SVG code
+
 [1.0.1]
 
 ### UPDATE
