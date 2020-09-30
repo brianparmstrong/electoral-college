@@ -3,6 +3,14 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.0.4]
+
+### UPDATE
+
+- Reduce image asset size
+- Remove unused file
+- Update HOW_TO_USE.md doc re: saving and clearing results.
+
 [1.0.3]
 
 ### UDPATE

@@ -37,9 +37,17 @@ However you do it, the `Proportional` total changes, as well as the `Popular Vot
 
 For both counters there is a black arrow pointing at the line a winner must cross.
 
+## Saving Results
+
+Click the `Save` button.  This will save the results to localStorage.  The next time you try to load the application it will use this data instead of loading blank.
+
+## Clearing Results
+
+Click the `Clear` button.  This will clear the current results as well as your localStorage data.
+
 Screenshots
 ===========
 
 `2016_BLANK` -- how this will load if you do not have saved data in local storage
 
-`2016_FINAL_RESULTS` -- full winner-take-all and proportional representation results
+`2016_FINAL_RESULTS` -- Winner-take-all and proportional representation EV results for Trump and Clinton

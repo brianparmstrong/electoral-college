@@ -1,6 +1,6 @@
 {
   "name": "electoral-college",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "See LICENSE.md",
   "description": "An application to track and predict Electoral College results in U.S. Presidential Elections",
   "dependencies": {
