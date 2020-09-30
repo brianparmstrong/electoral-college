@@ -1,12 +1,20 @@
 The first Electoral College application available in npm open source!
 
+How Do I Use This?
+==================
+
+Go to [HOW_TO_USE](./docs/HOW_TO_USE.md) for complete information.
+
+What Does This Module Do?
+=========================
+
 This is currently configured for the 2020 Presidential Election.  The following candidates are shown:
 
-Donald Trump (Republican)
-Joseph Biden (Democratic)
-Jo Jorgensen (Libertarian)
-Howie Hawkins (Green)
-Kanye West (Independent)
+* Donald Trump (Republican)
+* Joseph Biden (Democratic)
+* Jo Jorgensen (Libertarian)
+* Howie Hawkins (Green)
+* Kanye West (Independent)
 
 Terms used in this application:
 ===============================
@@ -72,15 +80,16 @@ In 1992 and 1996, Independent candidate Ross Perot received a substantial portio
 What Else Would I Like To Do With This Module?
 ==============================================
 
-I'd like to support passing in state-by-state voting data so you don't have to manually enter the vote percentages in each state.  Maybe in version 2.x.
+I'd like to support passing in state-by-state voting data so you don't have to manually enter the vote percentages in each state.  I'd also like to support passing in _all_ data, including the candidates complete with their pictures, party info, etc.  Maybe in version 2.x.
 
 Add full unit testing.
+Turn this into a more-easily-importable module.
 
 
-CRA Info
-========
+CRA and other Info
+==================
 
-Yes, yes, I know, I know.  I'm using CRA.  This was a for-fun project that I quickly built in 2016, forgot about after the election, and only just now got back around to in time for the 2020 election.  Would this be better without CRA, latest of React, Webpack, etc.?  Yup.  For now this is what it is.
+Yes, yes, I know, I know.  I'm using CRA.  This was a just-for-fun project that I quickly built in 2016 using React 13, upgraded to React 16, then quickly forgot about it in early 2017.  I've only just now got back around to in time for the 2020 election.  Would this be better without CRA, latest of React (though v16.9+ is pretty recent), Webpack, etc.?  Yup.  For now this is what it is.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

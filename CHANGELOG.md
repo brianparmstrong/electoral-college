@@ -3,6 +3,12 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.1.0]
+
+### UPDATE
+
+- Move `react-scripts` to devDeps
+
 [1.0.4]
 
 ### UPDATE

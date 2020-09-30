@@ -1,6 +1,16 @@
 How To Use This Module
 ======================
 
+This module can be run locally as its own application.  Just download, install, build, and run.  To import into another application you should be able to:
+
+```
+import ElectoralCollege from 'electoral-college/src/ElectoralCollege';
+```
+
+You can copy all the styles from `electoral-college/src/style.css'.  Apologies that this isn't in a nice, neat .scss file.
+
+
+
 ## Winner-Take-All / Current System
 
 ### Using the Map

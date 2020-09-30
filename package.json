@@ -1,12 +1,11 @@
 {
   "name": "electoral-college",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "license": "See LICENSE.md",
   "description": "An application to track and predict Electoral College results in U.S. Presidential Elections",
   "dependencies": {
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -25,6 +24,7 @@
     "core-js": "^3.0.0",
     "eslint": "^6.1.0",
     "prop-types": "^15.7.0",
+    "react-scripts": "3.1.1",
     "webpack": "4.39.1",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.2.1",
