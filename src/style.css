@@ -220,7 +220,7 @@ circle:hover {
 }
 #info-box {
   background-color: #ffffff;
-  bottom: 25%;
+  bottom: 15%;
   border: 2px solid #000;
   border-radius: 5px;
   display: none;
@@ -232,6 +232,12 @@ circle:hover {
 }
 #info-box.show {
   display: block;
+}
+svg path,
+circle,
+path:hover,
+circle:hover {
+  fill: #fff;
 }
 svg .gop,
 path.gop:hover,

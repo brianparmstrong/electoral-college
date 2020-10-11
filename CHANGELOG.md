@@ -3,6 +3,17 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.2.0]
+
+### ADD
+
+- Add State Winner to info box that appears onMouseEnter of a state on the map
+- Tests for utilities
+
+### UPDATE
+
+- Use CSS to set default `fill` property for SVG instead of in the SVG html
+
 [1.1.1]
 
 ### UPDATE

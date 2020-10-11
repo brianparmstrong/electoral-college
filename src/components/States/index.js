@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { arrayOf, bool, func, number, oneOfType, shape, string } from 'prop-types';
 import Map from '../Map';
 import PopularVotes from '../PopularVotes';
 import State from '../State';
+import { getStateWinnerName, getStateWinnerNames } from '../../utilities';
 
 const States = ({
   currentEVTotals,
@@ -18,9 +19,10 @@ const States = ({
   const [buttonText, setButtonText] = useState(HIDE_POP_VOTES_TEXT);
   const [showPopVotes, setShowPopVotes] = useState(true);
   const [newStateData, setNewStateData] = useState({});
+  const [stateWinnerNames, setStateWinnerNames] = useState(getStateWinnerNames(statesData));
   const [stateClickedFromMap, setStateClickedFromMap] = useState(null);
 
-  const handleMapStateClick = (state) => {
+  const handleMapStateClick = state => {
     setStateClickedFromMap(state);
   };
 
@@ -49,6 +51,7 @@ const States = ({
     let newGrnTotal = currentEVTotals[3];
     let newIndTotal = currentEVTotals[4];
     let newEVTotals = [];
+    let updateObj;
 
     switch (data.newWinningParty) {
       case 1:
@@ -85,10 +88,15 @@ const States = ({
 
     updateElectoralVotes(data);
     handleStateWinner(newEVTotals);
+
+    updateObj = {
+      [data.stateId]: getStateWinnerName(data.newWinningParty)
+    }
     setNewStateData({
       newWinningParty: data.newWinningParty,
       stateId: data.stateId
     });
+    setStateWinnerNames({...stateWinnerNames, ...updateObj});
   };
 
   const renderStates = stateClicked => {
@@ -150,6 +158,7 @@ const States = ({
       <Map
         handleMapStateClick={handleMapStateClick}
         newStateData={newStateData}
+        stateWinnerNames={stateWinnerNames}
         statesData={statesData} />
       <div className='statesWrapper'>
         <button type='button' onClick={showHidePopVotes}>{buttonText}</button>

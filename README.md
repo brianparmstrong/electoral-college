@@ -82,7 +82,7 @@ What Else Would I Like To Do With This Module?
 
 I'd like to support passing in state-by-state voting data so you don't have to manually enter the vote percentages in each state.  I'd also like to support passing in _all_ data, including the candidates complete with their pictures, party info, etc.  Maybe in version 2.x.
 
-Add full unit testing.
+Add full unit testing.  Currently have tests for `utilities`.
 Turn this into a more-easily-importable module.
 
 
