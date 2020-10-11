@@ -3,6 +3,12 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.1.1]
+
+### UPDATE
+
+- Update favicon.ico and related images
+
 [1.1.0]
 
 ### UPDATE
