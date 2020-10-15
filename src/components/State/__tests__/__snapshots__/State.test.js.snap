@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="stateWrapper"
+  id="North Carolina"
+>
+  <div
+    className="state lib"
+    data-evs={15}
+    data-fromstorage={false}
+    data-statecode="NC"
+    data-statename="North Carolina"
+    data-winner={3}
+    onClick={[Function]}
+    tabIndex="0"
+  >
+    <span
+      className="evs"
+    >
+      15
+    </span>
+  </div>
+  <p
+    className="stateName"
+  >
+    North Carolina
+  </p>
+</div>
+`;

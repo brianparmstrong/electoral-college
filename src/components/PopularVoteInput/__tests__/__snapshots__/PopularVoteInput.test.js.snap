@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="pvInputWrapper"
+>
+  <input
+    className="pvInput"
+    data-evsawarded="2"
+    data-party="grn"
+    data-statename="Pennsylvania"
+    defaultValue="10"
+    id="grnPopVoteInput"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    pattern="^(100(?:\\\\.00)?|0(?:\\\\.\\\\d\\\\d)?|\\\\d?\\\\d(?:\\\\.\\\\d\\\\d)?)$"
+    placeholder="GRN %"
+    type="text"
+  />
+</div>
+`;

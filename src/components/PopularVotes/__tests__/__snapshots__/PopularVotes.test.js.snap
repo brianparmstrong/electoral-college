@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="popVotesWrapper "
+>
+  <div
+    className="pvInputWrapper"
+  >
+    <input
+      className="pvInput"
+      data-evsawarded="undefined"
+      data-party="gop"
+      data-statename="ME-CD1"
+      defaultValue=""
+      id="gopPopVoteInput"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      pattern="^(100(?:\\\\.00)?|0(?:\\\\.\\\\d\\\\d)?|\\\\d?\\\\d(?:\\\\.\\\\d\\\\d)?)$"
+      placeholder="GOP %"
+      type="text"
+    />
+  </div>
+  <div
+    className="pvInputWrapper"
+  >
+    <input
+      className="pvInput"
+      data-evsawarded="undefined"
+      data-party="dem"
+      data-statename="ME-CD1"
+      defaultValue=""
+      id="demPopVoteInput"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      pattern="^(100(?:\\\\.00)?|0(?:\\\\.\\\\d\\\\d)?|\\\\d?\\\\d(?:\\\\.\\\\d\\\\d)?)$"
+      placeholder="DEM %"
+      type="text"
+    />
+  </div>
+  <div
+    className="pvInputWrapper"
+  >
+    <input
+      className="pvInput"
+      data-evsawarded="undefined"
+      data-party="lib"
+      data-statename="ME-CD1"
+      defaultValue=""
+      id="libPopVoteInput"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      pattern="^(100(?:\\\\.00)?|0(?:\\\\.\\\\d\\\\d)?|\\\\d?\\\\d(?:\\\\.\\\\d\\\\d)?)$"
+      placeholder="LIB %"
+      type="text"
+    />
+  </div>
+  <div
+    className="pvInputWrapper"
+  >
+    <input
+      className="pvInput"
+      data-evsawarded="undefined"
+      data-party="grn"
+      data-statename="ME-CD1"
+      defaultValue=""
+      id="grnPopVoteInput"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      pattern="^(100(?:\\\\.00)?|0(?:\\\\.\\\\d\\\\d)?|\\\\d?\\\\d(?:\\\\.\\\\d\\\\d)?)$"
+      placeholder="GRN %"
+      type="text"
+    />
+  </div>
+  <div
+    className="pvInputWrapper"
+  >
+    <input
+      className="pvInput"
+      data-evsawarded="undefined"
+      data-party="ind"
+      data-statename="ME-CD1"
+      defaultValue=""
+      id="indPopVoteInput"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      pattern="^(100(?:\\\\.00)?|0(?:\\\\.\\\\d\\\\d)?|\\\\d?\\\\d(?:\\\\.\\\\d\\\\d)?)$"
+      placeholder="IND %"
+      type="text"
+    />
+  </div>
+</div>
+`;

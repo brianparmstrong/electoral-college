@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="candidate"
+  id="Biden"
+>
+  <h2>
+    Biden
+  </h2>
+  <img
+    alt="Biden"
+    src="biden.jpeg"
+  />
+  <div
+    className="electoralVotesWrapper"
+  >
+    <p
+      className="electoralVotesLabel"
+    >
+      Winner-Take-All:
+    </p>
+    <span
+      className="electoralVotes"
+      id="dem-wta"
+    >
+      48
+    </span>
+    <p
+      className="electoralVotesLabel"
+    >
+      Proportional:
+    </p>
+    <span
+      className="electoralVotes"
+      id="dem-prop"
+    >
+      40
+    </span>
+  </div>
+</div>
+`;

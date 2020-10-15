@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="electoralVotesWrapper"
+>
+  <p
+    className="electoralVotesLabel"
+  >
+    Winner-Take-All:
+  </p>
+  <span
+    className="electoralVotes"
+    id="ind-wta"
+  >
+    0
+  </span>
+  <p
+    className="electoralVotesLabel"
+  >
+    Proportional:
+  </p>
+  <span
+    className="electoralVotes"
+    id="ind-prop"
+  >
+    10
+  </span>
+</div>
+`;

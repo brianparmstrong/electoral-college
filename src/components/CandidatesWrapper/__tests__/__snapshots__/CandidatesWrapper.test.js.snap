@@ -1,0 +1,333 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <h1>
+    Electoral College 2020
+  </h1>
+  <div
+    className="votes-counter"
+    id="ev-votes-counter"
+  >
+    <h3>
+      Winner-Take-All Electoral Votes Counter
+    </h3>
+    <div>
+      <div
+        className="votes-winner-line"
+      />
+      <div
+        className="votes-parties"
+      >
+        <span
+          className="gop-votes"
+          style={
+            Object {
+              "width": "15%",
+            }
+          }
+        />
+        <span
+          className="lib-votes"
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        />
+        <span
+          className="unawarded-votes"
+          style={
+            Object {
+              "width": "71%",
+            }
+          }
+        />
+        <span
+          className="grn-votes"
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        />
+        <span
+          className="ind-votes"
+          style={
+            Object {
+              "width": "0%",
+            }
+          }
+        />
+        <span
+          className="dem-votes"
+          style={
+            Object {
+              "width": "14%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="votes-counter"
+    id="pop-votes-counter"
+  >
+    <h3>
+      Proportional Electoral Votes Counter
+    </h3>
+    <div>
+      <div
+        className="votes-winner-line"
+      />
+      <div
+        className="votes-parties"
+      >
+        <span
+          className="gop-votes"
+          style={
+            Object {
+              "width": "12.5%",
+            }
+          }
+        />
+        <span
+          className="lib-votes"
+          style={
+            Object {
+              "width": "2.75%",
+            }
+          }
+        />
+        <span
+          className="unawarded-votes"
+          style={
+            Object {
+              "width": "71%",
+            }
+          }
+        />
+        <span
+          className="grn-votes"
+          style={
+            Object {
+              "width": "1.25%",
+            }
+          }
+        />
+        <span
+          className="ind-votes"
+          style={
+            Object {
+              "width": "1%",
+            }
+          }
+        />
+        <span
+          className="dem-votes"
+          style={
+            Object {
+              "width": "11.5%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="candidatesWrapper"
+  >
+    <div
+      className="candidate"
+      id="Trump"
+    >
+      <h2>
+        Trump
+      </h2>
+      <img
+        alt="Trump"
+        src="trump.jpeg"
+      />
+      <div
+        className="electoralVotesWrapper"
+      >
+        <p
+          className="electoralVotesLabel"
+        >
+          Winner-Take-All:
+        </p>
+        <span
+          className="electoralVotes"
+          id="gop-wta"
+        >
+          43
+        </span>
+        <p
+          className="electoralVotesLabel"
+        >
+          Proportional:
+        </p>
+        <span
+          className="electoralVotes"
+          id="gop-prop"
+        >
+          40
+        </span>
+      </div>
+    </div>
+    <div
+      className="candidate"
+      id="Biden"
+    >
+      <h2>
+        Biden
+      </h2>
+      <img
+        alt="Biden"
+        src="biden.jpeg"
+      />
+      <div
+        className="electoralVotesWrapper"
+      >
+        <p
+          className="electoralVotesLabel"
+        >
+          Winner-Take-All:
+        </p>
+        <span
+          className="electoralVotes"
+          id="dem-wta"
+        >
+          42
+        </span>
+        <p
+          className="electoralVotesLabel"
+        >
+          Proportional:
+        </p>
+        <span
+          className="electoralVotes"
+          id="dem-prop"
+        >
+          40
+        </span>
+      </div>
+    </div>
+    <div
+      className="candidate"
+      id="Jorgensen"
+    >
+      <h2>
+        Jorgensen
+      </h2>
+      <img
+        alt="Jorgensen"
+        src="jorgensen.png"
+      />
+      <div
+        className="electoralVotesWrapper"
+      >
+        <p
+          className="electoralVotesLabel"
+        >
+          Winner-Take-All:
+        </p>
+        <span
+          className="electoralVotes"
+          id="lib-wta"
+        >
+          0
+        </span>
+        <p
+          className="electoralVotesLabel"
+        >
+          Proportional:
+        </p>
+        <span
+          className="electoralVotes"
+          id="lib-prop"
+        >
+          2
+        </span>
+      </div>
+    </div>
+    <div
+      className="candidate"
+      id="Hawkins"
+    >
+      <h2>
+        Hawkins
+      </h2>
+      <img
+        alt="Hawkins"
+        src="hawkins.jpeg"
+      />
+      <div
+        className="electoralVotesWrapper"
+      >
+        <p
+          className="electoralVotesLabel"
+        >
+          Winner-Take-All:
+        </p>
+        <span
+          className="electoralVotes"
+          id="grn-wta"
+        >
+          0
+        </span>
+        <p
+          className="electoralVotesLabel"
+        >
+          Proportional:
+        </p>
+        <span
+          className="electoralVotes"
+          id="grn-prop"
+        >
+          1
+        </span>
+      </div>
+    </div>
+    <div
+      className="candidate"
+      id="West"
+    >
+      <h2>
+        West
+      </h2>
+      <img
+        alt="West"
+        src="west.jpeg"
+      />
+      <div
+        className="electoralVotesWrapper"
+      >
+        <p
+          className="electoralVotesLabel"
+        >
+          Winner-Take-All:
+        </p>
+        <span
+          className="electoralVotes"
+          id="ind-wta"
+        >
+          0
+        </span>
+        <p
+          className="electoralVotesLabel"
+        >
+          Proportional:
+        </p>
+        <span
+          className="electoralVotes"
+          id="ind-prop"
+        >
+          1
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

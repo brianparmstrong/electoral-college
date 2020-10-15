@@ -14,7 +14,6 @@ const Candidates = ({
         key={`candidate-${i}`}
         party={candidate.party}
         popularVoteTotals={popularVoteTotals[i]}
-        winner={candidate.winner}
         winnerTakeAllTotal={winnerTakeAllTotals[i]} />
     );
   });

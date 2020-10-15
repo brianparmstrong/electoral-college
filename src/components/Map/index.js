@@ -180,10 +180,11 @@ Map.propTypes = {
     newWinningParty: number,
     stateId: string
   }),
+  stateWinnerNames: shape({}).isRequired,
   statesData: arrayOf(shape({
-    evs: oneOfType([number, string]),
-    name: string,
-    stateCode: string,
+    evs: oneOfType([number, string]).isRequired,
+    name: string.isRequired,
+    stateCode: string.isRequired,
     winner: string
   })).isRequired
 };

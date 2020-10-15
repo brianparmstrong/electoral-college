@@ -3,6 +3,12 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.2.1]
+
+### ADD
+
+- Jest test snapshots for all components
+
 [1.2.0]
 
 ### ADD
