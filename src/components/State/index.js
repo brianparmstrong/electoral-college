@@ -13,17 +13,16 @@ const State = ({
   winner
 }) => {
   const stateNode = useRef(null);
-
-  useEffect(() => {
-    stateClickedFromMap && stateNode.current.click();
-  }, [ stateClickedFromMap ]);
-
   const [winningParty, setWinningParty] = useState(
     isFromStorage ?
     Number(winner) :
     0
   );
   const [winningPartyClass, setWinningPartyClass] = useState(getWinnerClassName(winner));
+
+  useEffect(() => {
+    stateClickedFromMap && stateNode.current.click();
+  }, [ stateClickedFromMap ]);
 
   const updateWinningParty = e => {
     const newWinningParty = (winningParty === 5) ? 0 : (winningParty + 1);

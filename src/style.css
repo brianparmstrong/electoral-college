@@ -118,6 +118,10 @@
   cursor: pointer;
 }
 
+.statesWrapper > div {
+  margin-top: 10px;
+}
+
 .stateWrapper {
   margin: 5px;
   text-align: center;
@@ -126,41 +130,84 @@
 .state {
   background-color: none;
   border: 1px solid #000000;
+  border-radius: 3px;
   cursor: pointer;
   height: 30px;
-  margin-left: 10px;
+  margin: 0 auto;
   width: 100px;
 }
 
-.state.gop {
+.wta-winner,
+.prop-winner {
+  background-color: none;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+.state.gop,
+.wta-winner.gop,
+.prop-winner.gop {
   background-color: rgba(255, 0, 0, 0.75);
   border: 1px solid rgba(255, 0, 0, 0.75);
 }
-.state.dem {
+.state.dem,
+.wta-winner.dem,
+.prop-winner.dem {
   background-color: rgba(0, 70, 255, 0.75);
   border: 1px solid rgba(0, 70, 255, 0.75);
 }
-.state.lib {
+.state.lib,
+.wta-winner.lib,
+.prop-winner.lib {
   background-color: rgba(255, 215, 0, 0.75);
   border: 1px solid rgba(255, 215, 0, 0.75);
 }
-.state.grn {
+.state.grn,
+.wta-winner.grn,
+.wta-winner.grn {
   background-color: rgba(0, 200, 0, 0.75);
   border: 1px solid rgba(0, 200, 0, 0.75);
 }
-.state.ind {
+.state.ind,
+.wta-winner.ind,
+.prop-winner.ind {
   background-color: #d3d3d3;
   border: 1px solid #d3d3d3;
-}
-
-.stateName {
-  
 }
 
 .evs {
   font-size: 22px;
   position: relative;
   top: 10%;
+}
+
+.pvInputWrapper {
+  margin-bottom: 3px;
+}
+
+.pvInput {
+  border-radius: 3px;
+  border: 2px solid;
+}
+
+.pvInput[data-party="gop"] {
+  border-color: rgba(255, 0, 0, 0.75);
+}
+
+.pvInput[data-party="dem"] {
+  border-color: rgba(0, 70, 255, 0.75);
+}
+
+.pvInput[data-party="lib"] {
+  border-color: rgba(255, 215, 0, 0.75);
+}
+
+.pvInput[data-party="grn"] {
+  border-color: rgba(0, 200, 0, 0.75);
+}
+
+.pvInput[data-party="ind"] {
+  border-color: #d3d3d3;
 }
 
 .hide {

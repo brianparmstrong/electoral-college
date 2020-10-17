@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { arrayOf, bool, func, number, oneOfType, shape, string } from 'prop-types';
 import Map from '../Map';
 import PopularVotes from '../PopularVotes';
 import State from '../State';
-import { getStateWinnerName, getStateWinnerNames } from '../../utilities';
+import { getStateWinnerNames, getWinnerName } from '../../utilities';
 
 const States = ({
   currentEVTotals,
@@ -90,7 +90,7 @@ const States = ({
     handleStateWinner(newEVTotals);
 
     updateObj = {
-      [data.stateId]: getStateWinnerName(data.newWinningParty)
+      [data.stateId]: getWinnerName(data.newWinningParty)
     }
     setNewStateData({
       newWinningParty: data.newWinningParty,

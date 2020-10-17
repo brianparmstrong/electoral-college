@@ -1,11 +1,11 @@
-import { getStateWinnerName } from './';
+import { getWinnerName } from './';
 
 const getStateWinnerNames = data => {
   const stateWinnerNames = {};
 
   data.map((state, i) => {
     if (state.name.indexOf('-CD') === -1) {
-      stateWinnerNames[state.stateCode] = getStateWinnerName(state.winner);
+      stateWinnerNames[state.stateCode] = getWinnerName(state.winner);
     }
     return stateWinnerNames;
   });

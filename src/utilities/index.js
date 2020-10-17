@@ -1,11 +1,13 @@
 import calculateEVPercentage from './calculatePercentage';
-import getStateWinnerName from './getStateWinnerName';
+import checkForWinner from './checkForWinner';
 import getStateWinnerNames from './getStateWinnerNames';
 import getWinnerClassName from './getWinnerClassName';
+import getWinnerName from './getWinnerName';
 
 export {
   calculateEVPercentage,
-  getStateWinnerName,
+  checkForWinner,
   getStateWinnerNames,
-  getWinnerClassName
+  getWinnerClassName,
+  getWinnerName
 };

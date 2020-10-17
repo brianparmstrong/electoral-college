@@ -3,6 +3,18 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.3.0]
+
+### ADD
+
+- `Winner: {winnerName}` to Electoral Votes counters when a candidate has won at > 50% of possible EVs
+- Colored borders to each PopularVoteInput to match the party to which that input belongs
+- `checkForWinner` util for determining if a candidate has won > 50% of possible EVs
+
+### UPDATE
+
+- Rename `getStateWinnerName` to `getWinnerName` since the function is now being used by multiple components
+
 [1.2.1]
 
 ### ADD

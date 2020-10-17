@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { arrayOf, number, shape, string } from 'prop-types';
+import { checkForWinner, getWinnerClassName, getWinnerName } from '../../utilities';
 import Candidates from '../Candidates';
 
 const CandidatesWrapper = ({
@@ -9,6 +10,35 @@ const CandidatesWrapper = ({
   pvPct,
   winnerTakeAllTotals
 }) => {
+  const [wtaWinnerIndex, setWtaWinnerIndex] = useState(checkForWinner(winnerTakeAllTotals));
+  const [propWinnerIndex, setPropWinnerIndex] = useState(checkForWinner(popVoteTotals));
+  const [wtaWinnerName, setWtaWinnerName] = useState(getWinnerName((wtaWinnerIndex + 1)));
+  const [propWinnerName, setPropWinnerName] = useState(getWinnerName((propWinnerIndex + 1)));
+  const [wtaWinnerClassName, setWtaWinnerClassName] = useState(getWinnerClassName((wtaWinnerIndex + 1)));
+  const [propWinnerClassName, setPropWinnerClassName] = useState(getWinnerClassName((propWinnerIndex + 1)));
+
+  useEffect(() => {
+    setPropWinnerIndex(checkForWinner(pvPct));
+  }, [ pvPct ]);
+
+  useEffect(() => {
+    setWtaWinnerIndex(checkForWinner(evPct));
+  }, [ evPct ]);
+
+  useEffect(() => {
+    const index = propWinnerIndex + 1;
+    const name = getWinnerName(index);
+    setPropWinnerName(name);
+    setPropWinnerClassName(getWinnerClassName(index));
+  }, [ propWinnerIndex ]);
+
+  useEffect(() => {
+    const index = wtaWinnerIndex + 1;
+    const name = getWinnerName(index);
+    setWtaWinnerName(name);
+    setWtaWinnerClassName(getWinnerClassName(index));
+  }, [ wtaWinnerIndex ]);
+
   const calculateUnawardedEvsPct = percentages => {
     const awardedEvsPct = percentages.reduce((a, b) => a + b, 0);
     return (100 - awardedEvsPct);
@@ -19,6 +49,9 @@ const CandidatesWrapper = ({
       <h1>Electoral College 2020</h1>
       <div className='votes-counter' id='ev-votes-counter'>
         <h3>Winner-Take-All Electoral Votes Counter</h3>
+        <h3 className={`wta-winner ${wtaWinnerClassName} ${wtaWinnerIndex > -1 ? 'show' : 'hide'}`}>
+          {`Winner: ${wtaWinnerName}`}
+        </h3>
         <div>
           <div className='votes-winner-line'></div>
           <div className='votes-parties'>
@@ -33,6 +66,9 @@ const CandidatesWrapper = ({
       </div>
       <div className='votes-counter' id='pop-votes-counter'>
         <h3>Proportional Electoral Votes Counter</h3>
+        <h3 className={`prop-winner ${propWinnerClassName} ${propWinnerIndex > -1 ? 'show' : 'hide'}`}>
+          {`Winner: ${propWinnerName}`}
+        </h3>
         <div>
           <div className='votes-winner-line'></div>
           <div className='votes-parties'>

@@ -1,4 +1,4 @@
-const getStateWinnerName = winningParty => {
+const getWinnerName = winningParty => {
   let stateWinner = '';
 
   switch (parseInt(winningParty)) {
@@ -25,4 +25,4 @@ const getStateWinnerName = winningParty => {
   return stateWinner;
 };
 
-export default getStateWinnerName;
+export default getWinnerName;
