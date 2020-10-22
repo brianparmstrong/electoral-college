@@ -3,6 +3,12 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.4.0]
+
+### ADD
+
+- Make the candidates' Electoral Votes totals into a sticky header when page is scrolled down so that it's easier to see the updated totals
+
 [1.3.0]
 
 ### ADD

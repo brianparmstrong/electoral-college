@@ -8,6 +8,18 @@
   text-align: center;
 }
 
+.candidatesWrapper.sticky {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.candidatesWrapper.sticky img {
+  display: none;
+}
+
 .candidate {
   margin: 10px;
 }
