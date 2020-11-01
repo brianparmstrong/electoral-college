@@ -20,11 +20,6 @@ const PopularVoteInput = ({
   const calculateProportionalVotes = (e, value) => {
     const newInputValue = value ? Number(value) : (e && e.target) ? Number(e.target.value) : 0;
     let totalEvs = stateEvs ? stateEvs : evs;
-    if (name === 'Maine') {
-      totalEvs = 4;
-    } else if (name === 'Nebraska') {
-      totalEvs = 5;
-    }
     const popVotePercent = (Boolean(newInputValue) || percent) ? (newInputValue / 100) : 0;
     const evsWon = Math.round(totalEvs * popVotePercent);
     const polParty = (value || Boolean(e) === false) ? null : e.target.getAttribute('data-party');

@@ -3,6 +3,12 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.4.1]
+
+### FIX
+
+- Re-order Maine and Nebraska in `statesData` const to fix a bug where the popular vote inputs would not show after saving.
+
 [1.4.0]
 
 ### ADD

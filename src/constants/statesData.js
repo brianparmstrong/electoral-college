@@ -90,12 +90,6 @@ export const STATES_DATA = [
     "evs": 8
   },
   {
-    "name": "Maine",
-    "stateCode": "ME",
-    "evs": 2,
-    "stateEvs": 4
-  },
-  {
     "name": "ME-CD1",
     "stateCode": "ME1",
     "evs" : 1
@@ -104,6 +98,12 @@ export const STATES_DATA = [
     "name": "ME-CD2",
     "stateCode": "ME2",
     "evs": 1
+  },
+  {
+    "name": "Maine",
+    "stateCode": "ME",
+    "evs": 2,
+    "stateEvs": 4
   },
   {
     "name": "Maryland",
@@ -141,12 +141,6 @@ export const STATES_DATA = [
     "evs": 3
   },
   {
-    "name": "Nebraska",
-    "stateCode": "NE",
-    "evs" : 2,
-    "stateEvs": 5
-  },
-  {
     "name": "NE-CD1",
     "stateCode": "NE1",
     "evs": 1
@@ -160,6 +154,12 @@ export const STATES_DATA = [
     "name": "NE-CD3",
     "stateCode": "NE3",
     "evs" : 1
+  },
+  {
+    "name": "Nebraska",
+    "stateCode": "NE",
+    "evs" : 2,
+    "stateEvs": 5
   },
   {
     "name": "Nevada",
