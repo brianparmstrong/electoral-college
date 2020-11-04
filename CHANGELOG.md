@@ -3,6 +3,12 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.4.2]
+
+### FIX
+
+- Accidentally removed code for properly calculating Maine and Nebraska proportional EVs
+
 [1.4.1]
 
 ### FIX
