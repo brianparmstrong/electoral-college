@@ -8,13 +8,13 @@ Go to [HOW_TO_USE](./docs/HOW_TO_USE.md) for complete information.
 What Does This Module Do?
 =========================
 
-This is currently configured for the 2020 Presidential Election.  The following candidates are shown:
+This is currently configured for the 2024 Presidential Election.  Party names are used:
 
-* Donald Trump (Republican)
-* Joseph Biden (Democratic)
-* Jo Jorgensen (Libertarian)
-* Howie Hawkins (Green)
-* Kanye West (Independent)
+* Rep (Republican)
+* Dem (Democratic)
+* Lib (Libertarian)
+* Grn (Green)
+* Ind (Independent)
 
 Terms used in this application:
 ===============================

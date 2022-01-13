@@ -3,19 +3,19 @@ const getWinnerName = winningParty => {
 
   switch (parseInt(winningParty)) {
     case 1:
-      stateWinner = 'Trump';
+      stateWinner = 'Republican';
       break;
     case 2:
-      stateWinner = 'Biden';
+      stateWinner = 'Democratic';
       break;
     case 3:
-      stateWinner = 'Jorgensen';
+      stateWinner = 'Libertarian';
       break;
     case 4:
-      stateWinner = 'Hawkins';
+      stateWinner = 'Green';
       break;
     case 5:
-      stateWinner = 'West';
+      stateWinner = 'Independent';
       break;
     default:
       stateWinner = '';

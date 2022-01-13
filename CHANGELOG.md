@@ -3,6 +3,13 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.5.0]
+
+### UPDATE
+
+- Add 2020 Census-related info (candidatesData-2024.js and statesData-2020.js)
+- Rename `statesData` const file to `statesData-{Census Year}.js`
+
 [1.4.2]
 
 ### FIX
