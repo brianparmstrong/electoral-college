@@ -3,14 +3,14 @@
 exports[`renders correctly 1`] = `
 <div
   className="candidate"
-  id="Biden"
+  id="Dem"
 >
   <h2>
-    Biden
+    Dem
   </h2>
   <img
-    alt="Biden"
-    src="biden.jpeg"
+    alt="Dem"
+    src="demlogo.jpeg"
   />
   <div
     className="electoralVotesWrapper"

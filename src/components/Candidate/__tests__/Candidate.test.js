@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import Candidate from '../';
 
 const MOCK_CANDIDATE = {
-  name: 'Biden',
+  name: 'Dem',
   party: 'dem',
   popularVoteTotals: 40,
   winnerTakeAllTotal: 48

@@ -3,6 +3,12 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.5.2]
+
+### UPDATE
+
+- Remove 2016 and 2020 candidate images from `/src/assets`
+
 [1.5.1]
 
 ### UPDATE
