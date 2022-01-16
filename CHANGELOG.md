@@ -3,6 +3,12 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.5.3]
+
+### UPDATE
+
+- Unit tests for constants
+
 [1.5.2]
 
 ### UPDATE
