@@ -3,6 +3,14 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.5.1]
+
+### UPDATE
+
+- Update a few unit tests that failed as a result of 1.5.0 changes
+- Add unit tests for `statesData` file
+- Move historical candidatesData and statesData to new `/docs/historical-data` folder to reduce build size; rename `statesData-{Census Year}.js` back to `statesData.js`
+
 [1.5.0]
 
 ### UPDATE

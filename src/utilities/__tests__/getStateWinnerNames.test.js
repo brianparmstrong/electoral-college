@@ -17,6 +17,6 @@ const MOCK_DATA = [
 it('should return correct state winner name', () => {
   const mockReturnData = getStateWinnerNames(MOCK_DATA);
   expect(mockReturnData).toEqual({
-    'AL': 'Trump'
+    'AL': 'Republican'
   });
 });

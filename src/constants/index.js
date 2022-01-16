@@ -1,6 +1,6 @@
-import { CANDIDATES_DATA } from './candidatesData-2024';
+import { CANDIDATES_DATA } from './candidatesData';
 import { PARTY_MAP } from './partyData';
-import { STATES_DATA } from './statesData-2020';
+import { STATES_DATA } from './statesData';
 
 export {
   CANDIDATES_DATA,

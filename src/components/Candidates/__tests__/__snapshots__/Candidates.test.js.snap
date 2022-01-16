@@ -6,14 +6,14 @@ exports[`renders correctly 1`] = `
 >
   <div
     className="candidate"
-    id="Trump"
+    id="Rep"
   >
     <h2>
-      Trump
+      Rep
     </h2>
     <img
-      alt="Trump"
-      src="trump.jpeg"
+      alt="Rep"
+      src="goplogo.png"
     />
     <div
       className="electoralVotesWrapper"
@@ -44,14 +44,14 @@ exports[`renders correctly 1`] = `
   </div>
   <div
     className="candidate"
-    id="Biden"
+    id="Dem"
   >
     <h2>
-      Biden
+      Dem
     </h2>
     <img
-      alt="Biden"
-      src="biden.jpeg"
+      alt="Dem"
+      src="demlogo.jpeg"
     />
     <div
       className="electoralVotesWrapper"
@@ -82,14 +82,14 @@ exports[`renders correctly 1`] = `
   </div>
   <div
     className="candidate"
-    id="Jorgensen"
+    id="Lib"
   >
     <h2>
-      Jorgensen
+      Lib
     </h2>
     <img
-      alt="Jorgensen"
-      src="jorgensen.png"
+      alt="Lib"
+      src="liblogo.png"
     />
     <div
       className="electoralVotesWrapper"
@@ -120,14 +120,14 @@ exports[`renders correctly 1`] = `
   </div>
   <div
     className="candidate"
-    id="Hawkins"
+    id="Grn"
   >
     <h2>
-      Hawkins
+      Grn
     </h2>
     <img
-      alt="Hawkins"
-      src="hawkins.jpeg"
+      alt="Grn"
+      src="grnlogo.png"
     />
     <div
       className="electoralVotesWrapper"
@@ -158,14 +158,14 @@ exports[`renders correctly 1`] = `
   </div>
   <div
     className="candidate"
-    id="West"
+    id="Ind"
   >
     <h2>
-      West
+      Ind
     </h2>
     <img
-      alt="West"
-      src="west.jpeg"
+      alt="Ind"
+      src="indlogo.jpeg"
     />
     <div
       className="electoralVotesWrapper"
