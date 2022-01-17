@@ -3,6 +3,12 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.5.4]
+
+### FIX
+
+- Fix CSS of each `Candidate` component to restore background color
+
 [1.5.3]
 
 ### UPDATE
