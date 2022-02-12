@@ -3,6 +3,12 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.5.5]
+
+### UPDATE
+
+- Really this is just a re-publish of 1.5.5.  I realized I had forgotten to push the code changes to Git (for a while, maybe since 1.2.x or 1.3.x -- major facepalm!);
+
 [1.5.4]
 
 ### FIX
