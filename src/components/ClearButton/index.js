@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ClearButton = () => {
   const clearStatus = () => {
     if (typeof(Storage) !== 'undefined') {

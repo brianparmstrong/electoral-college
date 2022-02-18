@@ -1,4 +1,3 @@
-import React from 'react';
 import { STATES_DATA } from '../';
 
 it('should have 56 States and Congressional Districts', () => {

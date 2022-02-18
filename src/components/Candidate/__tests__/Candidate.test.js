@@ -1,5 +1,4 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Candidate from '../';
 
 const MOCK_CANDIDATE = {
@@ -10,10 +9,6 @@ const MOCK_CANDIDATE = {
 };
 
 it('renders correctly', () => {
-  const candidate = renderer
-    .create(
-      <Candidate {...MOCK_CANDIDATE} />
-    )
-    .toJSON();
-  expect(candidate).toMatchSnapshot();
+  const { container } = render(<Candidate {...MOCK_CANDIDATE} />);
+  expect(container.firstChild).toMatchSnapshot();
 });

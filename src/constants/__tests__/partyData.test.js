@@ -1,4 +1,3 @@
-import React from 'react';
 import { PARTY_MAP } from '../';
 
 it('should have the parties in a specific order', () => {

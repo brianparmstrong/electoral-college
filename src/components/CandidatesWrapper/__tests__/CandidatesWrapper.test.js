@@ -1,5 +1,4 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { CANDIDATES_DATA } from '../../../constants';
 import CandidatesWrapper from '../';
 
@@ -9,15 +8,14 @@ const MOCK_PV_PCT = [ 12.50, 11.50, 2.75, 1.25, 1.00 ];
 const MOCK_WINNER_TAKE_ALL_TOTALS = [ 55, 45, 0, 0, 0 ];
 
 it('renders correctly', () => {
-  const candidatesWrapper = renderer
-    .create(
+  const { container } = render(
       <CandidatesWrapper
         candidates={CANDIDATES_DATA}
         evPct={MOCK_EV_PCT}
         popVoteTotals={MOCK_POP_VOTE_TOTALS}
         pvPct={MOCK_PV_PCT}
-        winnerTakeAllTotals={MOCK_WINNER_TAKE_ALL_TOTALS} />
-    )
-    .toJSON();
-  expect(candidatesWrapper).toMatchSnapshot();
+        winnerTakeAllTotals={MOCK_WINNER_TAKE_ALL_TOTALS}
+      />
+    );
+  expect(container.firstChild).toMatchSnapshot();
 });

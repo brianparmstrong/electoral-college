@@ -1,4 +1,3 @@
-import React from 'react';
 import { checkForWinner } from '../';
 
 const hasWinner = [ 55, 45, 0, 0, 0 ];

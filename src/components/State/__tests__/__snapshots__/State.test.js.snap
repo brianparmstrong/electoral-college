@@ -2,27 +2,26 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="stateWrapper"
+  class="stateWrapper"
   id="North Carolina"
 >
   <div
-    className="state lib"
-    data-evs={15}
-    data-fromstorage={false}
+    class="state gop"
+    data-evs="15"
+    data-fromstorage="false"
     data-statecode="NC"
     data-statename="North Carolina"
-    data-winner={0}
-    onClick={[Function]}
-    tabIndex="0"
+    data-winner="1"
+    tabindex="0"
   >
     <span
-      className="evs"
+      class="evs"
     >
       15
     </span>
   </div>
   <p
-    className="stateName"
+    class="stateName"
   >
     North Carolina
   </p>

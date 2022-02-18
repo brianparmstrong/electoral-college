@@ -1,12 +1,7 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import ClearButton from '../';
 
 it('renders correctly', () => {
-  const clearButton = renderer
-    .create(
-      <ClearButton />
-    )
-    .toJSON();
-  expect(clearButton).toMatchSnapshot();
+  const { container } = render(<ClearButton />);
+  expect(container.firstChild).toMatchSnapshot();
 });

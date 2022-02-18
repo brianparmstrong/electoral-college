@@ -1,4 +1,3 @@
-import React from 'react';
 import { CANDIDATES_DATA } from '../';
 
 it('should have the candidates in a specific order', () => {

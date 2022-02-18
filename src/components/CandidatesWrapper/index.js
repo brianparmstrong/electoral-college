@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { arrayOf, number, shape, string } from 'prop-types';
 import { checkForWinner, getWinnerClassName, getWinnerName } from '../../utilities';
 import Candidates from '../Candidates';
@@ -46,7 +46,7 @@ const CandidatesWrapper = ({
 
   return (
     <div>
-      <h1>Electoral College 2020</h1>
+      <h1>Electoral College 2024</h1>
       <div className='votes-counter' id='ev-votes-counter'>
         <h3>Winner-Take-All Electoral Votes Counter</h3>
         <h3 className={`wta-winner ${wtaWinnerClassName} ${wtaWinnerIndex > -1 ? 'show' : 'hide'}`}>

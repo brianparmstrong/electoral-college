@@ -2,11 +2,10 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="buttonWrapper"
+  class="buttonWrapper"
 >
   <button
     id="saveButton"
-    onClick={[Function]}
     type="button"
   >
     Save

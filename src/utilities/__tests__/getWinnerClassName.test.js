@@ -1,4 +1,3 @@
-import React from 'react';
 import { getWinnerClassName } from '../';
 
 it('should return correct state winner name', () => {

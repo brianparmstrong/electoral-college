@@ -109,7 +109,7 @@ const States = ({
               isFromStorage={isFromStorage}
               name={state.name}
               stateClickedFromMap={
-                stateClicked && stateClicked.split('-')[0] === state.stateCode ? stateClicked : false
+                stateClicked?.split('-')[0] === state.stateCode ? stateClicked : false
               }
               stateCode={state.stateCode}
               stateEvs={state.stateEvs}

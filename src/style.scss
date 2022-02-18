@@ -6,22 +6,26 @@
   display: flex;
   justify-content: space-around;
   text-align: center;
-}
 
-.candidatesWrapper.sticky {
-  background-color: #fff;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-}
+  &.sticky {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 
-.candidatesWrapper.sticky img {
-  display: none;
+    img {
+      display: none;
+    }
+  }
 }
 
 .candidate {
   margin: 10px;
+
+  img {
+    height: 100px;
+  }
 }
 
 #Rep,
@@ -47,10 +51,6 @@
 #Ind,
 .ind-votes {
   background-color: #d3d3d3;
-}
-
-.candidate img {
-  height: 100px;
 }
 
 .electoralVotesWrapper {
@@ -115,14 +115,14 @@
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 10px;
-}
 
-.statesWrapper button {
-  cursor: pointer;
-}
+  button {
+    cursor: pointer;
+  }
 
-.statesWrapper > div {
-  margin-top: 10px;
+  > div {
+    margin-top: 10px;
+  }
 }
 
 .stateWrapper {
@@ -191,26 +191,26 @@
 .pvInput {
   border-radius: 3px;
   border: 2px solid;
-}
 
-.pvInput[data-party="gop"] {
-  border-color: rgba(255, 0, 0, 0.75);
-}
+  &[data-party="gop"] {
+    border-color: rgba(255, 0, 0, 0.75);
+  }
 
-.pvInput[data-party="dem"] {
-  border-color: rgba(0, 70, 255, 0.75);
-}
+  &[data-party="dem"] {
+    border-color: rgba(0, 70, 255, 0.75); 
+  }
 
-.pvInput[data-party="lib"] {
-  border-color: rgba(255, 215, 0, 0.75);
-}
+  &[data-party="lib"] {
+    border-color: rgba(255, 215, 0, 0.75);
+  }
 
-.pvInput[data-party="grn"] {
-  border-color: rgba(0, 200, 0, 0.75);
-}
+  &[data-party="grn"] {
+    border-color: rgba(0, 200, 0, 0.75);
+  }
 
-.pvInput[data-party="ind"] {
-  border-color: #d3d3d3;
+  &[data-party="ind"] {
+    border-color: #d3d3d3;
+  }
 }
 
 .hide {
@@ -220,14 +220,14 @@
 .buttonWrapper {
   display: inline-block;
   margin: 10px 20px 0 0;
-}
 
-.buttonWrapper button {
-  border: 0;
-  cursor: pointer;
-  display: block;
-  font-family: Helvetica;
-  font-size: 30px;
+  button {
+    border: 0;
+    cursor: pointer;
+    display: block;
+    font-family: Helvetica;
+    font-size: 30px;
+  }
 }
 
 #saveButton {
@@ -240,21 +240,23 @@
 
 #map-wrapper {
   position: relative;
-}
 
-#map-wrapper button {
-  margin: 20px;
-  padding: 20px;
+  button {
+    margin: 20px;
+    padding: 20px;
+  }
 }
 
 #us-map {
   display: block;
   height: 100%;
   width: 100%;
+
+  &.hide {
+    display: none;
+  }
 }
-#us-map.hide {
-  display: none;
-}
+
 path:hover,
 circle:hover {
   stroke: #000 !important;
@@ -279,9 +281,10 @@ circle:hover {
   position: absolute;
   right: 10px;
   z-index: 1;
-}
-#info-box.show {
-  display: block;
+
+  &.show {
+    display: block;
+  }
 }
 svg path,
 circle,

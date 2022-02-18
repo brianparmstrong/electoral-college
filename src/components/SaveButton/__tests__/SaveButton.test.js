@@ -1,5 +1,4 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import SaveButton from '../';
 
 const MOCK_TOTALS = {
@@ -8,10 +7,6 @@ const MOCK_TOTALS = {
 }
 
 it('renders correctly', () => {
-  const saveButton = renderer
-    .create(
-      <SaveButton { ...MOCK_TOTALS } />
-    )
-    .toJSON();
-  expect(saveButton).toMatchSnapshot();
+  const { container } = render(<SaveButton { ...MOCK_TOTALS } />);
+  expect(container.firstChild).toMatchSnapshot();
 });

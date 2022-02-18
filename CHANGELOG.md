@@ -3,6 +3,18 @@ CHANGELOG
 
 Semver versioning is followed.
 
+[1.6.0]
+
+### UPGRADE
+
+- Upgrade to React 17 and CRA 5.x.  This enables removal of `import React from 'react'` statements and some easier-to-read tests with `@testing-libary/react`.
+- Use optional chaining
+- Use SASS instead of CSS
+
+### FIX
+
+- Typo in h1: `2020` ==> `2024`
+
 [1.5.5]
 
 ### UPDATE

@@ -1,5 +1,4 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { STATES_DATA } from '../../../constants';
 import Map from '../';
 
@@ -8,13 +7,12 @@ const NO_STATE_WINNERS = {};
 const mockMapStateClick = jest.fn();
 
 it('renders correctly', () => {
-  const map = renderer
-    .create(
-      <Map
-        handleMapStateClick={mockMapStateClick}
-        statesData={STATES_DATA}
-        stateWinnerNames={NO_STATE_WINNERS} />
-    )
-    .toJSON();
-  expect(map).toMatchSnapshot();
+  const { container } = render(
+    <Map
+      handleMapStateClick={mockMapStateClick}
+      statesData={STATES_DATA}
+      stateWinnerNames={NO_STATE_WINNERS}
+    />
+  );
+  expect(container.firstChild).toMatchSnapshot();
 });

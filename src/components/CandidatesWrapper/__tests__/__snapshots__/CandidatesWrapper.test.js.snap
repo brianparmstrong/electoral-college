@@ -6,150 +6,102 @@ exports[`renders correctly 1`] = `
     Electoral College 2020
   </h1>
   <div
-    className="votes-counter"
+    class="votes-counter"
     id="ev-votes-counter"
   >
     <h3>
       Winner-Take-All Electoral Votes Counter
     </h3>
     <h3
-      className="wta-winner gop show"
+      class="wta-winner  hide"
     >
-      Winner: Republican
+      Winner: 
     </h3>
     <div>
       <div
-        className="votes-winner-line"
+        class="votes-winner-line"
       />
       <div
-        className="votes-parties"
+        class="votes-parties"
       >
         <span
-          className="gop-votes"
-          style={
-            Object {
-              "width": "15%",
-            }
-          }
+          class="gop-votes"
+          style="width: 15%;"
         />
         <span
-          className="lib-votes"
-          style={
-            Object {
-              "width": "0%",
-            }
-          }
+          class="lib-votes"
+          style="width: 0%;"
         />
         <span
-          className="unawarded-votes"
-          style={
-            Object {
-              "width": "71%",
-            }
-          }
+          class="unawarded-votes"
+          style="width: 71%;"
         />
         <span
-          className="grn-votes"
-          style={
-            Object {
-              "width": "0%",
-            }
-          }
+          class="grn-votes"
+          style="width: 0%;"
         />
         <span
-          className="ind-votes"
-          style={
-            Object {
-              "width": "0%",
-            }
-          }
+          class="ind-votes"
+          style="width: 0%;"
         />
         <span
-          className="dem-votes"
-          style={
-            Object {
-              "width": "14%",
-            }
-          }
+          class="dem-votes"
+          style="width: 14%;"
         />
       </div>
     </div>
   </div>
   <div
-    className="votes-counter"
+    class="votes-counter"
     id="pop-votes-counter"
   >
     <h3>
       Proportional Electoral Votes Counter
     </h3>
     <h3
-      className="prop-winner  hide"
+      class="prop-winner  hide"
     >
       Winner: 
     </h3>
     <div>
       <div
-        className="votes-winner-line"
+        class="votes-winner-line"
       />
       <div
-        className="votes-parties"
+        class="votes-parties"
       >
         <span
-          className="gop-votes"
-          style={
-            Object {
-              "width": "12.5%",
-            }
-          }
+          class="gop-votes"
+          style="width: 12.5%;"
         />
         <span
-          className="lib-votes"
-          style={
-            Object {
-              "width": "2.75%",
-            }
-          }
+          class="lib-votes"
+          style="width: 2.75%;"
         />
         <span
-          className="unawarded-votes"
-          style={
-            Object {
-              "width": "71%",
-            }
-          }
+          class="unawarded-votes"
+          style="width: 71%;"
         />
         <span
-          className="grn-votes"
-          style={
-            Object {
-              "width": "1.25%",
-            }
-          }
+          class="grn-votes"
+          style="width: 1.25%;"
         />
         <span
-          className="ind-votes"
-          style={
-            Object {
-              "width": "1%",
-            }
-          }
+          class="ind-votes"
+          style="width: 1%;"
         />
         <span
-          className="dem-votes"
-          style={
-            Object {
-              "width": "11.5%",
-            }
-          }
+          class="dem-votes"
+          style="width: 11.5%;"
         />
       </div>
     </div>
   </div>
   <div
-    className="candidatesWrapper"
+    class="candidatesWrapper"
   >
     <div
-      className="candidate"
+      class="candidate"
       id="Rep"
     >
       <h2>
@@ -160,26 +112,26 @@ exports[`renders correctly 1`] = `
         src="goplogo.png"
       />
       <div
-        className="electoralVotesWrapper"
+        class="electoralVotesWrapper"
       >
         <p
-          className="electoralVotesLabel"
+          class="electoralVotesLabel"
         >
           Winner-Take-All:
         </p>
         <span
-          className="electoralVotes"
+          class="electoralVotes"
           id="gop-wta"
         >
           55
         </span>
         <p
-          className="electoralVotesLabel"
+          class="electoralVotesLabel"
         >
           Proportional:
         </p>
         <span
-          className="electoralVotes"
+          class="electoralVotes"
           id="gop-prop"
         >
           48
@@ -187,7 +139,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="candidate"
+      class="candidate"
       id="Dem"
     >
       <h2>
@@ -198,26 +150,26 @@ exports[`renders correctly 1`] = `
         src="demlogo.jpeg"
       />
       <div
-        className="electoralVotesWrapper"
+        class="electoralVotesWrapper"
       >
         <p
-          className="electoralVotesLabel"
+          class="electoralVotesLabel"
         >
           Winner-Take-All:
         </p>
         <span
-          className="electoralVotes"
+          class="electoralVotes"
           id="dem-wta"
         >
           45
         </span>
         <p
-          className="electoralVotesLabel"
+          class="electoralVotesLabel"
         >
           Proportional:
         </p>
         <span
-          className="electoralVotes"
+          class="electoralVotes"
           id="dem-prop"
         >
           49
@@ -225,7 +177,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="candidate"
+      class="candidate"
       id="Lib"
     >
       <h2>
@@ -236,26 +188,26 @@ exports[`renders correctly 1`] = `
         src="liblogo.png"
       />
       <div
-        className="electoralVotesWrapper"
+        class="electoralVotesWrapper"
       >
         <p
-          className="electoralVotesLabel"
+          class="electoralVotesLabel"
         >
           Winner-Take-All:
         </p>
         <span
-          className="electoralVotes"
+          class="electoralVotes"
           id="lib-wta"
         >
           0
         </span>
         <p
-          className="electoralVotesLabel"
+          class="electoralVotesLabel"
         >
           Proportional:
         </p>
         <span
-          className="electoralVotes"
+          class="electoralVotes"
           id="lib-prop"
         >
           2
@@ -263,7 +215,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="candidate"
+      class="candidate"
       id="Grn"
     >
       <h2>
@@ -274,26 +226,26 @@ exports[`renders correctly 1`] = `
         src="grnlogo.png"
       />
       <div
-        className="electoralVotesWrapper"
+        class="electoralVotesWrapper"
       >
         <p
-          className="electoralVotesLabel"
+          class="electoralVotesLabel"
         >
           Winner-Take-All:
         </p>
         <span
-          className="electoralVotes"
+          class="electoralVotes"
           id="grn-wta"
         >
           0
         </span>
         <p
-          className="electoralVotesLabel"
+          class="electoralVotesLabel"
         >
           Proportional:
         </p>
         <span
-          className="electoralVotes"
+          class="electoralVotes"
           id="grn-prop"
         >
           0.5
@@ -301,7 +253,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="candidate"
+      class="candidate"
       id="Ind"
     >
       <h2>
@@ -312,26 +264,26 @@ exports[`renders correctly 1`] = `
         src="indlogo.jpeg"
       />
       <div
-        className="electoralVotesWrapper"
+        class="electoralVotesWrapper"
       >
         <p
-          className="electoralVotesLabel"
+          class="electoralVotesLabel"
         >
           Winner-Take-All:
         </p>
         <span
-          className="electoralVotes"
+          class="electoralVotes"
           id="ind-wta"
         >
           0
         </span>
         <p
-          className="electoralVotesLabel"
+          class="electoralVotesLabel"
         >
           Proportional:
         </p>
         <span
-          className="electoralVotes"
+          class="electoralVotes"
           id="ind-prop"
         >
           0.5

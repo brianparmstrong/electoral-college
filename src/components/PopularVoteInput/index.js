@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { arrayOf, func, number, oneOfType, string } from 'prop-types';
 
 const PopularVoteInput = ({
@@ -18,7 +18,7 @@ const PopularVoteInput = ({
   const inputPlaceholder = `${party.toUpperCase()} %`;
 
   const calculateProportionalVotes = (e, value) => {
-    const newInputValue = value ? Number(value) : (e && e.target) ? Number(e.target.value) : 0;
+    const newInputValue = value ? Number(value) : e?.target ? Number(e.target.value) : 0;
     let totalEvs = stateEvs ? stateEvs : evs;
     if (name === 'Maine') {
       totalEvs = 4;
@@ -63,7 +63,7 @@ const PopularVoteInput = ({
         newIndPropTotal
       ];
 
-      if (e && e.target) {
+      if (e?.target) {
         e.target.setAttribute('data-evsawarded', evsWon);
         handlePropVotes(newPVTotals);
       } else if (percent) {

@@ -1,5 +1,4 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import ElectoralVotes from '../';
 
 const MOCK_VOTE_INFO = {
@@ -9,10 +8,6 @@ const MOCK_VOTE_INFO = {
 };
 
 it('renders correctly', () => {
-  const electoralVotes = renderer
-    .create(
-      <ElectoralVotes {...MOCK_VOTE_INFO} />
-    )
-    .toJSON();
-  expect(electoralVotes).toMatchSnapshot();
+  const { container } = render(<ElectoralVotes { ...MOCK_VOTE_INFO } />);
+  expect(container.firstChild).toMatchSnapshot();
 });

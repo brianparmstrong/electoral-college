@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="candidate"
+  class="candidate"
   id="Dem"
 >
   <h2>
@@ -13,26 +13,26 @@ exports[`renders correctly 1`] = `
     src="demlogo.jpeg"
   />
   <div
-    className="electoralVotesWrapper"
+    class="electoralVotesWrapper"
   >
     <p
-      className="electoralVotesLabel"
+      class="electoralVotesLabel"
     >
       Winner-Take-All:
     </p>
     <span
-      className="electoralVotes"
+      class="electoralVotes"
       id="dem-wta"
     >
       48
     </span>
     <p
-      className="electoralVotesLabel"
+      class="electoralVotesLabel"
     >
       Proportional:
     </p>
     <span
-      className="electoralVotes"
+      class="electoralVotes"
       id="dem-prop"
     >
       40

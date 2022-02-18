@@ -2,26 +2,26 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="electoralVotesWrapper"
+  class="electoralVotesWrapper"
 >
   <p
-    className="electoralVotesLabel"
+    class="electoralVotesLabel"
   >
     Winner-Take-All:
   </p>
   <span
-    className="electoralVotes"
+    class="electoralVotes"
     id="ind-wta"
   >
     0
   </span>
   <p
-    className="electoralVotesLabel"
+    class="electoralVotesLabel"
   >
     Proportional:
   </p>
   <span
-    className="electoralVotes"
+    class="electoralVotes"
     id="ind-prop"
   >
     10

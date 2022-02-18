@@ -3,7 +3,7 @@ import { getWinnerName } from './';
 const getStateWinnerNames = data => {
   const stateWinnerNames = {};
 
-  data.map((state, i) => {
+  data.map(state => {
     if (state.name.indexOf('-CD') === -1) {
       stateWinnerNames[state.stateCode] = getWinnerName(state.winner);
     }

@@ -32,7 +32,7 @@ const SaveButton = ({
     const setPopVoteStatus = pvData => {
       let inputValues = [];
       let popVoteData = {};
-      const inputElems = pvData && pvData.elem && pvData.elem.querySelectorAll('.pvInput');
+      const inputElems = pvData?.elem?.querySelectorAll('.pvInput');
       if (inputElems) {
         for (let i=0; i<inputElems.length; i++) {
           inputValues[i] = inputElems[i].value;

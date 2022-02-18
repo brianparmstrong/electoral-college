@@ -1,4 +1,3 @@
-import React from 'react';
 import { number, string } from 'prop-types';
 
 const ElectoralVotes = ({

@@ -1,5 +1,4 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import PopularVotes from '../';
 
 const MOCK_POP_VOTES_PROPS = {
@@ -13,10 +12,6 @@ const MOCK_POP_VOTES_PROPS = {
 };
 
 it('renders correctly', () => {
-  const popVotes = renderer
-    .create(
-      <PopularVotes { ...MOCK_POP_VOTES_PROPS } />
-    )
-    .toJSON();
-  expect(popVotes).toMatchSnapshot();
+  const { container } = render(<PopularVotes { ...MOCK_POP_VOTES_PROPS } />);
+  expect(container.firstChild).toMatchSnapshot();
 });

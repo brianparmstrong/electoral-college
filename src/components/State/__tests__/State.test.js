@@ -1,5 +1,4 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import State from '../';
 
 const MOCK_STATE_PROPS = {
@@ -13,10 +12,6 @@ const MOCK_STATE_PROPS = {
 };
 
 it('renders correctly', () => {
-  const state = renderer
-    .create(
-      <State { ...MOCK_STATE_PROPS } />
-    )
-    .toJSON();
-  expect(state).toMatchSnapshot();
+  const { container } = render(<State { ...MOCK_STATE_PROPS } />);
+  expect(container.firstChild).toMatchSnapshot();
 });

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { arrayOf, func, number, oneOfType, shape, string } from 'prop-types';
 import { getWinnerClassName } from '../../utilities';
 
@@ -19,8 +19,8 @@ const Map = ({
   const svgMapClass = showMap ? '' : 'hide';
 
   useEffect(() => {
-    const stateId = newStateData.stateId;
-    const newWinningPartyClass = getWinnerClassName(newStateData.newWinningParty);
+    const stateId = newStateData?.stateId;
+    const newWinningPartyClass = getWinnerClassName(newStateData?.newWinningParty);
     let updateObj;
 
     updateObj = {
@@ -54,14 +54,14 @@ const Map = ({
     setCurrentInfo(hoveredState.getAttribute('data-info'));
   };
 
-  const handleMouseLeave = e => {
+  const handleMouseLeave = () => {
     setCurrentInfo(null);
   };
 
   const renderCurrentInfo = info => {
-    const stateName = info && info.split('--')[0];
-    const stateEvs = info && info.split('--')[1];
-    const stateWinner = (info && info.split('--')[2]) || '';
+    const stateName = info?.split('--')[0];
+    const stateEvs = info?.split('--')[1];
+    const stateWinner = info?.split('--')[2] || '';
     return (
       <div>
         <p className='map-info-statename'>{stateName}</p>

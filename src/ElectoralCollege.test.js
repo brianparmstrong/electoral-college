@@ -1,9 +1,11 @@
-import React from 'react';
-import ReactDOM, { render, unmountComponentAtNode } from 'react-dom';
+import { render } from '@testing-library/react';
 import ElectoralCollege from './ElectoralCollege';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  render(<ElectoralCollege />, div);
-  unmountComponentAtNode(div);
+  render(<ElectoralCollege />);
+});
+
+it('renders correctly when localStorage is empty', () => {
+  const { container } = render(<ElectoralCollege />);
+  expect(container.firstChild).toMatchSnapshot();
 });

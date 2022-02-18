@@ -1,4 +1,3 @@
-import React from 'react';
 import { arrayOf, bool, func, number, oneOfType, shape, string } from 'prop-types';
 import PopularVoteInput from '../PopularVoteInput';
 import { PARTY_MAP } from '../../constants';

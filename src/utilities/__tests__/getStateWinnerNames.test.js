@@ -1,4 +1,3 @@
-import React from 'react';
 import { getStateWinnerNames } from '../';
 
 const MOCK_DATA = [

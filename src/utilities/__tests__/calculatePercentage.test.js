@@ -1,4 +1,3 @@
-import React from 'react';
 import { calculateEVPercentage } from '../';
 
 it('should calculate percentage based on value passed in', () => {

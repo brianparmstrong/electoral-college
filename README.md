@@ -89,7 +89,7 @@ Turn this into a more-easily-importable module.
 CRA and other Info
 ==================
 
-Yes, yes, I know, I know.  I'm using CRA.  This was a just-for-fun project that I quickly built in 2016 using React 13, upgraded to React 16, then quickly forgot about it in early 2017.  I got back around to in time for the 2020 election.  Would this be better without CRA, latest of React (though v16.9+ is pretty recent), Webpack, etc.?  Yup.  For now this is what it is.
+Yes, yes, I know, I know.  I'm using CRA.  This was a just-for-fun project that I quickly built in 2016 using React 13, upgraded to React 16, then quickly forgot about it in early 2017.  I got back around to in time for the 2020 election.  Would this be better without CRA, set up to use Webpack, fully linted and prettified, etc.?  Yup.  For now this is what it is.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
