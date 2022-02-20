@@ -1,6 +1,6 @@
 {
   "name": "electoral-college",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "license": "See LICENSE.md",
   "description": "An application to track and predict Electoral College results in U.S. Presidential Elections",
   "dependencies": {
@@ -19,13 +19,28 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "prop-types": "^15.8.1"
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-react": "^7.28.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.4",
+    "prettier": "2.5.1"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "./node_modules/.bin/eslint ./src",
+    "lint-fix": "./node_modules/.bin/eslint ./src --fix",
+    "prepare": "husky install",
+    "prettier-check": "npx prettier --check ./src",
+    "prettier-write": "npx prettier --write ./src",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "keywords": [
     "react",

@@ -4,10 +4,4 @@ import Map from './Map';
 import SaveButton from './SaveButton';
 import States from './States';
 
-export {
-  CandidatesWrapper,
-  ClearButton,
-  Map,
-  SaveButton,
-  States
-};
+export { CandidatesWrapper, ClearButton, Map, SaveButton, States };

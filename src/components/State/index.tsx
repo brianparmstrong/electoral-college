@@ -1,31 +1,32 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { bool, func, number, oneOfType, string } from 'prop-types';
+import { MouseEvent, useEffect, useRef, useState } from 'react';
+import { IfcState } from '../../types';
 import { getWinnerClassName } from '../../utilities';
 
-const State = ({
-  evs,
-  isFromStorage,
-  name,
-  stateClickedFromMap,
-  stateCode,
-  stateEvs,
-  toggleWinner,
-  winner
-}) => {
+const State = (stateInfo: IfcState) => {
+  const {
+    evs,
+    isFromStorage,
+    name,
+    stateClickedFromMap,
+    stateCode,
+    stateEvs,
+    toggleWinner,
+    winner,
+  } = stateInfo;
   const stateNode = useRef(null);
   const [winningParty, setWinningParty] = useState(
-    isFromStorage ?
-    Number(winner) :
-    0
+    isFromStorage ? Number(winner) : 0
   );
-  const [winningPartyClass, setWinningPartyClass] = useState(getWinnerClassName(winner));
+  const [winningPartyClass, setWinningPartyClass] = useState(
+    getWinnerClassName(winner)
+  );
 
   useEffect(() => {
-    stateClickedFromMap && stateNode.current.click();
-  }, [ stateClickedFromMap ]);
+    stateClickedFromMap !== 'false' && stateNode.current.click();
+  }, [stateClickedFromMap]);
 
-  const updateWinningParty = e => {
-    const newWinningParty = (winningParty === 5) ? 0 : (winningParty + 1);
+  const updateWinningParty = (event: MouseEvent<HTMLDivElement>) => {
+    const newWinningParty = winningParty === 5 ? 0 : winningParty + 1;
     let newWinningPartyClass = '';
     let newPreviousWinningPartyClass = '';
 
@@ -59,9 +60,9 @@ const State = ({
     const newData = {
       evs: parseInt(evs),
       newPreviousWinnerTargetElem: `${newPreviousWinningPartyClass}-wta`,
-      newWinningParty,
+      newWinningParty: String(newWinningParty),
       newWinningTargetElem: `${newWinningPartyClass}-wta`,
-      stateId: e.target.getAttribute('data-statecode')
+      stateId: event.currentTarget.dataset.statecode,
     };
 
     setWinningParty(newWinningParty);
@@ -70,8 +71,8 @@ const State = ({
   };
 
   return (
-    <div className='stateWrapper' id={name}>
-      <div 
+    <div className="stateWrapper" id={name}>
+      <div
         className={`state ${winningPartyClass}`}
         data-evs={evs}
         data-stateevs={stateEvs}
@@ -81,23 +82,13 @@ const State = ({
         data-winner={winningParty}
         onClick={updateWinningParty}
         ref={stateNode}
-        tabIndex='0' >
-        <span className='evs'>{evs}</span>
+        tabIndex={0}
+      >
+        <span className="evs">{evs}</span>
       </div>
-      <p className='stateName'>{name}</p>
+      <p className="stateName">{name}</p>
     </div>
   );
-};
-
-State.propTypes = {
-  evs: oneOfType([number, string]).isRequired,
-  isFromStorage: bool.isRequired,
-  name: string.isRequired,
-  stateClickedFromMap: oneOfType([ bool, string]),
-  stateCode: string.isRequired,
-  stateEvs: number,
-  toggleWinner: func.isRequired,
-  winner: string
 };
 
 export default State;

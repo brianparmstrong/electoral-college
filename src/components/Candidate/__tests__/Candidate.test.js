@@ -5,7 +5,7 @@ const MOCK_CANDIDATE = {
   name: 'Dem',
   party: 'dem',
   popularVoteTotals: 40,
-  winnerTakeAllTotal: 48
+  winnerTakeAllTotal: 48,
 };
 
 it('renders correctly', () => {

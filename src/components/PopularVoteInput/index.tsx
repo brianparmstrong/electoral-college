@@ -1,40 +1,56 @@
-import { useState } from 'react';
-import { arrayOf, func, number, oneOfType, string } from 'prop-types';
+import { FocusEvent, useState } from 'react';
+import { IfcPopularVoteInput } from '../../types';
 
-const PopularVoteInput = ({
-  currentPVTotals,
-  evs,
-  handlePropVotes,
-  name,
-  party,
-  percent,
-  stateEvs
-}) => {
+const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
+  const {
+    currentPVTotals,
+    evs,
+    handlePropVotes,
+    name,
+    party,
+    percent,
+    stateEvs,
+  } = popularVoteInput;
   const initialInputValue = percent ? percent : '';
   const [evsAwarded, setEvsAwarded] = useState(0);
   const [inputValue, setInputValue] = useState(initialInputValue);
   const [savedValue, setSavedValue] = useState('');
-  const inputId = party + 'PopVoteInput';
+  const inputId = `${party}PopVoteInput`;
   const inputPlaceholder = `${party.toUpperCase()} %`;
 
-  const calculateProportionalVotes = (e, value) => {
-    const newInputValue = value ? Number(value) : e?.target ? Number(e.target.value) : 0;
-    let totalEvs = stateEvs ? stateEvs : evs;
+  const calculateProportionalVotes = (
+    event: FocusEvent<HTMLInputElement>,
+    savedValue?: string
+  ) => {
+    const eventTarget = event?.target as HTMLInputElement;
+    const value = eventTarget?.value;
+    /* eslint-disable indent */
+    const newInputValue = savedValue
+      ? Number(savedValue)
+      : eventTarget
+      ? Number(value)
+      : 0;
+    /* eslint-enable indent */
+    let totalEvs = stateEvs ?? evs;
     if (name === 'Maine') {
-      totalEvs = 4;
+      totalEvs = '4';
     } else if (name === 'Nebraska') {
-      totalEvs = 5;
+      totalEvs = '5';
     }
-    const popVotePercent = (Boolean(newInputValue) || percent) ? (newInputValue / 100) : 0;
-    const evsWon = Math.round(totalEvs * popVotePercent);
-    const polParty = (value || Boolean(e) === false) ? null : e.target.getAttribute('data-party');
+    const popVotePercent =
+      Boolean(newInputValue) || percent ? newInputValue / 100 : 0;
+    const evsWon = Math.round(Number(totalEvs) * popVotePercent);
+    const polParty =
+      savedValue || Boolean(event) === false
+        ? null
+        : event.target.dataset.party;
     let newGopPropTotal = currentPVTotals[0];
     let newDemPropTotal = currentPVTotals[1];
     let newLibPropTotal = currentPVTotals[2];
     let newGrnPropTotal = currentPVTotals[3];
     let newIndPropTotal = currentPVTotals[4];
 
-    if (Boolean(evsWon) && (newInputValue <= 100)) {
+    if (Boolean(evsWon) && newInputValue <= 100) {
       switch (polParty) {
         case 'gop':
           newGopPropTotal += evsWon;
@@ -60,11 +76,11 @@ const PopularVoteInput = ({
         newDemPropTotal,
         newLibPropTotal,
         newGrnPropTotal,
-        newIndPropTotal
+        newIndPropTotal,
       ];
 
-      if (e?.target) {
-        e.target.setAttribute('data-evsawarded', evsWon);
+      if (event?.target) {
+        event.target.setAttribute('data-evsawarded', String(evsWon));
         handlePropVotes(newPVTotals);
       } else if (percent) {
         return evsWon;
@@ -72,8 +88,11 @@ const PopularVoteInput = ({
     }
   };
 
-  const resetEvsWon = (e, newEvsAwarded) => {
-    const politicalParty = e.target.getAttribute('data-party');
+  const resetEvsWon = (
+    event: FocusEvent<HTMLInputElement>,
+    newEvsAwarded: number
+  ) => {
+    const politicalParty = event.currentTarget.dataset.party;
     let newGopPropTotal = currentPVTotals[0];
     let newDemPropTotal = currentPVTotals[1];
     let newLibPropTotal = currentPVTotals[2];
@@ -101,42 +120,43 @@ const PopularVoteInput = ({
     }
 
     const newPVTotals = [
-        newGopPropTotal,
-        newDemPropTotal,
-        newLibPropTotal,
-        newGrnPropTotal,
-        newIndPropTotal
-      ];
+      newGopPropTotal,
+      newDemPropTotal,
+      newLibPropTotal,
+      newGrnPropTotal,
+      newIndPropTotal,
+    ];
 
-    e.target.setAttribute('data-evsawarded', 0);
+    event.target.setAttribute('data-evsawarded', '0');
     handlePropVotes(newPVTotals);
   };
 
-  const handleInputBlur = e => {
-    e.persist();
-    if (inputValue !== '' && e.target.value === '') {
+  const handleInputBlur = (event: FocusEvent<HTMLInputElement>) => {
+    event.persist();
+    const { value } = event.currentTarget as HTMLInputElement;
+    if (inputValue !== '' && value === '') {
       setInputValue(savedValue);
       calculateProportionalVotes(null, savedValue);
     } else {
-      calculateProportionalVotes(e);
+      calculateProportionalVotes(event);
     }
   };
 
-  const handleInputFocus = e => {
-    const evsAwardedData = Number(e.target.getAttribute('data-evsawarded'));
-    const newEvsAwarded = isNaN(evsAwardedData) ? evsAwarded : parseInt(evsAwardedData);
-    e.persist();
+  const handleInputFocus = (event: FocusEvent<HTMLInputElement>) => {
+    const evsAwardedData = Number(event.currentTarget.dataset.evsawarded);
+    const newEvsAwarded = isNaN(evsAwardedData) ? evsAwarded : evsAwardedData;
+    event.persist();
     setEvsAwarded(newEvsAwarded);
     setSavedValue(inputValue);
     setInputValue('');
-    resetEvsWon(e, newEvsAwarded);
+    resetEvsWon(event, newEvsAwarded);
   };
 
   return (
-    <div className='pvInputWrapper'>
+    <div className="pvInputWrapper">
       <input
-        type='text'
-        className='pvInput'
+        type="text"
+        className="pvInput"
         id={inputId}
         pattern="^(100(?:\.00)?|0(?:\.\d\d)?|\d?\d(?:\.\d\d)?)$"
         placeholder={inputPlaceholder}
@@ -145,19 +165,10 @@ const PopularVoteInput = ({
         data-statename={name}
         defaultValue={inputValue}
         onBlur={handleInputBlur}
-        onFocus={handleInputFocus} />
+        onFocus={handleInputFocus}
+      />
     </div>
   );
-};
-
-PopularVoteInput.propTypes = {
-  currentPVTotals: arrayOf(number).isRequired,
-  evs: oneOfType([number, string]).isRequired,
-  handlePropVotes: func.isRequired,
-  name: string.isRequired,
-  party: string.isRequired,
-  percent: oneOfType([number, string]).isRequired,
-  stateEvs: number
 };
 
 export default PopularVoteInput;

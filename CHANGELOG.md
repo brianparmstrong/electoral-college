@@ -1,13 +1,24 @@
-CHANGELOG
-=========
+# CHANGELOG
 
 Semver versioning is followed.
+
+[2.0.0]
+
+### UPGRADE
+
+- Hello TypeScript! Goodbye prop-types.
+- Also added: eslint, prettier
+
+### FIX
+
+- Jest test console warning messages re: window.alert
+- Jest test console warning messages re: incorrect prop type received
 
 [1.6.0]
 
 ### UPGRADE
 
-- Upgrade to React 17 and CRA 5.x.  This enables removal of `import React from 'react'` statements and some easier-to-read tests with `@testing-libary/react`.
+- Upgrade to React 17 and CRA 5.x. This enables removal of `import React from 'react'` statements and some easier-to-read tests with `@testing-libary/react`.
 - Use optional chaining
 - Use SASS instead of CSS
 
@@ -19,7 +30,7 @@ Semver versioning is followed.
 
 ### UPDATE
 
-- Really this is just a re-publish of 1.5.4.  I realized I had forgotten to push the code changes to Git (for a while, maybe since 1.2.x or 1.3.x -- major facepalm!);
+- Really this is just a re-publish of 1.5.4. I realized I had forgotten to push the code changes to Git (for a while, maybe since 1.2.x or 1.3.x -- major facepalm!);
 
 [1.5.4]
 

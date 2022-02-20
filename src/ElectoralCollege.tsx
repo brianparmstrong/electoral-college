@@ -3,25 +3,20 @@ import {
   CandidatesWrapper,
   ClearButton,
   SaveButton,
-  States
+  States,
 } from './components';
-import {
-  CANDIDATES_DATA,
-  STATES_DATA
-} from './constants';
-import {
-  calculateEVPercentage
-} from './utilities';
+import { CANDIDATES_DATA, STATES_DATA } from './constants';
+import { calculateEVPercentage } from './utilities';
 
 const ElectoralCollege = () => {
   const isFromStorage = Boolean(localStorage.getItem('ElectoralCollegeStatus'));
-  const startingEVTotals = isFromStorage ?
-    JSON.parse(localStorage.getItem('WinnerTakeAllTotals')) :
-    [0, 0, 0, 0, 0];
+  const startingEVTotals = isFromStorage
+    ? JSON.parse(localStorage.getItem('WinnerTakeAllTotals'))
+    : [0, 0, 0, 0, 0];
   const [popularVoteTotals, setPopularVoteTotals] = useState(
-    isFromStorage ?
-    JSON.parse(localStorage.getItem('PopularVoteTotals')) :
-    [0, 0, 0, 0, 0]
+    isFromStorage
+      ? JSON.parse(localStorage.getItem('PopularVoteTotals'))
+      : [0, 0, 0, 0, 0]
   );
   const [gopTotal, setGopTotal] = useState(startingEVTotals[0]);
   const [demTotal, setDemTotal] = useState(startingEVTotals[1]);
@@ -33,16 +28,20 @@ const ElectoralCollege = () => {
     demTotal,
     libTotal,
     grnTotal,
-    indTotal
+    indTotal,
   ]);
-  const [evPct, setEvPct] = useState(winnerTakeAllTotals.map(total => calculateEVPercentage(total)));
-  const [pvPct, setPvPct] = useState(popularVoteTotals.map(total => calculateEVPercentage(total)));
-  const statesData = isFromStorage ?
-    JSON.parse(localStorage.getItem('ElectoralCollegeStatus')) :
-    STATES_DATA;
-  const popVotesData = isFromStorage ?
-    JSON.parse(localStorage.getItem('PopularVoteStatus')) :
-    [];
+  const [evPct, setEvPct] = useState(
+    winnerTakeAllTotals.map((total) => calculateEVPercentage(total))
+  );
+  const [pvPct, setPvPct] = useState(
+    popularVoteTotals.map((total) => calculateEVPercentage(total))
+  );
+  const statesData = isFromStorage
+    ? JSON.parse(localStorage.getItem('ElectoralCollegeStatus'))
+    : STATES_DATA;
+  const popVotesData = isFromStorage
+    ? JSON.parse(localStorage.getItem('PopularVoteStatus'))
+    : [];
 
   useEffect(() => {
     if (!isFromStorage) {
@@ -50,7 +49,7 @@ const ElectoralCollege = () => {
     }
   }, [isFromStorage]);
 
-  const handlePropVotes = newPVTotals => {
+  const handlePropVotes = (newPVTotals: Array<number>) => {
     const gopPvPct = calculateEVPercentage(newPVTotals[0]);
     const demPvPct = calculateEVPercentage(newPVTotals[1]);
     const libPvPct = calculateEVPercentage(newPVTotals[2]);
@@ -58,10 +57,10 @@ const ElectoralCollege = () => {
     const indPvPct = calculateEVPercentage(newPVTotals[4]);
 
     setPopularVoteTotals(newPVTotals);
-    setPvPct([ gopPvPct, demPvPct, libPvPct, grnPvPct, indPvPct ]);
+    setPvPct([gopPvPct, demPvPct, libPvPct, grnPvPct, indPvPct]);
   };
 
-  const handleStateWinner = newEVTotals => {
+  const handleStateWinner = (newEVTotals: Array<number>) => {
     const gopPct = calculateEVPercentage(newEVTotals[0]);
     const demPct = calculateEVPercentage(newEVTotals[1]);
     const libPct = calculateEVPercentage(newEVTotals[2]);
@@ -74,7 +73,7 @@ const ElectoralCollege = () => {
     setGrnTotal(newEVTotals[3]);
     setIndTotal(newEVTotals[4]);
     setWinnerTakeAllTotals(newEVTotals);
-    setEvPct([ gopPct, demPct, libPct, grnPct, indPct ]);
+    setEvPct([gopPct, demPct, libPct, grnPct, indPct]);
   };
 
   return (
@@ -84,7 +83,8 @@ const ElectoralCollege = () => {
         evPct={evPct}
         pvPct={pvPct}
         popVoteTotals={popularVoteTotals}
-        winnerTakeAllTotals={winnerTakeAllTotals} />
+        winnerTakeAllTotals={winnerTakeAllTotals}
+      />
       <States
         currentEVTotals={winnerTakeAllTotals}
         currentPVTotals={popularVoteTotals}
@@ -92,15 +92,17 @@ const ElectoralCollege = () => {
         handleStateWinner={handleStateWinner}
         isFromStorage={isFromStorage}
         popVotesData={popVotesData}
-        statesData={statesData} />
+        statesData={statesData}
+      />
       <div id="buttons">
-        <SaveButton 
+        <SaveButton
           currentEVTotals={winnerTakeAllTotals}
-          currentPVTotals={popularVoteTotals} />
+          currentPVTotals={popularVoteTotals}
+        />
         <ClearButton />
       </div>
     </div>
   );
-}
+};
 
 export default ElectoralCollege;

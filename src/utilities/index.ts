@@ -9,5 +9,5 @@ export {
   checkForWinner,
   getStateWinnerNames,
   getWinnerClassName,
-  getWinnerName
+  getWinnerName,
 };

@@ -192,23 +192,23 @@
   border-radius: 3px;
   border: 2px solid;
 
-  &[data-party="gop"] {
+  &[data-party='gop'] {
     border-color: rgba(255, 0, 0, 0.75);
   }
 
-  &[data-party="dem"] {
-    border-color: rgba(0, 70, 255, 0.75); 
+  &[data-party='dem'] {
+    border-color: rgba(0, 70, 255, 0.75);
   }
 
-  &[data-party="lib"] {
+  &[data-party='lib'] {
     border-color: rgba(255, 215, 0, 0.75);
   }
 
-  &[data-party="grn"] {
+  &[data-party='grn'] {
     border-color: rgba(0, 200, 0, 0.75);
   }
 
-  &[data-party="ind"] {
+  &[data-party='ind'] {
     border-color: #d3d3d3;
   }
 }
@@ -260,14 +260,14 @@
 path:hover,
 circle:hover {
   stroke: #000 !important;
-  stroke-width:2px;
+  stroke-width: 2px;
   stroke-linejoin: round;
   fill: #fff;
   cursor: pointer;
 }
 #path67 {
   fill: none !important;
-  stroke: #A9A9A9 !important;
+  stroke: #a9a9a9 !important;
   cursor: default;
 }
 #info-box {

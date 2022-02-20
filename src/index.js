@@ -4,7 +4,7 @@ import ElectoralCollege from './ElectoralCollege';
 // import * as serviceWorker from './serviceWorker';
 
 const checkForStickyEVCounter = () => {
-	const candidatesEVCounter = document.querySelector('.candidatesWrapper');
+  const candidatesEVCounter = document.querySelector('.candidatesWrapper');
   const candidatesEVCounterOffsetTop = candidatesEVCounter.offsetTop;
 
   if (window.pageYOffset > candidatesEVCounterOffsetTop) {
