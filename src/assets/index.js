@@ -1,7 +1,7 @@
-import demImg from './demlogo.jpeg';
-import grnImg from './grnlogo.png';
-import indImg from './indlogo.jpeg';
-import libImg from './liblogo.png';
-import repImg from './goplogo.png';
+import bidenImg from './biden.jpeg';
+import steinImg from './stein.jpg';
+import kennedyImg from './kennedyjr.png';
+import oliverImg from './oliver.jpeg';
+import trumpImg from './trump.jpeg';
 
-export { demImg, grnImg, indImg, libImg, repImg };
+export { bidenImg, kennedyImg, oliverImg, steinImg, trumpImg };

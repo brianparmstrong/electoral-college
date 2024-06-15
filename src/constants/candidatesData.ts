@@ -2,23 +2,23 @@ import { CandidatesData } from '../types';
 
 export const CANDIDATES_DATA: CandidatesData = [
   {
-    name: 'Rep',
+    name: 'Trump',
     party: 'gop',
   },
   {
-    name: 'Dem',
+    name: 'Biden',
     party: 'dem',
   },
   {
-    name: 'Lib',
+    name: 'Oliver',
     party: 'lib',
   },
   {
-    name: 'Grn',
+    name: 'Stein',
     party: 'grn',
   },
   {
-    name: 'Ind',
+    name: 'Kennedy',
     party: 'ind',
   },
 ];

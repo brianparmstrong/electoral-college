@@ -2,6 +2,13 @@
 
 Semver versioning is followed.
 
+[2.0.1]
+
+### UPDATE
+
+- 2024 General Election candidates for all parties
+- Removed unnecessary `return` statement from `/Candidates/index`
+
 [2.0.0]
 
 ### UPGRADE
