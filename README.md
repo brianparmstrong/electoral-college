@@ -6,13 +6,13 @@ Go to [HOW_TO_USE](./docs/HOW_TO_USE.md) for complete information.
 
 # What Does This Module Do?
 
-This is currently configured for the 2024 Presidential Election. Party names are used:
+This is currently configured for the 2024 Presidential Election:
 
-- Rep (Republican)
-- Dem (Democratic)
-- Lib (Libertarian)
-- Grn (Green)
-- Ind (Independent)
+- Trump (Republican)
+- Biden (Democratic)
+- Oliver (Libertarian)
+- Stein (Green)
+- Kennedy, Jr. (Independent)
 
 # Terms used in this application:
 

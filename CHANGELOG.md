@@ -2,6 +2,12 @@
 
 Semver versioning is followed.
 
+[2.0.2]
+
+### DOCS
+
+- Forgot to update README in 2.0.1
+
 [2.0.1]
 
 ### UPDATE
