@@ -10,7 +10,6 @@ exports[`renders correctly 1`] = `
   </h2>
   <img
     alt="Dem"
-    src="demlogo.jpeg"
   />
   <div
     class="electoralVotesWrapper"

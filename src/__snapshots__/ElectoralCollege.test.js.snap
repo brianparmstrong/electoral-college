@@ -105,14 +105,14 @@ exports[`renders correctly when localStorage is empty 1`] = `
     >
       <div
         class="candidate"
-        id="Rep"
+        id="Trump"
       >
         <h2>
-          Rep
+          Trump
         </h2>
         <img
-          alt="Rep"
-          src="goplogo.png"
+          alt="Trump"
+          src="trump.jpeg"
         />
         <div
           class="electoralVotesWrapper"
@@ -143,14 +143,14 @@ exports[`renders correctly when localStorage is empty 1`] = `
       </div>
       <div
         class="candidate"
-        id="Dem"
+        id="Biden"
       >
         <h2>
-          Dem
+          Biden
         </h2>
         <img
-          alt="Dem"
-          src="demlogo.jpeg"
+          alt="Biden"
+          src="biden.jpeg"
         />
         <div
           class="electoralVotesWrapper"
@@ -181,14 +181,14 @@ exports[`renders correctly when localStorage is empty 1`] = `
       </div>
       <div
         class="candidate"
-        id="Lib"
+        id="Oliver"
       >
         <h2>
-          Lib
+          Oliver
         </h2>
         <img
-          alt="Lib"
-          src="liblogo.png"
+          alt="Oliver"
+          src="oliver.jpeg"
         />
         <div
           class="electoralVotesWrapper"
@@ -219,14 +219,14 @@ exports[`renders correctly when localStorage is empty 1`] = `
       </div>
       <div
         class="candidate"
-        id="Grn"
+        id="Stein"
       >
         <h2>
-          Grn
+          Stein
         </h2>
         <img
-          alt="Grn"
-          src="grnlogo.png"
+          alt="Stein"
+          src="stein.jpg"
         />
         <div
           class="electoralVotesWrapper"
@@ -257,14 +257,14 @@ exports[`renders correctly when localStorage is empty 1`] = `
       </div>
       <div
         class="candidate"
-        id="Ind"
+        id="Kennedy"
       >
         <h2>
-          Ind
+          Kennedy
         </h2>
         <img
-          alt="Ind"
-          src="indlogo.jpeg"
+          alt="Kennedy"
+          src="kennedyjr.png"
         />
         <div
           class="electoralVotesWrapper"
