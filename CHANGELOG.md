@@ -2,6 +2,13 @@
 
 Semver versioning is followed.
 
+[2.0.4]
+
+### FIX
+
+- Typos in `data-info` for CT and TX
+- Removing `updateElectoralVotes()` from `States` component as it is not needed; `toggleWinner()` handles all necessary updating of the EV counters. (Was wanting to figure out how to get rid of `document.getElementById` functionality -- a React anti-pattern. Seems to have been left over from a 1.x version of this package, as best as I can figure out.)
+
 [2.0.3]
 
 ### FIX

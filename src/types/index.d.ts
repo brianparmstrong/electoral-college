@@ -47,9 +47,7 @@ type StateWinnerNames = {
 
 export type WinnerData = {
   evs: number;
-  newPreviousWinnerTargetElem: string;
   newWinningParty: string;
-  newWinningTargetElem: string;
   stateId: string;
 };
 

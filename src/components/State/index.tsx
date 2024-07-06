@@ -59,9 +59,7 @@ const State = (stateInfo: IfcState) => {
 
     const newData = {
       evs: parseInt(evs),
-      newPreviousWinnerTargetElem: `${newPreviousWinningPartyClass}-wta`,
       newWinningParty: String(newWinningParty),
-      newWinningTargetElem: `${newWinningPartyClass}-wta`,
       stateId: event.currentTarget.dataset.statecode,
     };
 

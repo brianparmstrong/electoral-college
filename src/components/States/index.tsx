@@ -33,30 +33,6 @@ const States = (states: IfcStates) => {
     setStateClickedFromMap(state);
   };
 
-  const updateElectoralVotes = (data: WinnerData) => {
-    const hasWinner = Number(data.newWinningParty) > 0;
-    const hasPreviousWinner = data.newWinningParty !== '1';
-    const winningTargetElem = document.getElementById(
-      data.newWinningTargetElem
-    );
-    const previousWinningTargetElem = document.getElementById(
-      data.newPreviousWinnerTargetElem
-    );
-    let winnerTotal: string;
-    let previousWinnerTotal: string;
-
-    if (hasWinner) {
-      winnerTotal = String(parseInt(winningTargetElem.innerHTML) + data.evs);
-      winningTargetElem.innerHTML = winnerTotal;
-    }
-    if (hasPreviousWinner) {
-      previousWinnerTotal = String(
-        parseInt(previousWinningTargetElem.innerHTML) - data.evs
-      );
-      previousWinningTargetElem.innerHTML = previousWinnerTotal;
-    }
-  };
-
   const toggleWinner = (data: WinnerData) => {
     let newGopTotal = currentEVTotals[0];
     let newDemTotal = currentEVTotals[1];
@@ -98,7 +74,7 @@ const States = (states: IfcStates) => {
       newIndTotal,
     ];
 
-    updateElectoralVotes(data);
+    // updateElectoralVotes(data);
     handleStateWinner(newEVTotals);
 
     const updateObj: UpdateObj = {
