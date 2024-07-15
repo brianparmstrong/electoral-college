@@ -28,32 +28,25 @@ const State = (stateInfo: IfcState) => {
   const updateWinningParty = (event: MouseEvent<HTMLDivElement>) => {
     const newWinningParty = winningParty === 5 ? 0 : winningParty + 1;
     let newWinningPartyClass = '';
-    let newPreviousWinningPartyClass = '';
 
     switch (newWinningParty) {
       case 1:
         newWinningPartyClass = 'gop';
-        newPreviousWinningPartyClass = '';
         break;
       case 2:
         newWinningPartyClass = 'dem';
-        newPreviousWinningPartyClass = 'gop';
         break;
       case 3:
         newWinningPartyClass = 'lib';
-        newPreviousWinningPartyClass = 'dem';
         break;
       case 4:
         newWinningPartyClass = 'grn';
-        newPreviousWinningPartyClass = 'lib';
         break;
       case 5:
         newWinningPartyClass = 'ind';
-        newPreviousWinningPartyClass = 'grn';
         break;
       default:
         newWinningPartyClass = '';
-        newPreviousWinningPartyClass = 'ind';
         break;
     }
 

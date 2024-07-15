@@ -18,7 +18,7 @@ type CandidatesData = [
   {
     name: string;
     party: string;
-  }
+  },
 ];
 
 type NewStateData = {
@@ -38,7 +38,7 @@ export type StatesData = [
     stateCode: string;
     stateEvs?: string;
     winner?: string;
-  }
+  },
 ];
 
 type StateWinnerNames = {

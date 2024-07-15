@@ -28,8 +28,8 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
     const newInputValue = savedValue
       ? Number(savedValue)
       : eventTarget
-      ? Number(value)
-      : 0;
+        ? Number(value)
+        : 0;
     /* eslint-enable indent */
     let totalEvs = stateEvs ?? evs;
     if (name === 'Maine') {

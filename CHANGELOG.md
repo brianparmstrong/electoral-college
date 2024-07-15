@@ -2,6 +2,13 @@
 
 Semver versioning is followed.
 
+[2.1.0]
+
+### UPGRADE
+
+- Upgrading `react` and related deps to v18.x (I want to convert this to a true importable package instead of a create-react-app app but ran into issues with React v17.x, so doing this upgrade first).
+- Upgrading `react-scripts`, `jest`, `prettier`, and linters
+
 [2.0.4]
 
 ### FIX
