@@ -2,11 +2,18 @@
 
 Semver versioning is followed.
 
+[3.0.0-alpha-3]
+
+### DOCS
+
+- Updating how to import the module (`3.0.0-alpha-2` worked!).
+- Still need to remove all the unnecessary files from the bundle, but module can now be imported into an application! (Will do this before taking module out of alpha). Also need to export types.
+
 [3.0.0-alpha-2]
 
 ### FIX
 
-Looks like `3.0.0-alpha` didn't properly export ElectoralCollege
+- Looks like `3.0.0-alpha` didn't properly export ElectoralCollege
 
 [3.0.0-alpha]
 
