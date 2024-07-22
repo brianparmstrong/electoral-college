@@ -1,4 +1,4 @@
-import { IfcSaveButton } from '../../types';
+import { IfcSaveButton, PopVotesData } from '../../types';
 
 type PvData = {
   elem: HTMLElement;
@@ -17,13 +17,15 @@ const SaveButton = (saveButton: IfcSaveButton) => {
   const saveStateStatus = () => {
     const states = document.getElementsByClassName('stateWrapper');
     const statesLength = states.length;
-    let currentStateStatus = [];
-    let currentPopVoteStatus = [];
+    let currentStateStatus: StateData[] = [];
+    let currentPopVoteStatus: PopVotesData[] = [];
     let stateData: StateData;
     let pvData: PvData;
 
     const dynamicSort = (property: string) => {
       const sortOrder = 1;
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore for `a` and `b`
       return (a, b) => {
         const result =
           a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
@@ -39,8 +41,8 @@ const SaveButton = (saveButton: IfcSaveButton) => {
     };
 
     const setPopVoteStatus = (pvData: PvData) => {
-      const inputValues = [];
-      let popVoteData = {};
+      const inputValues: string[] = [];
+      const popVoteData = { name: '', values: inputValues };
       const inputElems = pvData?.elem?.querySelectorAll(
         '.pvInput'
       ) as NodeListOf<HTMLInputElement>;
@@ -49,7 +51,8 @@ const SaveButton = (saveButton: IfcSaveButton) => {
           inputValues[i] = inputElems[i].value;
         }
       }
-      popVoteData = { name: pvData.name, values: inputValues };
+      popVoteData.name = pvData.name;
+      popVoteData.values = inputValues;
       currentPopVoteStatus.push(popVoteData);
       currentPopVoteStatus.sort(dynamicSort('name'));
 
@@ -59,14 +62,14 @@ const SaveButton = (saveButton: IfcSaveButton) => {
     for (let state = 0; state < statesLength; state++) {
       const stateNode = states[state].childNodes[0] as HTMLDivElement;
       stateData = {
-        evs: stateNode.getAttribute('data-evs'),
-        name: stateNode.getAttribute('data-statename'),
-        stateCode: stateNode.getAttribute('data-statecode'),
-        winner: stateNode.getAttribute('data-winner'),
+        evs: stateNode.getAttribute('data-evs') as string,
+        name: stateNode.getAttribute('data-statename') as string,
+        stateCode: stateNode.getAttribute('data-statecode') as string,
+        winner: stateNode.getAttribute('data-winner') as string,
       };
       pvData = {
-        elem: states[state].parentElement.childNodes[1] as HTMLDivElement,
-        name: stateNode.getAttribute('data-statename'),
+        elem: states[state].parentElement?.childNodes[1] as HTMLDivElement,
+        name: stateNode.getAttribute('data-statename') as string,
       };
       setStateStatus(stateData);
       setPopVoteStatus(pvData);

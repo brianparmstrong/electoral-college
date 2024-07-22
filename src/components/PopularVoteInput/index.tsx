@@ -12,14 +12,14 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
     stateEvs,
   } = popularVoteInput;
   const initialInputValue = percent ? percent : '';
-  const [evsAwarded, setEvsAwarded] = useState(0);
-  const [inputValue, setInputValue] = useState(initialInputValue);
-  const [savedValue, setSavedValue] = useState('');
+  const [evsAwarded, setEvsAwarded] = useState<number>(0);
+  const [inputValue, setInputValue] = useState<string>(initialInputValue);
+  const [savedValue, setSavedValue] = useState<string>('');
   const inputId = `${party}PopVoteInput`;
   const inputPlaceholder = `${party.toUpperCase()} %`;
 
   const calculateProportionalVotes = (
-    event: FocusEvent<HTMLInputElement>,
+    event: FocusEvent<HTMLInputElement> | null,
     savedValue?: string
   ) => {
     const eventTarget = event?.target as HTMLInputElement;
@@ -43,7 +43,7 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
     const polParty =
       savedValue || Boolean(event) === false
         ? null
-        : event.target.dataset.party;
+        : event?.target.dataset.party;
     let newGopPropTotal = currentPVTotals[0];
     let newDemPropTotal = currentPVTotals[1];
     let newLibPropTotal = currentPVTotals[2];
@@ -79,8 +79,8 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
         newIndPropTotal,
       ];
 
-      if (event?.target) {
-        event.target.setAttribute('data-evsawarded', String(evsWon));
+      if (eventTarget) {
+        eventTarget.setAttribute('data-evsawarded', String(evsWon));
         handlePropVotes(newPVTotals);
       } else if (percent) {
         return evsWon;

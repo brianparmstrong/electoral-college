@@ -1,34 +1,32 @@
-type CandidatesData = [
-  {
-    name: string;
-    party: string;
-  },
-  {
-    name: string;
-    party: string;
-  },
-  {
-    name: string;
-    party: string;
-  },
-  {
-    name: string;
-    party: string;
-  },
-  {
-    name: string;
-    party: string;
-  },
-];
+type CandidateImageSrc = {
+  dem: string;
+  gop: string;
+  grn: string;
+  ind: string;
+  lib: string;
+};
+
+type CandidateData = {
+  name: string;
+  party: string;
+};
+
+type CandidatesData = Array<CandidateData>;
+
+export interface IfcElectoralCollegeProps {
+  candidateImageSources: CandidateImageSrc;
+  candidatesData: CandidatesData;
+  enableStickyEVCounter?: boolean;
+}
 
 type NewStateData = {
   newWinningParty: string;
   stateId: string;
-};
+} | null;
 
 type PopVotesData = {
   name: string;
-  values: Array<number>;
+  values: Array<string>;
 };
 
 export type StatesData = [
@@ -52,6 +50,7 @@ export type WinnerData = {
 };
 
 export interface IfcCandidate {
+  imageSrc: string;
   name: string;
   party: string;
   popularVoteTotals: number;
@@ -59,12 +58,14 @@ export interface IfcCandidate {
 }
 
 export interface IfcCandidates {
+  candidateImageSources: CandidateImageSrc;
   candidatesData: CandidatesData;
   popularVoteTotals: Array<number>;
   winnerTakeAllTotals: Array<number>;
 }
 
 export interface IfcCandidatesWrapper {
+  candidateImageSources: CandidateImageSrc;
   candidates: CandidatesData;
   evPct: Array<number>;
   popVoteTotals: Array<number>;
@@ -81,7 +82,7 @@ export interface IfcElectoralVotes {
 export interface IfcMap {
   handleMapStateClick: (state: string) => void;
   newStateData: NewStateData;
-  stateWinnerNames?: StateWinnerNames | Partial<StateWinnerNames>;
+  stateWinnerNames?: StateWinnerNames | Partial<StateWinnerNames> | undefined;
   statesData: StatesData;
 }
 

@@ -1,8 +1,8 @@
-import { getWinnerName } from '.';
-import { StatesData } from '../types';
+import getWinnerName from './getWinnerName';
+import { StatesData, StateWinnerNames } from '../types';
 
 const getStateWinnerNames = (data: StatesData) => {
-  const stateWinnerNames = {};
+  const stateWinnerNames: StateWinnerNames = {};
 
   data.map((state) => {
     if (state.name.indexOf('-CD') === -1) {

@@ -1,0 +1,321 @@
+#root {
+  font-family: Helvetica;
+}
+
+.candidatesWrapper {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.candidatesWrapper.sticky {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.candidatesWrapper.sticky img {
+  display: none;
+}
+
+.candidate {
+  margin: 10px;
+}
+.candidate img {
+  height: 100px;
+}
+
+#Trump,
+.gop-votes {
+  background-color: rgba(255, 0, 0, 0.75);
+}
+
+#Biden,
+.dem-votes {
+  background-color: rgba(0, 70, 255, 0.75);
+}
+
+#Oliver,
+.lib-votes {
+  background-color: rgba(255, 215, 0, 0.75);
+}
+
+#Stein,
+.grn-votes {
+  background-color: rgba(0, 200, 0, 0.75);
+}
+
+#Kennedy,
+.ind-votes {
+  background-color: #d3d3d3;
+}
+
+.electoralVotesWrapper {
+  font-size: 35px;
+  margin-top: 5px;
+}
+
+.electoralVotesLabel {
+  font-size: 16px;
+}
+
+.electoralVotes {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  display: flex;
+  height: 40px;
+  justify-content: space-around;
+}
+
+.electoralVotes#gop-wta,
+.electoralVotes#gop-prop {
+  color: rgba(255, 0, 0, 0.75);
+}
+
+.electoralVotes#dem-wta,
+.electoralVotes#dem-prop {
+  color: rgba(0, 70, 255, 0.75);
+}
+
+.electoralVotes#lib-wta,
+.electoralVotes#lib-prop {
+  color: rgba(255, 215, 0, 0.75);
+}
+
+.electoralVotes#grn-wta,
+.electoralVotes#grn-prop {
+  color: rgba(0, 200, 0, 0.75);
+}
+
+.electoralVotes#ind-wta,
+.electoralVotes#ind-prop {
+  color: #d3d3d3;
+}
+
+.votes-winner-line {
+  border-top: 15px solid #000000;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  height: 0px;
+  width: 0px;
+  margin: 0 auto 1px;
+}
+
+.votes-parties {
+  border: 1px solid #777777;
+  height: 20px;
+}
+
+.votes-parties > span {
+  display: inline-block;
+  height: inherit;
+}
+
+.statesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.statesWrapper button {
+  cursor: pointer;
+}
+.statesWrapper > div {
+  margin-top: 10px;
+}
+
+.stateWrapper {
+  margin: 5px;
+  text-align: center;
+}
+
+.state {
+  background-color: none;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 30px;
+  margin: 0 auto;
+  width: 100px;
+}
+
+.wta-winner,
+.prop-winner {
+  background-color: none;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+.state.gop,
+.wta-winner.gop,
+.prop-winner.gop {
+  background-color: rgba(255, 0, 0, 0.75);
+  border: 1px solid rgba(255, 0, 0, 0.75);
+}
+
+.state.dem,
+.wta-winner.dem,
+.prop-winner.dem {
+  background-color: rgba(0, 70, 255, 0.75);
+  border: 1px solid rgba(0, 70, 255, 0.75);
+}
+
+.state.lib,
+.wta-winner.lib,
+.prop-winner.lib {
+  background-color: rgba(255, 215, 0, 0.75);
+  border: 1px solid rgba(255, 215, 0, 0.75);
+}
+
+.state.grn,
+.wta-winner.grn,
+.wta-winner.grn {
+  background-color: rgba(0, 200, 0, 0.75);
+  border: 1px solid rgba(0, 200, 0, 0.75);
+}
+
+.state.ind,
+.wta-winner.ind,
+.prop-winner.ind {
+  background-color: #d3d3d3;
+  border: 1px solid #d3d3d3;
+}
+
+.evs {
+  font-size: 22px;
+  position: relative;
+  top: 10%;
+}
+
+.pvInputWrapper {
+  margin-bottom: 3px;
+}
+
+.pvInput {
+  border-radius: 3px;
+  border: 2px solid;
+}
+.pvInput[data-party='gop'] {
+  border-color: rgba(255, 0, 0, 0.75);
+}
+.pvInput[data-party='dem'] {
+  border-color: rgba(0, 70, 255, 0.75);
+}
+.pvInput[data-party='lib'] {
+  border-color: rgba(255, 215, 0, 0.75);
+}
+.pvInput[data-party='grn'] {
+  border-color: rgba(0, 200, 0, 0.75);
+}
+.pvInput[data-party='ind'] {
+  border-color: #d3d3d3;
+}
+
+.hide {
+  display: none;
+}
+
+.buttonWrapper {
+  display: inline-block;
+  margin: 10px 20px 0 0;
+}
+.buttonWrapper button {
+  border: 0;
+  cursor: pointer;
+  display: block;
+  font-family: Helvetica;
+  font-size: 30px;
+}
+
+#saveButton {
+  background-color: #00ff00;
+}
+
+#clearButton {
+  background-color: #ff0000;
+}
+
+#map-wrapper {
+  position: relative;
+}
+#map-wrapper button {
+  margin: 20px;
+  padding: 20px;
+}
+
+#us-map {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+#us-map.hide {
+  display: none;
+}
+
+path:hover,
+circle:hover {
+  stroke: #000 !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #fff;
+  cursor: pointer;
+}
+
+#path67 {
+  fill: none !important;
+  stroke: #a9a9a9 !important;
+  cursor: default;
+}
+
+#info-box {
+  background-color: #ffffff;
+  bottom: 15%;
+  border: 2px solid #000;
+  border-radius: 5px;
+  display: none;
+  font-family: arial;
+  padding: 5px 20px;
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+}
+#info-box.show {
+  display: block;
+}
+
+svg path,
+circle,
+path:hover,
+circle:hover {
+  fill: #fff;
+}
+
+svg .gop,
+path.gop:hover,
+circle.gop:hover {
+  fill: rgba(255, 0, 0, 0.75);
+}
+
+svg .dem,
+path.dem:hover,
+circle.dem:hover {
+  fill: rgba(0, 70, 255, 0.75);
+}
+
+svg .lib,
+path.lib:hover,
+circle.lib:hover {
+  fill: rgba(255, 215, 0, 0.75);
+}
+
+svg .grn,
+path.grn:hover,
+circle.grn:hover {
+  fill: rgba(0, 200, 0, 0.75);
+}
+
+svg .ind,
+path.ind:hover,
+circle.ind:hover {
+  fill: #d3d3d3;
+}

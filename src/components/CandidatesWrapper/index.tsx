@@ -8,24 +8,30 @@ import {
 import Candidates from '../Candidates';
 
 const CandidatesWrapper = (candidatesWrapper: IfcCandidatesWrapper) => {
-  const { candidates, evPct, popVoteTotals, pvPct, winnerTakeAllTotals } =
-    candidatesWrapper;
-  const [wtaWinnerIndex, setWtaWinnerIndex] = useState(
+  const {
+    candidateImageSources,
+    candidates,
+    evPct,
+    popVoteTotals,
+    pvPct,
+    winnerTakeAllTotals,
+  } = candidatesWrapper;
+  const [wtaWinnerIndex, setWtaWinnerIndex] = useState<number>(
     checkForWinner(winnerTakeAllTotals)
   );
-  const [propWinnerIndex, setPropWinnerIndex] = useState(
+  const [propWinnerIndex, setPropWinnerIndex] = useState<number>(
     checkForWinner(popVoteTotals)
   );
-  const [wtaWinnerName, setWtaWinnerName] = useState(
+  const [wtaWinnerName, setWtaWinnerName] = useState<string>(
     getWinnerName(String(wtaWinnerIndex + 1))
   );
-  const [propWinnerName, setPropWinnerName] = useState(
+  const [propWinnerName, setPropWinnerName] = useState<string>(
     getWinnerName(String(propWinnerIndex + 1))
   );
-  const [wtaWinnerClassName, setWtaWinnerClassName] = useState(
+  const [wtaWinnerClassName, setWtaWinnerClassName] = useState<string>(
     getWinnerClassName(String(wtaWinnerIndex + 1))
   );
-  const [propWinnerClassName, setPropWinnerClassName] = useState(
+  const [propWinnerClassName, setPropWinnerClassName] = useState<string>(
     getWinnerClassName(String(propWinnerIndex + 1))
   );
 
@@ -108,6 +114,7 @@ const CandidatesWrapper = (candidatesWrapper: IfcCandidatesWrapper) => {
         </div>
       </div>
       <Candidates
+        candidateImageSources={candidateImageSources}
         candidatesData={candidates}
         popularVoteTotals={popVoteTotals}
         winnerTakeAllTotals={winnerTakeAllTotals}

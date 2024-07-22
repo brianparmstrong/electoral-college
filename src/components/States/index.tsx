@@ -2,7 +2,12 @@ import { useState } from 'react';
 import Map from '../Map';
 import PopularVotes from '../PopularVotes';
 import State from '../State';
-import { IfcStates, WinnerData } from '../../types';
+import {
+  IfcStates,
+  NewStateData,
+  StateWinnerNames,
+  WinnerData,
+} from '../../types';
 import { getStateWinnerNames, getWinnerName } from '../../utilities';
 
 type UpdateObj = {
@@ -21,13 +26,13 @@ const States = (states: IfcStates) => {
   } = states;
   const HIDE_POP_VOTES_TEXT = 'Hide Popular Votes';
   const SHOW_POP_VOTES_TEXT = 'Show Popular Votes';
-  const [buttonText, setButtonText] = useState(HIDE_POP_VOTES_TEXT);
-  const [showPopVotes, setShowPopVotes] = useState(true);
-  const [newStateData, setNewStateData] = useState(null);
-  const [stateWinnerNames, setStateWinnerNames] = useState(
+  const [buttonText, setButtonText] = useState<string>(HIDE_POP_VOTES_TEXT);
+  const [showPopVotes, setShowPopVotes] = useState<boolean>(true);
+  const [newStateData, setNewStateData] = useState<NewStateData>(null);
+  const [stateWinnerNames, setStateWinnerNames] = useState<StateWinnerNames>(
     getStateWinnerNames(statesData)
   );
-  const [stateClickedFromMap, setStateClickedFromMap] = useState(null);
+  const [stateClickedFromMap, setStateClickedFromMap] = useState<string>('');
 
   const handleMapStateClick = (state: string) => {
     setStateClickedFromMap(state);
@@ -74,7 +79,6 @@ const States = (states: IfcStates) => {
       newIndTotal,
     ];
 
-    // updateElectoralVotes(data);
     handleStateWinner(newEVTotals);
 
     const updateObj: UpdateObj = {
@@ -111,8 +115,10 @@ const States = (states: IfcStates) => {
               evs={state.evs}
               handlePropVotes={handlePropVotes}
               name={state.name}
-              popVotesData={popVotesData[i]}
-              stateEvs={state.stateEvs}
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore for `i`, which is the index in the array
+              popVotesData={popVotesData?.[i]}
+              stateEvs={state.stateEvs as string}
               showPopVotes={showPopVotes}
             />
           </div>

@@ -10,6 +10,7 @@ exports[`renders correctly 1`] = `
   </h2>
   <img
     alt="Dem"
+    src="https://d.newsweek.com/en/full/2432800/biden.jpg"
   />
   <div
     class="electoralVotesWrapper"

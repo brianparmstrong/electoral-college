@@ -1,14 +1,29 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "module": "es2020",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    // "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
     "moduleResolution": "node",
-    "noImplicitAny": false,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "sourceMap": true
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "sourceMap": true,
+    "typeRoots": ["./node_modules/@types/"]
   },
-  "exclude": ["node_modules", "**/*.spec.ts"],
-  "include": ["src/**/*"],
-  "typeRoots": ["./node_modules/@types/"]
+  "exclude": [
+    "node_modules",
+    "src/stories/**/*",
+    "**/*.spec.ts",
+    "**/*.stories.tsx",
+    "**/*.test.js"
+  ],
+  "include": ["src/**/*"]
 }

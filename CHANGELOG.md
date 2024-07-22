@@ -2,6 +2,21 @@
 
 Semver versioning is followed.
 
+[3.0.0-alpha]
+
+### UPGRADE
+
+Possible WIP (am publishing as an alpha to test importing it as a published package)
+
+- Converted to exportable module via `rollup`!
+- Removed `react-scripts`
+- Added `storybook` using the webpack configuration and setup
+- Moved `/docs` folder to `/.storybook`
+- Added `typecheck` script and fixed TS errors
+- Added required props `candidateImageSources` and `candidatesData` and optional prop `enableStickyEVCounter` (defaults to Boolean(true))
+- Removed `/assets` (must use `candidateImageSources` prop)
+- Removed `/src/constants/candidatesData` (must use `candidatesData` prop)
+
 [2.1.0]
 
 ### UPGRADE

@@ -1,8 +1,8 @@
-The first Electoral College application available in npm open source!
+The first Electoral College module available in npm open source!
 
 # How Do I Use This?
 
-Go to [HOW_TO_USE](./docs/HOW_TO_USE.md) for complete information.
+Go to [DocumentationTemplate](./.storybook/DocumentationTemplate.mdx) for complete information.
 
 # What Does This Module Do?
 
@@ -34,7 +34,7 @@ Proportional Representation
 -- a "What If?" scenario were all EVs awarded proportionally on a state-by-state basis according to the PV in each state.
 -- E.g. Wisconsin has 10 EVs. A candidate in WI winning 60% of the PV would receive 6 EVs instead of all 10 EVs. A candidate winning 30% of the PV would receive 3 EVs rather than 0 EVs.
 
-See `/docs/HOW_TO_USE.md` for more information.
+See `/.storybook/DocumentationTemplate.mdx` for more information.
 
 # 2016 Results For Each Version
 
@@ -73,81 +73,10 @@ In 1992 and 1996, Independent candidate Ross Perot received a substantial portio
 
 # What Else Would I Like To Do With This Module?
 
-I'd like to support passing in state-by-state voting data so you don't have to manually enter the vote percentages in each state. I'd also like to support passing in _all_ data, including the candidates complete with their pictures, party info, etc. Maybe in version 3.x.
+I'd like to support passing in state-by-state voting data so you don't have to manually enter the vote percentages in each state. I'd also like to support passing in _all_ data, including the candidates complete with their party info, etc. Maybe in version 3.x.
 
 Add full unit testing. Currently have full test coverage for `utilities` and `constants` and basic snapshot tests for everything else.
-Turn this into a more-easily-importable module into other websites and applications.
-Reduce initial load time.
 
-# CRA and other Info
+# Why Rollup for bundling?
 
-Yes, yes, I know, I know. I'm using CRA. This was a just-for-fun project that I quickly built in 2016 using React 13, upgraded to React 16, then quickly forgot about it in early 2017. I got back around to in time for the 2020 election. Would this be better without CRA, set up to use Webpack, etc.? Yup. For now this is what it is.
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Vite and Webpack really seem more appropriate for applications. Plus the setup and configuration for Rollup (even with Storybook, which OOTB supports only Vite and Webpack, which can be made to work with Rollup) was more straightforward.

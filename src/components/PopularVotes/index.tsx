@@ -14,11 +14,11 @@ const PopularVotes = (popularVotes: IfcPopularVotes) => {
   } = popularVotes;
   const popVotesDataValues = popVotesData
     ? popVotesData.values
-    : [0, 0, 0, 0, 0];
+    : ['0', '0', '0', '0', '0'];
   const wrapperClass = showPopVotes ? '' : 'hide';
 
   const renderPopVoteInput = () => {
-    return popVotesDataValues.map((value: number, i: number) => {
+    return popVotesDataValues.map((value: string, i: number) => {
       return (
         <PopularVoteInput
           currentPVTotals={currentPVTotals}
@@ -27,7 +27,7 @@ const PopularVotes = (popularVotes: IfcPopularVotes) => {
           key={`${name}-${PARTY_MAP[i]}`}
           name={name}
           party={PARTY_MAP[i]}
-          percent={popVotesData && String(value)}
+          percent={popVotesData && value}
           stateEvs={stateEvs}
         />
       );

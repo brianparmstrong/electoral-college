@@ -14,7 +14,7 @@ const State = (stateInfo: IfcState) => {
     winner,
   } = stateInfo;
   const stateNode = useRef(null);
-  const [winningParty, setWinningParty] = useState(
+  const [winningParty, setWinningParty] = useState<number>(
     isFromStorage ? Number(winner) : 0
   );
   const [winningPartyClass, setWinningPartyClass] = useState(
@@ -22,7 +22,9 @@ const State = (stateInfo: IfcState) => {
   );
 
   useEffect(() => {
-    stateClickedFromMap !== 'false' && stateNode.current.click();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore for click() not existing on type never
+    stateClickedFromMap !== 'false' && stateNode?.current?.click();
   }, [stateClickedFromMap]);
 
   const updateWinningParty = (event: MouseEvent<HTMLDivElement>) => {
@@ -53,7 +55,7 @@ const State = (stateInfo: IfcState) => {
     const newData = {
       evs: parseInt(evs),
       newWinningParty: String(newWinningParty),
-      stateId: event.currentTarget.dataset.statecode,
+      stateId: event.currentTarget.dataset.statecode as string,
     };
 
     setWinningParty(newWinningParty);

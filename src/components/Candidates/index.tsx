@@ -1,10 +1,18 @@
 import Candidate from '../Candidate';
-import { IfcCandidates } from '../../types';
+import { CandidateImageSrc, IfcCandidates } from '../../types';
 
 const Candidates = (candidates: IfcCandidates) => {
-  const { candidatesData, popularVoteTotals, winnerTakeAllTotals } = candidates;
+  const {
+    candidateImageSources,
+    candidatesData,
+    popularVoteTotals,
+    winnerTakeAllTotals,
+  } = candidates;
   const candidatesMap = candidatesData.map((candidate, i) => (
     <Candidate
+      imageSrc={
+        candidateImageSources[candidate.party as keyof CandidateImageSrc]
+      }
       name={candidate.name}
       key={`candidate-${i}`}
       party={candidate.party}

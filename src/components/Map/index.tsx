@@ -1,19 +1,26 @@
 import { MouseEvent, useEffect, useState } from 'react';
-import { IfcMap } from '../../types';
+import { IfcMap, StateWinnerNames } from '../../types';
 import { getWinnerClassName } from '../../utilities';
+
+type UpdatedStateClassNames = {
+  [x: string]: string;
+};
 
 const Map = (mapData: IfcMap) => {
   const { handleMapStateClick, newStateData, stateWinnerNames, statesData } =
     mapData;
   const HIDE_MAP_TEXT = 'Hide Map';
   const SHOW_MAP_TEXT = 'Show Map';
-  const [buttonText, setButtonText] = useState(HIDE_MAP_TEXT);
-  const [showMap, setShowMap] = useState(true);
-  const [currentHoveredStateId, setCurrentHoveredStateId] = useState('');
-  const [currentInfo, setCurrentInfo] = useState('');
-  const [infoBoxWinnerNames, setInfoBoxWinnerNames] =
-    useState(stateWinnerNames);
-  const [updatedStateClassNames, setUpdatedStateClassNames] = useState({});
+  const [buttonText, setButtonText] = useState<string>(HIDE_MAP_TEXT);
+  const [showMap, setShowMap] = useState<boolean>(true);
+  const [currentHoveredStateId, setCurrentHoveredStateId] =
+    useState<string>('');
+  const [currentInfo, setCurrentInfo] = useState<string>('');
+  const [infoBoxWinnerNames, setInfoBoxWinnerNames] = useState<
+    StateWinnerNames | Partial<StateWinnerNames>
+  >(stateWinnerNames as StateWinnerNames);
+  const [updatedStateClassNames, setUpdatedStateClassNames] =
+    useState<UpdatedStateClassNames>({});
   const svgMapClass = showMap ? '' : 'hide';
 
   useEffect(() => {
@@ -22,23 +29,25 @@ const Map = (mapData: IfcMap) => {
       newStateData?.newWinningParty
     );
 
-    const updateObj = {
-      [stateId]: newWinningPartyClass,
-    };
-    setUpdatedStateClassNames((updatedStateClassNames) => ({
-      ...updatedStateClassNames,
-      ...updateObj,
-    }));
+    if (stateId) {
+      const updateObj = {
+        [stateId]: newWinningPartyClass,
+      };
+      setUpdatedStateClassNames((updatedStateClassNames) => ({
+        ...updatedStateClassNames,
+        ...updateObj,
+      }));
+    }
   }, [newStateData]);
 
   useEffect(() => {
-    setInfoBoxWinnerNames(stateWinnerNames);
+    setInfoBoxWinnerNames(stateWinnerNames as StateWinnerNames);
     setCurrentInfo((currentInfo) => {
       const winnerNames = stateWinnerNames;
       let currentInfoSplit = [''];
       if (currentInfo) {
         currentInfoSplit = currentInfo.split('--');
-        currentInfoSplit[2] = winnerNames[currentHoveredStateId];
+        currentInfoSplit[2] = winnerNames?.[currentHoveredStateId] ?? '';
       }
       return currentInfoSplit.join('--');
     });
@@ -58,13 +67,13 @@ const Map = (mapData: IfcMap) => {
   const handleMouseEnter = (event: MouseEvent<SVGPathElement>) => {
     const { id } = event.target as SVGPathElement;
     setCurrentHoveredStateId(id);
-    setCurrentInfo(event.currentTarget.dataset.info);
+    setCurrentInfo(event.currentTarget.dataset.info as string);
   };
 
   const handleDCMouseEnter = (event: MouseEvent<SVGCircleElement>) => {
     const { id } = event.target as SVGCircleElement;
     setCurrentHoveredStateId(id);
-    setCurrentInfo(event.currentTarget.dataset.info);
+    setCurrentInfo(event.currentTarget.dataset.info as string);
   };
 
   const handleMouseLeave = () => {
@@ -91,7 +100,7 @@ const Map = (mapData: IfcMap) => {
 
     return (
       (Object.keys(updatedStateClassNames).indexOf(stateId) === -1 &&
-        getWinnerClassName(stateToCheck.winner)) ||
+        getWinnerClassName(stateToCheck?.winner)) ||
       ''
     );
   };
