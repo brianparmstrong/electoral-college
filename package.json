@@ -1,6 +1,6 @@
 {
   "name": "electoral-college",
-  "version": "3.0.0-alpha",
+  "version": "3.0.0-alpha-2",
   "license": "See LICENSE.md",
   "description": "A module to track and predict Electoral College results in U.S. Presidential Elections",
   "dependencies": {

@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from '@storybook/react';
-import ElectoralCollege from '.';
+import ElectoralCollege from '../../';
 
 const meta: Meta<typeof ElectoralCollege> = {
   component: ElectoralCollege,

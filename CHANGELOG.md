@@ -2,6 +2,12 @@
 
 Semver versioning is followed.
 
+[3.0.0-alpha-2]
+
+### FIX
+
+Looks like `3.0.0-alpha` didn't properly export ElectoralCollege
+
 [3.0.0-alpha]
 
 ### UPGRADE

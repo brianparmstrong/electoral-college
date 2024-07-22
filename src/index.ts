@@ -1,1 +1,3 @@
-export * from './components';
+import ElectoralCollege from './components';
+
+export default ElectoralCollege;
