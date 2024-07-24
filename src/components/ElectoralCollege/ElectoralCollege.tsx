@@ -102,7 +102,7 @@ const ElectoralCollege = (props: IfcElectoralCollegeProps) => {
   };
 
   return (
-    <div className="App">
+    <div className="electoral-college-root">
       <CandidatesWrapper
         candidateImageSources={candidateImageSources}
         candidates={candidatesData}

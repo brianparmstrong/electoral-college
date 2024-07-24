@@ -2,8 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  class="candidate"
-  id="Dem"
+  class="candidate candidate-dem"
 >
   <h2>
     Dem

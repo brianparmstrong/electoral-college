@@ -166,8 +166,8 @@ var i,
             }
             b = Symbol.for('react.module.reference');
             var w,
-              S,
               V,
+              S,
               T,
               A,
               I,
@@ -205,8 +205,8 @@ var i,
                 (function () {
                   if (0 === W) {
                     (w = console.log),
-                      (S = console.info),
-                      (V = console.warn),
+                      (V = console.info),
+                      (S = console.warn),
                       (T = console.error),
                       (A = console.group),
                       (I = console.groupCollapsed),
@@ -305,8 +305,8 @@ var i,
                       };
                       Object.defineProperties(console, {
                         log: z({}, l, { value: w }),
-                        info: z({}, l, { value: S }),
-                        warn: z({}, l, { value: V }),
+                        info: z({}, l, { value: V }),
+                        warn: z({}, l, { value: S }),
                         error: z({}, l, { value: T }),
                         group: z({}, l, { value: A }),
                         groupCollapsed: z({}, l, { value: I }),
@@ -727,20 +727,20 @@ var i,
                     w
                   );
               }
-              var S = rl(l, e, n, h, g);
-              if (null == S) return S;
+              var V = rl(l, e, n, h, g);
+              if (null == V) return V;
               if (y) {
-                var V = e.children;
-                if (void 0 !== V)
+                var S = e.children;
+                if (void 0 !== S)
                   if (c)
-                    if (Z(V)) {
-                      for (var T = 0; T < V.length; T++) ml(V[T], l);
-                      Object.freeze && Object.freeze(V);
+                    if (Z(S)) {
+                      for (var T = 0; T < S.length; T++) ml(S[T], l);
+                      Object.freeze && Object.freeze(S);
                     } else
                       M(
                         'React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.'
                       );
-                  else ml(V, l);
+                  else ml(S, l);
               }
               if (J.call(e, 'key')) {
                 var A = L(l),
@@ -786,9 +786,9 @@ var i,
                           'Invalid attribute `ref` supplied to `React.Fragment`.'
                         ),
                         dl(null));
-                    })(S)
-                  : hl(S),
-                S
+                    })(V)
+                  : hl(V),
+                V
               );
             }
             var Ml = function (l, e, a) {
@@ -909,7 +909,7 @@ var d = r.exports,
     return d.jsxs(
       'div',
       t(
-        { className: 'candidate', id: a },
+        { className: 'candidate candidate-'.concat(n) },
         {
           children: [
             d.jsx('h2', { children: l.name }),
@@ -961,10 +961,10 @@ var d = r.exports,
       j = C[1],
       L = e(f(String(m + 1))),
       w = L[0],
-      S = L[1],
-      V = e(f(String(M + 1))),
-      T = V[0],
-      A = V[1];
+      V = L[1],
+      S = e(f(String(M + 1))),
+      T = S[0],
+      A = S[1];
     a(
       function () {
         b(p(i));
@@ -989,7 +989,7 @@ var d = r.exports,
         function () {
           var l = String(m + 1),
             e = v(l);
-          N(e), S(f(l));
+          N(e), V(f(l));
         },
         [m]
       );
@@ -1294,7 +1294,7 @@ var d = r.exports,
       j = e({}),
       L = j[0],
       w = j[1],
-      S = m ? '' : 'hide';
+      V = m ? '' : 'hide';
     a(
       function () {
         var l,
@@ -1328,7 +1328,7 @@ var d = r.exports,
         },
         [y, r]
       );
-    var V,
+    var S,
       T,
       A,
       I,
@@ -1378,10 +1378,10 @@ var d = r.exports,
                 { id: 'info-box', className: k ? 'show' : '' },
                 {
                   children:
-                    ((V = k),
-                    (T = V.split('--')[0]),
-                    (A = V.split('--')[1]),
-                    (I = V.split('--')[2] || ''),
+                    ((S = k),
+                    (T = S.split('--')[0]),
+                    (A = S.split('--')[1]),
+                    (I = S.split('--')[2] || ''),
                     d.jsxs('div', {
                       children: [
                         d.jsx(
@@ -1411,7 +1411,7 @@ var d = r.exports,
               'svg',
               t(
                 {
-                  className: S,
+                  className: V,
                   xmlns: 'http://www.w3.org/2000/svg',
                   xlinkHref: 'http://www.w3.org/1999/xlink',
                   version: '1.1',
@@ -2345,9 +2345,9 @@ var d = r.exports,
       ),
       L = C[0],
       w = C[1],
-      S = e(''),
-      V = S[0],
-      T = S[1],
+      V = e(''),
+      S = V[0],
+      T = V[1],
       A = function (l) {
         var e,
           a = n[0],
@@ -2412,7 +2412,7 @@ var d = r.exports,
                         { children: m }
                       )
                     ),
-                    ((a = V),
+                    ((a = S),
                     u.map(function (l, e) {
                       return -1 === l.name.indexOf('-CD')
                         ? d.jsxs(
@@ -2473,7 +2473,7 @@ var d = r.exports,
     );
   },
   w = [],
-  S = [];
+  V = [];
 !(function (l, e) {
   if (l && 'undefined' != typeof document) {
     var a,
@@ -2485,8 +2485,8 @@ var d = r.exports,
           : document.getElementsByTagName('head')[0];
     if (t) {
       var r = w.indexOf(o);
-      -1 === r && ((r = w.push(o) - 1), (S[r] = {})),
-        (a = S[r] && S[r][n] ? S[r][n] : (S[r][n] = s()));
+      -1 === r && ((r = w.push(o) - 1), (V[r] = {})),
+        (a = V[r] && V[r][n] ? V[r][n] : (V[r][n] = s()));
     } else a = s();
     65279 === l.charCodeAt(0) && (l = l.substring(1)),
       a.styleSheet
@@ -2502,10 +2502,10 @@ var d = r.exports,
     return o.insertAdjacentElement(r, l), l;
   }
 })(
-  '#root {\n  font-family: Helvetica;\n}\n\n.candidatesWrapper {\n  display: flex;\n  justify-content: space-around;\n  text-align: center;\n}\n.candidatesWrapper.sticky {\n  background-color: #fff;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  z-index: 100;\n}\n.candidatesWrapper.sticky img {\n  display: none;\n}\n\n.candidate {\n  margin: 10px;\n}\n.candidate img {\n  height: 100px;\n}\n\n#Trump,\n.gop-votes {\n  background-color: rgba(255, 0, 0, 0.75);\n}\n\n#Biden,\n.dem-votes {\n  background-color: rgba(0, 70, 255, 0.75);\n}\n\n#Oliver,\n.lib-votes {\n  background-color: rgba(255, 215, 0, 0.75);\n}\n\n#Stein,\n.grn-votes {\n  background-color: rgba(0, 200, 0, 0.75);\n}\n\n#Kennedy,\n.ind-votes {\n  background-color: #d3d3d3;\n}\n\n.electoralVotesWrapper {\n  font-size: 35px;\n  margin-top: 5px;\n}\n\n.electoralVotesLabel {\n  font-size: 16px;\n}\n\n.electoralVotes {\n  background-color: #ffffff;\n  border: 1px solid #000000;\n  display: flex;\n  height: 40px;\n  justify-content: space-around;\n}\n\n.electoralVotes#gop-wta,\n.electoralVotes#gop-prop {\n  color: rgba(255, 0, 0, 0.75);\n}\n\n.electoralVotes#dem-wta,\n.electoralVotes#dem-prop {\n  color: rgba(0, 70, 255, 0.75);\n}\n\n.electoralVotes#lib-wta,\n.electoralVotes#lib-prop {\n  color: rgba(255, 215, 0, 0.75);\n}\n\n.electoralVotes#grn-wta,\n.electoralVotes#grn-prop {\n  color: rgba(0, 200, 0, 0.75);\n}\n\n.electoralVotes#ind-wta,\n.electoralVotes#ind-prop {\n  color: #d3d3d3;\n}\n\n.votes-winner-line {\n  border-top: 15px solid #000000;\n  border-right: 15px solid transparent;\n  border-left: 15px solid transparent;\n  height: 0px;\n  width: 0px;\n  margin: 0 auto 1px;\n}\n\n.votes-parties {\n  border: 1px solid #777777;\n  height: 20px;\n}\n\n.votes-parties > span {\n  display: inline-block;\n  height: inherit;\n}\n\n.statesWrapper {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  margin-top: 10px;\n}\n.statesWrapper button {\n  cursor: pointer;\n}\n.statesWrapper > div {\n  margin-top: 10px;\n}\n\n.stateWrapper {\n  margin: 5px;\n  text-align: center;\n}\n\n.state {\n  background-color: none;\n  border: 1px solid #000000;\n  border-radius: 3px;\n  cursor: pointer;\n  height: 30px;\n  margin: 0 auto;\n  width: 100px;\n}\n\n.wta-winner,\n.prop-winner {\n  background-color: none;\n  border: 1px solid #000000;\n  border-radius: 3px;\n}\n\n.state.gop,\n.wta-winner.gop,\n.prop-winner.gop {\n  background-color: rgba(255, 0, 0, 0.75);\n  border: 1px solid rgba(255, 0, 0, 0.75);\n}\n\n.state.dem,\n.wta-winner.dem,\n.prop-winner.dem {\n  background-color: rgba(0, 70, 255, 0.75);\n  border: 1px solid rgba(0, 70, 255, 0.75);\n}\n\n.state.lib,\n.wta-winner.lib,\n.prop-winner.lib {\n  background-color: rgba(255, 215, 0, 0.75);\n  border: 1px solid rgba(255, 215, 0, 0.75);\n}\n\n.state.grn,\n.wta-winner.grn,\n.wta-winner.grn {\n  background-color: rgba(0, 200, 0, 0.75);\n  border: 1px solid rgba(0, 200, 0, 0.75);\n}\n\n.state.ind,\n.wta-winner.ind,\n.prop-winner.ind {\n  background-color: #d3d3d3;\n  border: 1px solid #d3d3d3;\n}\n\n.evs {\n  font-size: 22px;\n  position: relative;\n  top: 10%;\n}\n\n.pvInputWrapper {\n  margin-bottom: 3px;\n}\n\n.pvInput {\n  border-radius: 3px;\n  border: 2px solid;\n}\n.pvInput[data-party=gop] {\n  border-color: rgba(255, 0, 0, 0.75);\n}\n.pvInput[data-party=dem] {\n  border-color: rgba(0, 70, 255, 0.75);\n}\n.pvInput[data-party=lib] {\n  border-color: rgba(255, 215, 0, 0.75);\n}\n.pvInput[data-party=grn] {\n  border-color: rgba(0, 200, 0, 0.75);\n}\n.pvInput[data-party=ind] {\n  border-color: #d3d3d3;\n}\n\n.hide {\n  display: none;\n}\n\n.buttonWrapper {\n  display: inline-block;\n  margin: 10px 20px 0 0;\n}\n.buttonWrapper button {\n  border: 0;\n  cursor: pointer;\n  display: block;\n  font-family: Helvetica;\n  font-size: 30px;\n}\n\n#saveButton {\n  background-color: #00ff00;\n}\n\n#clearButton {\n  background-color: #ff0000;\n}\n\n#map-wrapper {\n  position: relative;\n}\n#map-wrapper button {\n  margin: 20px;\n  padding: 20px;\n}\n\n#us-map {\n  display: block;\n  height: 100%;\n  width: 100%;\n}\n#us-map.hide {\n  display: none;\n}\n\npath:hover,\ncircle:hover {\n  stroke: #000 !important;\n  stroke-width: 2px;\n  stroke-linejoin: round;\n  fill: #fff;\n  cursor: pointer;\n}\n\n#path67 {\n  fill: none !important;\n  stroke: #a9a9a9 !important;\n  cursor: default;\n}\n\n#info-box {\n  background-color: #ffffff;\n  bottom: 15%;\n  border: 2px solid #000;\n  border-radius: 5px;\n  display: none;\n  font-family: arial;\n  padding: 5px 20px;\n  position: absolute;\n  right: 10px;\n  z-index: 1;\n}\n#info-box.show {\n  display: block;\n}\n\nsvg path,\ncircle,\npath:hover,\ncircle:hover {\n  fill: #fff;\n}\n\nsvg .gop,\npath.gop:hover,\ncircle.gop:hover {\n  fill: rgba(255, 0, 0, 0.75);\n}\n\nsvg .dem,\npath.dem:hover,\ncircle.dem:hover {\n  fill: rgba(0, 70, 255, 0.75);\n}\n\nsvg .lib,\npath.lib:hover,\ncircle.lib:hover {\n  fill: rgba(255, 215, 0, 0.75);\n}\n\nsvg .grn,\npath.grn:hover,\ncircle.grn:hover {\n  fill: rgba(0, 200, 0, 0.75);\n}\n\nsvg .ind,\npath.ind:hover,\ncircle.ind:hover {\n  fill: #d3d3d3;\n}',
+  '.electoral-college-root {\n  font-family: Helvetica;\n}\n\n.candidatesWrapper {\n  display: flex;\n  justify-content: space-around;\n  text-align: center;\n}\n.candidatesWrapper.sticky {\n  background-color: #fff;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  z-index: 100;\n}\n.candidatesWrapper.sticky img {\n  display: none;\n}\n\n.candidate {\n  margin: 10px;\n}\n.candidate img {\n  height: 100px;\n}\n\n.candidate-gop,\n.gop-votes {\n  background-color: rgba(255, 0, 0, 0.75);\n}\n\n.candidate-dem,\n.dem-votes {\n  background-color: rgba(0, 70, 255, 0.75);\n}\n\n.candidate-lib,\n.lib-votes {\n  background-color: rgba(255, 215, 0, 0.75);\n}\n\n.candidate-grn,\n.grn-votes {\n  background-color: rgba(0, 200, 0, 0.75);\n}\n\n.candidate-ind,\n.ind-votes {\n  background-color: #d3d3d3;\n}\n\n.electoralVotesWrapper {\n  font-size: 35px;\n  margin-top: 5px;\n}\n\n.electoralVotesLabel {\n  font-size: 16px;\n}\n\n.electoralVotes {\n  background-color: #ffffff;\n  border: 1px solid #000000;\n  display: flex;\n  height: 40px;\n  justify-content: space-around;\n}\n\n.electoralVotes#gop-wta,\n.electoralVotes#gop-prop {\n  color: rgba(255, 0, 0, 0.75);\n}\n\n.electoralVotes#dem-wta,\n.electoralVotes#dem-prop {\n  color: rgba(0, 70, 255, 0.75);\n}\n\n.electoralVotes#lib-wta,\n.electoralVotes#lib-prop {\n  color: rgba(255, 215, 0, 0.75);\n}\n\n.electoralVotes#grn-wta,\n.electoralVotes#grn-prop {\n  color: rgba(0, 200, 0, 0.75);\n}\n\n.electoralVotes#ind-wta,\n.electoralVotes#ind-prop {\n  color: #d3d3d3;\n}\n\n.votes-winner-line {\n  border-top: 15px solid #000000;\n  border-right: 15px solid transparent;\n  border-left: 15px solid transparent;\n  height: 0px;\n  width: 0px;\n  margin: 0 auto 1px;\n}\n\n.votes-parties {\n  border: 1px solid #777777;\n  height: 20px;\n}\n\n.votes-parties > span {\n  display: inline-block;\n  height: inherit;\n}\n\n.statesWrapper {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  margin-top: 10px;\n}\n.statesWrapper button {\n  cursor: pointer;\n}\n.statesWrapper > div {\n  margin-top: 10px;\n}\n\n.stateWrapper {\n  margin: 5px;\n  text-align: center;\n}\n\n.state {\n  background-color: none;\n  border: 1px solid #000000;\n  border-radius: 3px;\n  cursor: pointer;\n  height: 30px;\n  margin: 0 auto;\n  width: 100px;\n}\n\n.wta-winner,\n.prop-winner {\n  background-color: none;\n  border: 1px solid #000000;\n  border-radius: 3px;\n}\n\n.state.gop,\n.wta-winner.gop,\n.prop-winner.gop {\n  background-color: rgba(255, 0, 0, 0.75);\n  border: 1px solid rgba(255, 0, 0, 0.75);\n}\n\n.state.dem,\n.wta-winner.dem,\n.prop-winner.dem {\n  background-color: rgba(0, 70, 255, 0.75);\n  border: 1px solid rgba(0, 70, 255, 0.75);\n}\n\n.state.lib,\n.wta-winner.lib,\n.prop-winner.lib {\n  background-color: rgba(255, 215, 0, 0.75);\n  border: 1px solid rgba(255, 215, 0, 0.75);\n}\n\n.state.grn,\n.wta-winner.grn,\n.wta-winner.grn {\n  background-color: rgba(0, 200, 0, 0.75);\n  border: 1px solid rgba(0, 200, 0, 0.75);\n}\n\n.state.ind,\n.wta-winner.ind,\n.prop-winner.ind {\n  background-color: #d3d3d3;\n  border: 1px solid #d3d3d3;\n}\n\n.evs {\n  font-size: 22px;\n  position: relative;\n  top: 10%;\n}\n\n.pvInputWrapper {\n  margin-bottom: 3px;\n}\n\n.pvInput {\n  border-radius: 3px;\n  border: 2px solid;\n}\n.pvInput[data-party=gop] {\n  border-color: rgba(255, 0, 0, 0.75);\n}\n.pvInput[data-party=dem] {\n  border-color: rgba(0, 70, 255, 0.75);\n}\n.pvInput[data-party=lib] {\n  border-color: rgba(255, 215, 0, 0.75);\n}\n.pvInput[data-party=grn] {\n  border-color: rgba(0, 200, 0, 0.75);\n}\n.pvInput[data-party=ind] {\n  border-color: #d3d3d3;\n}\n\n.hide {\n  display: none;\n}\n\n.buttonWrapper {\n  display: inline-block;\n  margin: 10px 20px 0 0;\n}\n.buttonWrapper button {\n  border: 0;\n  cursor: pointer;\n  display: block;\n  font-family: Helvetica;\n  font-size: 30px;\n}\n\n#saveButton {\n  background-color: #00ff00;\n}\n\n#clearButton {\n  background-color: #ff0000;\n}\n\n#map-wrapper {\n  position: relative;\n}\n#map-wrapper button {\n  margin: 20px;\n  padding: 20px;\n}\n\n#us-map {\n  display: block;\n  height: 100%;\n  width: 100%;\n}\n#us-map.hide {\n  display: none;\n}\n\npath:hover,\ncircle:hover {\n  stroke: #000 !important;\n  stroke-width: 2px;\n  stroke-linejoin: round;\n  fill: #fff;\n  cursor: pointer;\n}\n\n#path67 {\n  fill: none !important;\n  stroke: #a9a9a9 !important;\n  cursor: default;\n}\n\n#info-box {\n  background-color: #ffffff;\n  bottom: 15%;\n  border: 2px solid #000;\n  border-radius: 5px;\n  display: none;\n  font-family: arial;\n  padding: 5px 20px;\n  position: absolute;\n  right: 10px;\n  z-index: 1;\n}\n#info-box.show {\n  display: block;\n}\n\nsvg path,\ncircle,\npath:hover,\ncircle:hover {\n  fill: #fff;\n}\n\nsvg .gop,\npath.gop:hover,\ncircle.gop:hover {\n  fill: rgba(255, 0, 0, 0.75);\n}\n\nsvg .dem,\npath.dem:hover,\ncircle.dem:hover {\n  fill: rgba(0, 70, 255, 0.75);\n}\n\nsvg .lib,\npath.lib:hover,\ncircle.lib:hover {\n  fill: rgba(255, 215, 0, 0.75);\n}\n\nsvg .grn,\npath.grn:hover,\ncircle.grn:hover {\n  fill: rgba(0, 200, 0, 0.75);\n}\n\nsvg .ind,\npath.ind:hover,\ncircle.ind:hover {\n  fill: #d3d3d3;\n}',
   {}
 );
-var V = function (l) {
+var S = function (l) {
   var n = l.candidateImageSources,
     o = l.candidatesData,
     r = l.enableStickyEVCounter,
@@ -2530,13 +2530,13 @@ var V = function (l) {
     E = e(c[2]),
     j = E[0],
     w = E[1],
-    S = e(c[3]),
-    V = S[0],
-    T = S[1],
+    V = e(c[3]),
+    S = V[0],
+    T = V[1],
     A = e(c[4]),
     I = A[0],
     O = A[1],
-    z = e([h, x, j, V, I]),
+    z = e([h, x, j, S, I]),
     W = z[0],
     D = z[1],
     P = e(
@@ -2578,7 +2578,7 @@ var V = function (l) {
   return d.jsxs(
     'div',
     t(
-      { className: 'App' },
+      { className: 'electoral-college-root' },
       {
         children: [
           d.jsx(y, {
@@ -2635,5 +2635,5 @@ var V = function (l) {
     )
   );
 };
-export { V as default };
+export { S as default };
 //# sourceMappingURL=index.js.map

@@ -5,8 +5,7 @@ exports[`renders correctly 1`] = `
   class="candidatesWrapper"
 >
   <div
-    class="candidate"
-    id="Trump"
+    class="candidate candidate-gop"
   >
     <h2>
       Trump
@@ -43,8 +42,7 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="candidate"
-    id="Biden"
+    class="candidate candidate-dem"
   >
     <h2>
       Biden
@@ -81,8 +79,7 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="candidate"
-    id="Oliver"
+    class="candidate candidate-lib"
   >
     <h2>
       Oliver
@@ -119,8 +116,7 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="candidate"
-    id="Stein"
+    class="candidate candidate-grn"
   >
     <h2>
       Stein
@@ -157,8 +153,7 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="candidate"
-    id="Kennedy"
+    class="candidate candidate-ind"
   >
     <h2>
       Kennedy

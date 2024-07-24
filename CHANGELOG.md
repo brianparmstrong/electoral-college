@@ -2,6 +2,17 @@
 
 Semver versioning is followed.
 
+[3.0.0-alpha-4]
+
+### FIX
+
+- Remove `@rollup/plugin-image` (module now requires caller to pass in image src as of `v3.0.0-alpha`)
+- add `electoral-college-root` class to root of module
+- Add Kamala Harris (at least temporarily) as Democratic nominee
+- remove `Candidate` component `id={name}` in favor of adding the party to the className
+- delete `/public` folder, which was a leftover from 2.x CRA
+- adding `files` to `package.json` to whitelist files received when importing package
+
 [3.0.0-alpha-3]
 
 ### DOCS

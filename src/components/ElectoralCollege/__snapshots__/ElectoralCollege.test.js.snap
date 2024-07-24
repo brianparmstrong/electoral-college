@@ -2,7 +2,7 @@
 
 exports[`renders correctly when localStorage is empty 1`] = `
 <div
-  class="App"
+  class="electoral-college-root"
 >
   <div>
     <h1>
@@ -104,8 +104,7 @@ exports[`renders correctly when localStorage is empty 1`] = `
       class="candidatesWrapper"
     >
       <div
-        class="candidate"
-        id="Trump"
+        class="candidate candidate-gop"
       >
         <h2>
           Trump
@@ -142,8 +141,7 @@ exports[`renders correctly when localStorage is empty 1`] = `
         </div>
       </div>
       <div
-        class="candidate"
-        id="Biden"
+        class="candidate candidate-dem"
       >
         <h2>
           Biden
@@ -180,8 +178,7 @@ exports[`renders correctly when localStorage is empty 1`] = `
         </div>
       </div>
       <div
-        class="candidate"
-        id="Oliver"
+        class="candidate candidate-lib"
       >
         <h2>
           Oliver
@@ -218,8 +215,7 @@ exports[`renders correctly when localStorage is empty 1`] = `
         </div>
       </div>
       <div
-        class="candidate"
-        id="Stein"
+        class="candidate candidate-grn"
       >
         <h2>
           Stein
@@ -256,8 +252,7 @@ exports[`renders correctly when localStorage is empty 1`] = `
         </div>
       </div>
       <div
-        class="candidate"
-        id="Kennedy"
+        class="candidate candidate-ind"
       >
         <h2>
           Kennedy
@@ -6303,7 +6298,7 @@ exports[`renders correctly when localStorage is empty 1`] = `
 
 exports[`renders correctly when localStorage is empty, disabling sticky EV Counter 1`] = `
 <div
-  class="App"
+  class="electoral-college-root"
 >
   <div>
     <h1>
@@ -6405,8 +6400,7 @@ exports[`renders correctly when localStorage is empty, disabling sticky EV Count
       class="candidatesWrapper"
     >
       <div
-        class="candidate"
-        id="Trump"
+        class="candidate candidate-gop"
       >
         <h2>
           Trump
@@ -6443,8 +6437,7 @@ exports[`renders correctly when localStorage is empty, disabling sticky EV Count
         </div>
       </div>
       <div
-        class="candidate"
-        id="Biden"
+        class="candidate candidate-dem"
       >
         <h2>
           Biden
@@ -6481,8 +6474,7 @@ exports[`renders correctly when localStorage is empty, disabling sticky EV Count
         </div>
       </div>
       <div
-        class="candidate"
-        id="Oliver"
+        class="candidate candidate-lib"
       >
         <h2>
           Oliver
@@ -6519,8 +6511,7 @@ exports[`renders correctly when localStorage is empty, disabling sticky EV Count
         </div>
       </div>
       <div
-        class="candidate"
-        id="Stein"
+        class="candidate candidate-grn"
       >
         <h2>
           Stein
@@ -6557,8 +6548,7 @@ exports[`renders correctly when localStorage is empty, disabling sticky EV Count
         </div>
       </div>
       <div
-        class="candidate"
-        id="Kennedy"
+        class="candidate candidate-ind"
       >
         <h2>
           Kennedy

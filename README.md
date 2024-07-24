@@ -2,6 +2,12 @@ The first Electoral College module available in npm open source!
 
 # How Do I Use This?
 
+```
+import ElectoralCollege from 'electoral-college/dist/cjs';
+// Or
+import ElectoralCollege form 'electoral-college/dist/esm';
+```
+
 Go to [DocumentationTemplate](./.storybook/DocumentationTemplate.mdx) for complete information.
 
 # What Does This Module Do?
@@ -9,7 +15,7 @@ Go to [DocumentationTemplate](./.storybook/DocumentationTemplate.mdx) for comple
 This is currently configured for the 2024 Presidential Election:
 
 - Trump (Republican)
-- Biden (Democratic)
+- Harris (Democratic)
 - Oliver (Libertarian)
 - Stein (Green)
 - Kennedy, Jr. (Independent)

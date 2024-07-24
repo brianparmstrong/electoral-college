@@ -1,4 +1,4 @@
-#root {
+.electoral-college-root {
   font-family: Helvetica;
 }
 
@@ -28,27 +28,27 @@
   }
 }
 
-#Trump,
+.candidate-gop,
 .gop-votes {
   background-color: rgba(255, 0, 0, 0.75);
 }
 
-#Biden,
+.candidate-dem,
 .dem-votes {
   background-color: rgba(0, 70, 255, 0.75);
 }
 
-#Oliver,
+.candidate-lib,
 .lib-votes {
   background-color: rgba(255, 215, 0, 0.75);
 }
 
-#Stein,
+.candidate-grn,
 .grn-votes {
   background-color: rgba(0, 200, 0, 0.75);
 }
 
-#Kennedy,
+.candidate-ind,
 .ind-votes {
   background-color: #d3d3d3;
 }

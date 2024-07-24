@@ -10,7 +10,7 @@ export default meta;
 type Story = StoryObj<typeof ElectoralCollege>;
 
 const candidateImageSources = {
-  dem: 'https://d.newsweek.com/en/full/2432800/biden.jpg',
+  dem: 'http://www.palmerreport.com/wp-content/uploads/2024/07/kamala-harris.jpg',
   gop: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/1200px-Donald_Trump_official_portrait.jpg',
   grn: 'http://media4.s-nbcnews.com/j/newscms/2016_11/1463891/160318-jill-stein-green-party-yh-1145a_b279e0d0c484f5624e923917d4c42546.nbcnews-ux-2880-1000.jpg',
   ind: 'https://static01.nytimes.com/newsgraphics/2023-09-01-exec-power-survey/_images/headshots/kennedy-jr.png',
@@ -23,7 +23,7 @@ const candidatesData = [
     party: 'gop',
   },
   {
-    name: 'Biden',
+    name: 'Harris',
     party: 'dem',
   },
   {
