@@ -2,6 +2,14 @@
 
 Semver versioning is followed.
 
+[3.0.0-beta]
+
+### VERSION BUMP
+
+- Package is ready for beta. Package is now published only with `/dist`, runtime warnings are fixed.
+- Want to think over if there's anything else to be done before publishing as a full-fledged 3.x.
+- Removing a couple more CRA-related files
+
 [3.0.0-alpha-5]
 
 ### FIX

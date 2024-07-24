@@ -12,7 +12,7 @@ module.exports = {
     'plugin:storybook/recommended',
     'plugin:storybook/recommended',
   ],
-  ignorePatterns: ['src/**/*.test.js', 'serviceWorker.js'],
+  ignorePatterns: ['src/**/*.test.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
