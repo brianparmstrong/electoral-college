@@ -2636,4 +2636,3 @@ var S = function (l) {
   );
 };
 export { S as default };
-//# sourceMappingURL=index.js.map

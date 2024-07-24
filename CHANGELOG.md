@@ -2,6 +2,12 @@
 
 Semver versioning is followed.
 
+[3.0.0-alpha-5]
+
+### FIX
+
+- Remove `sourcemap: true` from `rollup.config.js` to eliminate runtime warnings re: cannot find the files that are in `/src`
+
 [3.0.0-alpha-4]
 
 ### FIX
