@@ -167,17 +167,17 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
   return (
     <div className="pvInputWrapper">
       <input
-        type="text"
         className="pvInput"
-        id={inputId}
-        pattern="^(100(?:\.00)?|0(?:\.\d\d)?|\d?\d(?:\.\d\d)?)$"
-        placeholder={inputPlaceholder}
         data-evsawarded={String(calculateProportionalVotes(null, inputValue))}
         data-party={party}
         data-statename={name}
+        id={inputId}
         onBlur={handleInputBlur}
         onChange={handleInputChange}
         onFocus={handleInputFocus}
+        pattern="^(100(?:\.00)?|0(?:\.\d\d)?|\d?\d(?:\.\d\d)?)$"
+        placeholder={inputPlaceholder}
+        type="text"
         value={inputValue}
       />
     </div>

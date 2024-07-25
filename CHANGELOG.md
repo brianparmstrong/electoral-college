@@ -2,6 +2,14 @@
 
 Semver versioning is followed.
 
+[3.0.0-beta-3]
+
+### FIX
+
+- Forgot to save `PopularVoteInput` changes in previous version
+- Forgot to re-bundle package
+- Removed sourcemap files in bundled output since `sourcemap` is no longer set to `true`
+
 [3.0.0-beta-2]
 
 ### FIX

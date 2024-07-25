@@ -131,7 +131,7 @@ const ElectoralCollege = (props: IfcElectoralCollegeProps) => {
     setTimeout(() => {
       setShowClearedMessage(false);
       setHasClearedSavedData('false');
-    }, 5000);
+    }, 3000);
   };
 
   const handleSave = () => {
@@ -141,7 +141,7 @@ const ElectoralCollege = (props: IfcElectoralCollegeProps) => {
     setIsFromStorage(true);
     setShowClearedMessage(false);
     setShowSavedMessage(true);
-    setTimeout(() => setShowSavedMessage(false), 5000);
+    setTimeout(() => setShowSavedMessage(false), 3000);
   };
 
   return (
