@@ -13,6 +13,7 @@ const State = (stateInfo: IfcState) => {
     toggleWinner,
     winner,
   } = stateInfo;
+
   const stateNode = useRef(null);
   const [winningParty, setWinningParty] = useState<number>(
     isFromStorage ? Number(winner) : 0
@@ -62,6 +63,13 @@ const State = (stateInfo: IfcState) => {
     setWinningPartyClass(newWinningPartyClass);
     toggleWinner(newData);
   };
+
+  useEffect(() => {
+    if (winner === '0') {
+      setWinningParty(0);
+      setWinningPartyClass('');
+    }
+  }, [winner]);
 
   return (
     <div className="stateWrapper" id={name}>

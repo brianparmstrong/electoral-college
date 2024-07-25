@@ -81,6 +81,7 @@ export interface IfcElectoralVotes {
 
 export interface IfcMap {
   handleMapStateClick: (state: string) => void;
+  hasClearedSavedData: 'false' | 'true';
   newStateData: NewStateData;
   stateWinnerNames?: StateWinnerNames | Partial<StateWinnerNames> | undefined;
   statesData: StatesData;
@@ -90,6 +91,7 @@ export interface IfcPopularVoteInput {
   currentPVTotals: Array<number>;
   evs: string;
   handlePropVotes: (newPVTotals: Array<number>) => void;
+  hasClearedSavedData: 'false' | 'true';
   name: string;
   party: string;
   percent: string;
@@ -100,15 +102,21 @@ export interface IfcPopularVotes {
   currentPVTotals: Array<number>;
   evs: string;
   handlePropVotes: (newPVTotals: Array<number>) => void;
+  hasClearedSavedData: 'false' | 'true';
   name: string;
   popVotesData: PopVotesData;
   showPopVotes: boolean;
   stateEvs: string;
 }
 
+export interface IfcClearButton {
+  handleClear: () => void;
+}
+
 export interface IfcSaveButton {
   currentEVTotals: Array<number>;
   currentPVTotals: Array<number>;
+  handleSave: () => void;
 }
 
 export interface IfcState {
@@ -127,6 +135,7 @@ export interface IfcStates {
   currentPVTotals: Array<number>;
   handlePropVotes: (newPVTotals: Array<number>) => void;
   handleStateWinner: (newEVTotals: Array<number>) => void;
+  hasClearedSavedData: 'false' | 'true';
   isFromStorage: boolean;
   popVotesData?: PopVotesData;
   statesData: StatesData;

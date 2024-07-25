@@ -7,8 +7,13 @@ type UpdatedStateClassNames = {
 };
 
 const Map = (mapData: IfcMap) => {
-  const { handleMapStateClick, newStateData, stateWinnerNames, statesData } =
-    mapData;
+  const {
+    handleMapStateClick,
+    hasClearedSavedData,
+    newStateData,
+    stateWinnerNames,
+    statesData,
+  } = mapData;
   const HIDE_MAP_TEXT = 'Hide Map';
   const SHOW_MAP_TEXT = 'Show Map';
   const [buttonText, setButtonText] = useState<string>(HIDE_MAP_TEXT);
@@ -22,6 +27,12 @@ const Map = (mapData: IfcMap) => {
   const [updatedStateClassNames, setUpdatedStateClassNames] =
     useState<UpdatedStateClassNames>({});
   const svgMapClass = showMap ? '' : 'hide';
+
+  useEffect(() => {
+    if (hasClearedSavedData) {
+      setUpdatedStateClassNames({});
+    }
+  }, [hasClearedSavedData]);
 
   useEffect(() => {
     const stateId = newStateData?.stateId;

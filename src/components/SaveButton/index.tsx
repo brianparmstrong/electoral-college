@@ -12,8 +12,8 @@ type StateData = {
   winner: string;
 };
 
-const SaveButton = (saveButton: IfcSaveButton) => {
-  const { currentEVTotals, currentPVTotals } = saveButton;
+const SaveButton = (saveButtonProps: IfcSaveButton) => {
+  const { currentEVTotals, currentPVTotals, handleSave } = saveButtonProps;
   const saveStateStatus = () => {
     const states = document.getElementsByClassName('stateWrapper');
     const statesLength = states.length;
@@ -74,29 +74,23 @@ const SaveButton = (saveButton: IfcSaveButton) => {
       setStateStatus(stateData);
       setPopVoteStatus(pvData);
     }
-    if (typeof Storage !== 'undefined') {
-      localStorage.setItem(
-        'ElectoralCollegeStatus',
-        JSON.stringify(currentStateStatus)
-      );
-      localStorage.setItem(
-        'WinnerTakeAllTotals',
-        JSON.stringify(currentEVTotals)
-      );
-      localStorage.setItem(
-        'PopularVoteStatus',
-        JSON.stringify(currentPopVoteStatus)
-      );
-      localStorage.setItem(
-        'PopularVoteTotals',
-        JSON.stringify(currentPVTotals)
-      );
-      currentStateStatus = [];
-      currentPopVoteStatus = [];
-      alert('Saved!');
-    } else {
-      alert('Please enable Storage to save your selections.');
-    }
+
+    localStorage.setItem(
+      'ElectoralCollegeStatus',
+      JSON.stringify(currentStateStatus)
+    );
+    localStorage.setItem(
+      'WinnerTakeAllTotals',
+      JSON.stringify(currentEVTotals)
+    );
+    localStorage.setItem(
+      'PopularVoteStatus',
+      JSON.stringify(currentPopVoteStatus)
+    );
+    localStorage.setItem('PopularVoteTotals', JSON.stringify(currentPVTotals));
+    currentStateStatus = [];
+    currentPopVoteStatus = [];
+    handleSave();
   };
   return (
     <div className="buttonWrapper">

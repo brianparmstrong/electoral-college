@@ -8,7 +8,7 @@ import ElectoralCollege from 'electoral-college/dist/cjs';
 import ElectoralCollege form 'electoral-college/dist/esm';
 ```
 
-Go to [DocumentationTemplate](./.storybook/DocumentationTemplate.mdx) for complete information.
+Go to [DocumentationTemplate](./.storybook/DocumentationTemplate.mdx) for complete information, including required and optional props.
 
 # What Does This Module Do?
 

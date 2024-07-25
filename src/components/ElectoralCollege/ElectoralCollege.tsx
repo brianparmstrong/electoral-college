@@ -28,13 +28,15 @@ const ElectoralCollege = (props: IfcElectoralCollegeProps) => {
     candidatesData,
     enableStickyEVCounter = true,
   } = props;
-  const isFromStorage = Boolean(localStorage.getItem('ElectoralCollegeStatus'));
+  const [isFromStorage, setIsFromStorage] = useState<boolean>(
+    Boolean(localStorage?.getItem('ElectoralCollegeStatus'))
+  );
   const startingEVTotals = isFromStorage
-    ? JSON.parse(localStorage.getItem('WinnerTakeAllTotals') as string)
+    ? JSON.parse(localStorage?.getItem('WinnerTakeAllTotals') as string)
     : [0, 0, 0, 0, 0];
   const [popularVoteTotals, setPopularVoteTotals] = useState(
     isFromStorage
-      ? JSON.parse(localStorage.getItem('PopularVoteTotals') as string)
+      ? JSON.parse(localStorage?.getItem('PopularVoteTotals') as string)
       : [0, 0, 0, 0, 0]
   );
   const [gopTotal, setGopTotal] = useState(startingEVTotals[0]);
@@ -55,12 +57,21 @@ const ElectoralCollege = (props: IfcElectoralCollegeProps) => {
   const [pvPct, setPvPct] = useState(
     popularVoteTotals.map((total: number) => calculateEVPercentage(total))
   );
-  const statesData = isFromStorage
-    ? JSON.parse(localStorage.getItem('ElectoralCollegeStatus') as string)
-    : STATES_DATA;
-  const popVotesData = isFromStorage
-    ? JSON.parse(localStorage.getItem('PopularVoteStatus') as string)
-    : [];
+  const [showSavedMessage, setShowSavedMessage] = useState<boolean>(false);
+  const [showClearedMessage, setShowClearedMessage] = useState<boolean>(false);
+  const [hasClearedSavedData, setHasClearedSavedData] = useState<
+    'false' | 'true'
+  >('false');
+  const [statesData, setStatesData] = useState(
+    isFromStorage
+      ? JSON.parse(localStorage.getItem('ElectoralCollegeStatus') as string)
+      : STATES_DATA
+  );
+  const [popVotesData, setPopVotesData] = useState(
+    isFromStorage
+      ? JSON.parse(localStorage.getItem('PopularVoteStatus') as string)
+      : []
+  );
 
   useEffect(() => {
     if (enableStickyEVCounter) {
@@ -69,10 +80,12 @@ const ElectoralCollege = (props: IfcElectoralCollegeProps) => {
   });
 
   useEffect(() => {
-    if (!isFromStorage) {
-      alert('no saved data so loading blank');
-    }
-  }, [isFromStorage]);
+    setShowClearedMessage(showClearedMessage);
+  }, [showClearedMessage]);
+
+  useEffect(() => {
+    setShowSavedMessage(showSavedMessage);
+  }, [showSavedMessage]);
 
   const handlePropVotes = (newPVTotals: Array<number>) => {
     const gopPvPct = calculateEVPercentage(newPVTotals[0]);
@@ -101,6 +114,36 @@ const ElectoralCollege = (props: IfcElectoralCollegeProps) => {
     setEvPct([gopPct, demPct, libPct, grnPct, indPct]);
   };
 
+  const resetWidget = () => {
+    handleStateWinner([0, 0, 0, 0, 0]);
+    handlePropVotes([0, 0, 0, 0, 0]);
+    setStatesData(STATES_DATA);
+    setPopVotesData([]);
+    setPopularVoteTotals([0, 0, 0, 0, 0]);
+    setHasClearedSavedData('true');
+    setIsFromStorage(false);
+  };
+
+  const handleClear = () => {
+    resetWidget();
+    setShowSavedMessage(false);
+    setShowClearedMessage(true);
+    setTimeout(() => {
+      setShowClearedMessage(false);
+      setHasClearedSavedData('false');
+    }, 5000);
+  };
+
+  const handleSave = () => {
+    setStatesData(
+      JSON.parse(localStorage.getItem('ElectoralCollegeStatus') as string)
+    );
+    setIsFromStorage(true);
+    setShowClearedMessage(false);
+    setShowSavedMessage(true);
+    setTimeout(() => setShowSavedMessage(false), 5000);
+  };
+
   return (
     <div className="electoral-college-root">
       <CandidatesWrapper
@@ -116,17 +159,23 @@ const ElectoralCollege = (props: IfcElectoralCollegeProps) => {
         currentPVTotals={popularVoteTotals}
         handlePropVotes={handlePropVotes}
         handleStateWinner={handleStateWinner}
+        hasClearedSavedData={hasClearedSavedData}
         isFromStorage={isFromStorage}
         popVotesData={popVotesData}
         statesData={statesData}
       />
-      <div id="buttons">
-        <SaveButton
-          currentEVTotals={winnerTakeAllTotals}
-          currentPVTotals={popularVoteTotals}
-        />
-        <ClearButton />
-      </div>
+      {typeof Storage !== 'undefined' && (
+        <div id="buttons">
+          <SaveButton
+            currentEVTotals={winnerTakeAllTotals}
+            currentPVTotals={popularVoteTotals}
+            handleSave={handleSave}
+          />
+          {isFromStorage && <ClearButton handleClear={handleClear} />}
+          <p className={`${showSavedMessage ? 'show' : 'hide'}`}>Saved!</p>
+          <p className={`${showClearedMessage ? 'show' : 'hide'}`}>Cleared!</p>
+        </div>
+      )}
     </div>
   );
 };

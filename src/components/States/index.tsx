@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Map from '../Map';
 import PopularVotes from '../PopularVotes';
 import State from '../State';
@@ -20,6 +20,7 @@ const States = (states: IfcStates) => {
     currentPVTotals,
     handlePropVotes,
     handleStateWinner,
+    hasClearedSavedData,
     isFromStorage,
     popVotesData,
     statesData,
@@ -28,11 +29,33 @@ const States = (states: IfcStates) => {
   const SHOW_POP_VOTES_TEXT = 'Show Popular Votes';
   const [buttonText, setButtonText] = useState<string>(HIDE_POP_VOTES_TEXT);
   const [showPopVotes, setShowPopVotes] = useState<boolean>(true);
+  const [statesDataToUse, setStatesDataToUse] = useState(statesData);
   const [newStateData, setNewStateData] = useState<NewStateData>(null);
   const [stateWinnerNames, setStateWinnerNames] = useState<StateWinnerNames>(
     getStateWinnerNames(statesData)
   );
   const [stateClickedFromMap, setStateClickedFromMap] = useState<string>('');
+  const [clearMapWinners, setClearMapWinners] = useState<'false' | 'true'>(
+    hasClearedSavedData
+  );
+  const [clearPopularVotes, setClearPopularVotes] = useState<'false' | 'true'>(
+    hasClearedSavedData
+  );
+
+  useEffect(() => {
+    setStatesDataToUse(statesData);
+    setStateWinnerNames(getStateWinnerNames(statesData));
+  }, [
+    getStateWinnerNames,
+    setStateWinnerNames,
+    setStatesDataToUse,
+    statesData,
+  ]);
+
+  useEffect(() => {
+    setClearMapWinners(hasClearedSavedData);
+    setClearPopularVotes(hasClearedSavedData);
+  }, [hasClearedSavedData]);
 
   const handleMapStateClick = (state: string) => {
     setStateClickedFromMap(state);
@@ -92,7 +115,7 @@ const States = (states: IfcStates) => {
   };
 
   const renderStates = (stateClicked: string) => {
-    return statesData.map((state, i) => {
+    return statesDataToUse.map((state, i) => {
       if (state.name.indexOf('-CD') === -1) {
         return (
           <div key={`state-${i}`}>
@@ -108,12 +131,13 @@ const States = (states: IfcStates) => {
               stateCode={state.stateCode}
               stateEvs={state.stateEvs}
               toggleWinner={toggleWinner}
-              winner={state.winner}
+              winner={state.winner ?? '0'}
             />
             <PopularVotes
               currentPVTotals={currentPVTotals}
               evs={state.evs}
               handlePropVotes={handlePropVotes}
+              hasClearedSavedData={clearPopularVotes}
               name={state.name}
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore for `i`, which is the index in the array
@@ -134,7 +158,7 @@ const States = (states: IfcStates) => {
               stateCode={state.stateCode}
               stateEvs={state.stateEvs}
               toggleWinner={toggleWinner}
-              winner={state.winner}
+              winner={state.winner ?? '0'}
             />
           </div>
         );
@@ -155,9 +179,10 @@ const States = (states: IfcStates) => {
     <div className="statesPopVotes">
       <Map
         handleMapStateClick={handleMapStateClick}
+        hasClearedSavedData={clearMapWinners}
         newStateData={newStateData}
         stateWinnerNames={stateWinnerNames}
-        statesData={statesData}
+        statesData={statesDataToUse}
       />
       <div className="statesWrapper">
         <button type="button" onClick={showHidePopVotes}>

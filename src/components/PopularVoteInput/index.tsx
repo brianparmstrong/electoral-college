@@ -1,4 +1,4 @@
-import { FocusEvent, useState } from 'react';
+import { FocusEvent, SyntheticEvent, useEffect, useState } from 'react';
 import { IfcPopularVoteInput } from '../../types';
 
 const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
@@ -6,17 +6,24 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
     currentPVTotals,
     evs,
     handlePropVotes,
+    hasClearedSavedData,
     name,
     party,
     percent,
     stateEvs,
   } = popularVoteInput;
-  const initialInputValue = percent ? percent : '';
+  const initialInputValue = percent !== '0' ? percent : '';
   const [evsAwarded, setEvsAwarded] = useState<number>(0);
   const [inputValue, setInputValue] = useState<string>(initialInputValue);
   const [savedValue, setSavedValue] = useState<string>('');
   const inputId = `${party}PopVoteInput`;
   const inputPlaceholder = `${party.toUpperCase()} %`;
+
+  useEffect(() => {
+    if (hasClearedSavedData) {
+      setInputValue('');
+    }
+  }, [hasClearedSavedData]);
 
   const calculateProportionalVotes = (
     event: FocusEvent<HTMLInputElement> | null,
@@ -152,6 +159,11 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
     resetEvsWon(event, newEvsAwarded);
   };
 
+  const handleInputChange = (event: SyntheticEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement;
+    setInputValue(target.value);
+  };
+
   return (
     <div className="pvInputWrapper">
       <input
@@ -163,9 +175,10 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
         data-evsawarded={String(calculateProportionalVotes(null, inputValue))}
         data-party={party}
         data-statename={name}
-        defaultValue={inputValue}
         onBlur={handleInputBlur}
+        onChange={handleInputChange}
         onFocus={handleInputFocus}
+        value={inputValue}
       />
     </div>
   );

@@ -6282,16 +6282,16 @@ exports[`renders correctly when localStorage is empty 1`] = `
         Save
       </button>
     </div>
-    <div
-      class="buttonWrapper"
+    <p
+      class="hide"
     >
-      <button
-        id="clearButton"
-        type="button"
-      >
-        Clear
-      </button>
-    </div>
+      Saved!
+    </p>
+    <p
+      class="hide"
+    >
+      Cleared!
+    </p>
   </div>
 </div>
 `;
@@ -12578,16 +12578,16 @@ exports[`renders correctly when localStorage is empty, disabling sticky EV Count
         Save
       </button>
     </div>
-    <div
-      class="buttonWrapper"
+    <p
+      class="hide"
     >
-      <button
-        id="clearButton"
-        type="button"
-      >
-        Clear
-      </button>
-    </div>
+      Saved!
+    </p>
+    <p
+      class="hide"
+    >
+      Cleared!
+    </p>
   </div>
 </div>
 `;

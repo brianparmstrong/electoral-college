@@ -217,6 +217,16 @@
   display: none;
 }
 
+.show {
+  display: block;
+}
+
+#buttons {
+  .show {
+    display: inline-block;
+  }
+}
+
 .buttonWrapper {
   display: inline-block;
   margin: 10px 20px 0 0;
@@ -272,15 +282,15 @@ circle:hover {
 }
 #info-box {
   background-color: #ffffff;
-  bottom: 15%;
-  border: 2px solid #000;
+  border: 5px solid rgba(255, 0, 0, 0.75);
   border-radius: 5px;
   display: none;
   font-family: arial;
   padding: 5px 20px;
-  position: absolute;
-  right: 10px;
-  z-index: 1;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
 
   &.show {
     display: block;

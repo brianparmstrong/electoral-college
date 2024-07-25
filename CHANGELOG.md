@@ -2,6 +2,16 @@
 
 Semver versioning is followed.
 
+[3.0.0-beta-2]
+
+### FIX
+
+- 3.0.0 should be ready, but still trying to get types picked up by changing the rollup output for the types file
+- Removed `alert()` messages in favor of inline messaging
+- Removed messaging for when there is no saved data in localStorage (was previously an `alert`)
+- Removed `location.reload()` in favor of new functionality to reset the map, state buttons, and popular vote input fields
+- Changed Save and Clear button functionality to show buttons only if Storage is enabled; Clear button will show only if data has been previously saved
+
 [3.0.0-beta]
 
 ### VERSION BUMP

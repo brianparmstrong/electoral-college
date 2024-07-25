@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import PopularVoteInput from '../PopularVoteInput';
 import { PARTY_MAP } from '../../constants';
 import { IfcPopularVotes } from '../../types';
@@ -7,6 +8,7 @@ const PopularVotes = (popularVotes: IfcPopularVotes) => {
     currentPVTotals,
     evs,
     handlePropVotes,
+    hasClearedSavedData,
     name,
     popVotesData,
     showPopVotes,
@@ -16,6 +18,13 @@ const PopularVotes = (popularVotes: IfcPopularVotes) => {
     ? popVotesData.values
     : ['0', '0', '0', '0', '0'];
   const wrapperClass = showPopVotes ? '' : 'hide';
+  const [clearInputs, setClearInputs] = useState<'false' | 'true'>(
+    hasClearedSavedData
+  );
+
+  useEffect(() => {
+    setClearInputs(hasClearedSavedData);
+  }, [hasClearedSavedData]);
 
   const renderPopVoteInput = () => {
     return popVotesDataValues.map((value: string, i: number) => {
@@ -24,10 +33,11 @@ const PopularVotes = (popularVotes: IfcPopularVotes) => {
           currentPVTotals={currentPVTotals}
           evs={evs}
           handlePropVotes={handlePropVotes}
+          hasClearedSavedData={clearInputs}
           key={`${name}-${PARTY_MAP[i]}`}
           name={name}
           party={PARTY_MAP[i]}
-          percent={popVotesData && value}
+          percent={clearInputs === 'true' ? '0' : popVotesData && value}
           stateEvs={stateEvs}
         />
       );
