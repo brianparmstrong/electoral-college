@@ -115,6 +115,10 @@ const ElectoralCollege = (props: IfcElectoralCollegeProps) => {
   };
 
   const resetWidget = () => {
+    localStorage.removeItem('ElectoralCollegeStatus');
+    localStorage.removeItem('PopularVoteStatus');
+    localStorage.removeItem('PopularVoteTotals');
+    localStorage.removeItem('WinnerTakeAllTotals');
     handleStateWinner([0, 0, 0, 0, 0]);
     handlePropVotes([0, 0, 0, 0, 0]);
     setStatesData(STATES_DATA);

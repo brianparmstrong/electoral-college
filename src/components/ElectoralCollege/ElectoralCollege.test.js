@@ -1,8 +1,6 @@
 import { render } from '@testing-library/react';
 import ElectoralCollege from './ElectoralCollege';
 
-window.alert = jest.fn();
-
 const CANDIDATE_IMAGE_SOURCES = {
   dem: 'https://d.newsweek.com/en/full/2432800/biden.jpg',
   gop: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/1200px-Donald_Trump_official_portrait.jpg',
@@ -41,7 +39,6 @@ it('renders without crashing', () => {
       candidatesData={CANDIDATES_DATA}
     />
   );
-  window.alert.mockClear();
 });
 
 it('renders correctly when localStorage is empty', () => {
@@ -52,7 +49,6 @@ it('renders correctly when localStorage is empty', () => {
     />
   );
   expect(container.firstChild).toMatchSnapshot();
-  window.alert.mockClear();
 });
 
 it('renders without crashing, disabling sticky EV Counter', () => {
@@ -63,7 +59,6 @@ it('renders without crashing, disabling sticky EV Counter', () => {
       candidatesData={CANDIDATES_DATA}
     />
   );
-  window.alert.mockClear();
 });
 
 it('renders correctly when localStorage is empty, disabling sticky EV Counter', () => {
@@ -75,5 +70,4 @@ it('renders correctly when localStorage is empty, disabling sticky EV Counter', 
     />
   );
   expect(container.firstChild).toMatchSnapshot();
-  window.alert.mockClear();
 });

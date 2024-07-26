@@ -35,10 +35,7 @@ export default [
   },
   {
     input: 'src/index.ts',
-    output: [
-      { file: 'dist/cjs/types.d.ts', format: 'es' },
-      { file: 'dist/esm/types.d.ts', format: 'es' },
-    ],
+    output: [{ file: 'dist/index.d.ts', format: 'es' }],
     external: [/\.(sass|scss|css)$/],
     plugins: [dts.default()],
   },

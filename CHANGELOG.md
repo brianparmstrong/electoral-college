@@ -2,6 +2,13 @@
 
 Semver versioning is followed.
 
+[3.0.0-beta-4]
+
+### FIX
+
+- Trying to get types to work. May have had incorrect file name in rollup bundler.
+- Moving some reset logic from `ClearButton` to `ElectoralCollege`
+
 [3.0.0-beta-3]
 
 ### FIX
