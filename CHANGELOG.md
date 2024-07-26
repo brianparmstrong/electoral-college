@@ -2,6 +2,12 @@
 
 Semver versioning is followed.
 
+[3.0.0-beta-5]
+
+### FIX
+
+- Forgot to bundle previous changes
+
 [3.0.0-beta-4]
 
 ### FIX

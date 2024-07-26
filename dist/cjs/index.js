@@ -1161,17 +1161,7 @@ var s = t.exports,
           children: s.jsx(
             'button',
             e(
-              {
-                id: 'clearButton',
-                type: 'button',
-                onClick: function () {
-                  localStorage.removeItem('ElectoralCollegeStatus'),
-                    localStorage.removeItem('PopularVoteStatus'),
-                    localStorage.removeItem('PopularVoteTotals'),
-                    localStorage.removeItem('WinnerTakeAllTotals'),
-                    a();
-                },
-              },
+              { id: 'clearButton', type: 'button', onClick: a },
               { children: 'Clear' }
             )
           ),
@@ -2745,7 +2735,11 @@ module.exports = function (a) {
                     d &&
                       s.jsx(g, {
                         handleClear: function () {
-                          sl([0, 0, 0, 0, 0]),
+                          localStorage.removeItem('ElectoralCollegeStatus'),
+                            localStorage.removeItem('PopularVoteStatus'),
+                            localStorage.removeItem('PopularVoteTotals'),
+                            localStorage.removeItem('WinnerTakeAllTotals'),
+                            sl([0, 0, 0, 0, 0]),
                             rl([0, 0, 0, 0, 0]),
                             al(x),
                             ol([]),
