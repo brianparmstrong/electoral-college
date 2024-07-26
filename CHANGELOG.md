@@ -2,6 +2,12 @@
 
 Semver versioning is followed.
 
+[3.0.0-beta-6]
+
+### FIX
+
+- Trying to get types to work
+
 [3.0.0-beta-5]
 
 ### FIX

@@ -3,9 +3,7 @@ The first Electoral College module available in npm open source!
 # How Do I Use This?
 
 ```
-import ElectoralCollege from 'electoral-college/dist/cjs';
-// Or
-import ElectoralCollege form 'electoral-college/dist/esm';
+import ElectoralCollege from 'electoral-college/dist';
 ```
 
 Go to [DocumentationTemplate](./.storybook/DocumentationTemplate.mdx) for complete information, including required and optional props.

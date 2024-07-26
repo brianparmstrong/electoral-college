@@ -13,12 +13,8 @@ export default [
     input: 'src/index.ts',
     output: [
       {
-        file: packageJson.main,
+        file: `${packageJson.main}.js`,
         format: 'cjs',
-      },
-      {
-        file: packageJson.module,
-        format: 'esm',
       },
     ],
     plugins: [
