@@ -16,7 +16,7 @@ type CandidateData = {
 type CandidatesData = Array<CandidateData>;
 
 interface IfcElectoralCollegeProps {
-  candidateImageSources: CandidateImageSrc;
+  candidateImageSources?: CandidateImageSrc;
   candidatesData: CandidatesData;
   enableStickyEVCounter?: boolean;
 }

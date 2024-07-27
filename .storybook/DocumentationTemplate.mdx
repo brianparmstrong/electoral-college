@@ -12,7 +12,7 @@ import ElectoralCollege from 'electoral-college/dist';
 
 # Props
 
-`candidateImageSources` - object - required - keys are the political party, values are strings of the `<img />` `src` attribute:
+`candidateImageSources` - object - optional - pass if you want to display candidate images; keys are the political party, values are strings of the `<img />` `src` attribute:
 
 ```js
 {
@@ -50,8 +50,7 @@ If needed you can copy all the styles from `electoral-college/src/style.scss' in
 
 # Types
 
-You can try configuring your `tsconfig.json` to look for the exported types from this package (`/dist/types.d.ts` -- haven't gotten this to work).
-You can also manually create a (or add to an existing) `.d.ts` file and declare a module.
+These should now be automatically picked up so you shouldn't need to modify your `tsconfig.json` nor declare a module.
 
 ## Winner-Take-All / Current System
 
@@ -76,7 +75,9 @@ When clicking on a state's EV box you should see the corresponding state update 
 
 ## Proportional Representation
 
-Enter the percentage of votes won by each candidate. This will calculate how many EVs the candidate would win if EVs were awarded proportionally. In some cases the total EVs awarded will not quite add up to 100% of that State's EVs, due to rounding. In this case you'll have to fudge the numbers until 100% of EVs for that state have been awarded. What I do, and what I would recommend for a Proportional system (which, of course, would have to be spelled out in the law), is:
+Enter the percentage of votes won by each candidate. This will calculate how many EVs the candidate would win if EVs were awarded proportionally.
+In some cases the total EVs awarded will not quite add up to 100% of that State's EVs, due to rounding. In this case you'll have to fudge the numbers until 100% of EVs for that state have been awarded.
+What I do, and what I would recommend for a Proportional system (which, of course, would have to be spelled out in the law), is:
 
 Only 1 EV unawarded? Give it to the candidate with the most votes in that State.
 Only 2 EVs unawarded? Give 1 EV each to the top two vote getters?
@@ -98,8 +99,6 @@ Click the `Save` button. This will save the results to localStorage. The next ti
 Click the `Clear` button (shows only if data has previously been saved). This will clear the current results as well as your localStorage data.
 
 # Screenshots
-
-`/docs/screenshots/2016_BLANK` -- how this will load if you do not have saved data in local storage
 
 `/docs/screenshots/2016_FINAL_RESULTS` -- Winner-take-all and proportional representation EV results for Trump and Clinton
 

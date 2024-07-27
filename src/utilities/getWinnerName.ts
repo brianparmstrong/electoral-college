@@ -1,4 +1,4 @@
-const getWinnerName = (winningParty: string = '') => {
+const getWinnerName = (winningParty = '') => {
   let stateWinner = '';
 
   switch (winningParty) {

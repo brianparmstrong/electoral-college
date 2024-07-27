@@ -14,7 +14,7 @@ type CandidateData = {
 type CandidatesData = Array<CandidateData>;
 
 export interface IfcElectoralCollegeProps {
-  candidateImageSources: CandidateImageSrc;
+  candidateImageSources?: CandidateImageSrc;
   candidatesData: CandidatesData;
   enableStickyEVCounter?: boolean;
 }
@@ -50,7 +50,7 @@ export type WinnerData = {
 };
 
 export interface IfcCandidate {
-  imageSrc: string;
+  imageSrc?: string;
   name: string;
   party: string;
   popularVoteTotals: number;
@@ -58,14 +58,14 @@ export interface IfcCandidate {
 }
 
 export interface IfcCandidates {
-  candidateImageSources: CandidateImageSrc;
+  candidateImageSources?: CandidateImageSrc;
   candidatesData: CandidatesData;
   popularVoteTotals: Array<number>;
   winnerTakeAllTotals: Array<number>;
 }
 
 export interface IfcCandidatesWrapper {
-  candidateImageSources: CandidateImageSrc;
+  candidateImageSources?: CandidateImageSrc;
   candidates: CandidatesData;
   evPct: Array<number>;
   popVoteTotals: Array<number>;

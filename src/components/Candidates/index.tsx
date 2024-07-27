@@ -11,7 +11,7 @@ const Candidates = (candidates: IfcCandidates) => {
   const candidatesMap = candidatesData.map((candidate, i) => (
     <Candidate
       imageSrc={
-        candidateImageSources[candidate.party as keyof CandidateImageSrc]
+        candidateImageSources?.[candidate.party as keyof CandidateImageSrc]
       }
       name={candidate.name}
       key={`candidate-${i}`}

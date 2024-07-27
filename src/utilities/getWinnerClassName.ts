@@ -1,4 +1,4 @@
-const getWinnerClassName = (winner: string = '') => {
+const getWinnerClassName = (winner = '') => {
   let winnerClass = '';
 
   switch (winner) {

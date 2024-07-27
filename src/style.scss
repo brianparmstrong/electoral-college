@@ -282,7 +282,7 @@ circle:hover {
 }
 #info-box {
   background-color: #ffffff;
-  border: 5px solid rgba(255, 0, 0, 0.75);
+  border: 5px solid rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   display: none;
   font-family: arial;
@@ -290,10 +290,31 @@ circle:hover {
   position: fixed;
   right: 0;
   top: 0;
+  width: 25%;
   z-index: 1000;
 
   &.show {
     display: block;
+  }
+
+  &.gop {
+    border-color: rgba(255, 0, 0, 0.75);
+  }
+
+  &.dem {
+    border-color: rgba(0, 70, 255, 0.75);
+  }
+
+  &.lib {
+    border-color: rgba(255, 215, 0, 0.75);
+  }
+
+  &.grn {
+    border-color: rgba(0, 200, 0, 0.75);
+  }
+
+  &.ind {
+    border-color: #d3d3d3;
   }
 }
 svg path,

@@ -92,9 +92,10 @@ const Map = (mapData: IfcMap) => {
   };
 
   const renderCurrentInfo = (info: string) => {
-    const stateName = info.split('--')[0];
-    const stateEvs = info.split('--')[1];
-    const stateWinner = info.split('--')[2] || '';
+    const splitInfo = info.split('--');
+    const stateName = splitInfo[0];
+    const stateEvs = splitInfo[1];
+    const stateWinner = splitInfo[2] || '';
     return (
       <div>
         <p className="map-info-statename">{stateName}</p>
@@ -116,6 +117,29 @@ const Map = (mapData: IfcMap) => {
     );
   };
 
+  const getInfoBoxWinnerClass = (info: string) => {
+    const winnerName = info.split('--')[2] || '';
+    let winner = '';
+    switch (winnerName) {
+      case 'Republican':
+        winner = '1';
+        break;
+      case 'Democratic':
+        winner = '2';
+        break;
+      case 'Libertarian':
+        winner = '3';
+        break;
+      case 'Green':
+        winner = '4';
+        break;
+      case 'Independent':
+        winner = '5';
+        break;
+    }
+    return getWinnerClassName(winner);
+  };
+
   const showHideMap = () => {
     let newButtonText = HIDE_MAP_TEXT;
     if (showMap) {
@@ -135,7 +159,12 @@ const Map = (mapData: IfcMap) => {
       <button type="button" onClick={showHideMap}>
         {buttonText}
       </button>
-      <div id="info-box" className={currentInfo ? 'show' : ''}>
+      <div
+        id="info-box"
+        className={
+          currentInfo ? `show ${getInfoBoxWinnerClass(currentInfo)}` : ''
+        }
+      >
         {renderCurrentInfo(currentInfo)}
       </div>
       <svg

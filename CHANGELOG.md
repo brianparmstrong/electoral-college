@@ -2,6 +2,19 @@
 
 Semver versioning is followed.
 
+[3.0.0]
+
+### VERSION BUMP
+
+- Typings are being picked up from the published package. Yay!
+- See `README.md` for updated way to import this module
+- Decided to make `candidateImageSources` prop optional
+- Tweaked styling of the `Map`'s `info-box` to have `border-color` match the hovered State's winner
+- Fixed a couple lint errors re: not needing to explicitly type trivially inferred types
+- Deleted `/.storybook/docs/screenshots/2016_BLANK.png` since module no longer loads with an alert message
+- Added `--collectCoverage` flag to Jest
+- Package is now ready to be taken out of beta
+
 [3.0.0-beta-6]
 
 ### FIX

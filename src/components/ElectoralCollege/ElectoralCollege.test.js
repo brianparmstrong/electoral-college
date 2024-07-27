@@ -71,3 +71,17 @@ it('renders correctly when localStorage is empty, disabling sticky EV Counter', 
   );
   expect(container.firstChild).toMatchSnapshot();
 });
+
+it('renders without crashing, no candidateImageSources', () => {
+  render(<ElectoralCollege candidatesData={CANDIDATES_DATA} />);
+});
+
+it('renders correctly when localStorage is empty, no candidateImageSources', () => {
+  const { container } = render(
+    <ElectoralCollege
+      candidatesData={CANDIDATES_DATA}
+      enableStickyEVCounter={false}
+    />
+  );
+  expect(container.firstChild).toMatchSnapshot();
+});

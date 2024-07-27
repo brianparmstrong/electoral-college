@@ -1,6 +1,6 @@
 {
   "name": "electoral-college",
-  "version": "3.0.0-beta-6",
+  "version": "3.0.0",
   "license": "See LICENSE.md",
   "description": "A module to track and predict Electoral College results in U.S. Presidential Elections",
   "dependencies": {
@@ -67,8 +67,8 @@
     "rollup": "rollup -c --bundleConfigAsCjs",
     "storybook:build": "storybook build",
     "storybook:run": "storybook dev -p 6006",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "jest --collectCoverage",
+    "test:watch": "jest --watch --collectCoverage",
     "typecheck": "tsc",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -87,9 +87,6 @@
     "elections"
   ],
   "author": "Brian Armstrong",
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",

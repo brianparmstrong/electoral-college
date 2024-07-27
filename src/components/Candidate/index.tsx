@@ -7,7 +7,7 @@ const Candidate = (candidate: IfcCandidate) => {
   return (
     <div className={`candidate candidate-${party}`}>
       <h2>{candidate.name}</h2>
-      <img src={imageSrc} alt={name} />
+      {imageSrc && <img src={imageSrc} alt={name} />}
       <ElectoralVotes
         party={party}
         popularVoteTotals={popularVoteTotals}
