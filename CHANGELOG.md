@@ -2,6 +2,12 @@
 
 Semver versioning is followed.
 
+[3.0.1]
+
+### DOCS
+
+- `DocumentationTemplate` had old info on how to run this module
+
 [3.0.0]
 
 ### VERSION BUMP
