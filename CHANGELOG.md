@@ -2,6 +2,16 @@
 
 Semver versioning is followed.
 
+[3.1.0]
+
+### UPGRADE
+
+- New optional prop `mapSize` (defaults to `large` -- see documentation for more information)
+- New optional prop `stateControlSize` (defaults to `large` -- see documentation for more information)
+- Adjusted styling of sticky EV counter so it doesn't take up as much vertical space
+- Adjusted styling of `#info-box` so it's not as wide
+- Updated `DocumentationTemplate` to specify that you must include one and only one candidate for each political party
+
 [3.0.1]
 
 ### DOCS

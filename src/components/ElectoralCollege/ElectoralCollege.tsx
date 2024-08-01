@@ -27,6 +27,8 @@ const ElectoralCollege = (props: IfcElectoralCollegeProps) => {
     candidateImageSources,
     candidatesData,
     enableStickyEVCounter = true,
+    mapSize = 'large',
+    stateControlSize = 'large',
   } = props;
   const [isFromStorage, setIsFromStorage] = useState<boolean>(
     Boolean(localStorage?.getItem('ElectoralCollegeStatus'))
@@ -165,7 +167,9 @@ const ElectoralCollege = (props: IfcElectoralCollegeProps) => {
         handleStateWinner={handleStateWinner}
         hasClearedSavedData={hasClearedSavedData}
         isFromStorage={isFromStorage}
+        mapSize={mapSize}
         popVotesData={popVotesData}
+        stateControlSize={stateControlSize}
         statesData={statesData}
       />
       {typeof Storage !== 'undefined' && (

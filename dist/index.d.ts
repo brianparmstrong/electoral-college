@@ -15,10 +15,14 @@ type CandidateData = {
 
 type CandidatesData = Array<CandidateData>;
 
+type Size = 'small' | 'medium' | 'large';
+
 interface IfcElectoralCollegeProps {
   candidateImageSources?: CandidateImageSrc;
   candidatesData: CandidatesData;
   enableStickyEVCounter?: boolean;
+  mapSize?: Size;
+  stateControlSize?: Size;
 }
 
 declare const ElectoralCollege: (

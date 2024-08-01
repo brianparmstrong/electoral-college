@@ -5,6 +5,18 @@ import { Meta, Title, Primary, Controls, Stories } from '@storybook/blocks';
 # How To Use This Module
 
 As of 3.x this module is now a true npm module that can be imported into and used in any application.
+This module expects that there will be one and only one candidate each for:
+
+Republican
+Democratic
+Libertarian
+Green
+Independent
+
+You are free to pick whatever candidate you want as the Independent candidate, but you must pick only one.
+E.g. for 2024 there are many polling companies conducting 5-way polls that include two Independents -- Robert F. Kennedy, Jr. and Cornell West.
+These polls do not include the Libertarian Party candidate Chase Oliver but do include the Green Party candidate Jill Stein.
+Robert F. Kennedy, Jr. is polling much higher than Cornell West but you can choose to include West as the Independent candidate, if you want, instead of Kennedy, Jr.
 
 ```
 import ElectoralCollege from 'electoral-college/dist';
@@ -37,6 +49,10 @@ import ElectoralCollege from 'electoral-college/dist';
 ```
 
 `enableStickyEVCounter` - boolean - optional (defaults to Boolean(true)) - causes EV Counter at top of screen to act as a sticky header
+
+`mapSize` - 'small' | 'medium' | 'large' - optional (defaults to 'large') - causes SVG map to render at a different size ('small' = 50% height & width; 'medium' = 75% height & width, 'large' = 100% height & width)
+
+`stateControlSize` - 'small' | 'medium' | 'large' - optional (defaults to 'large') - causes the `.state-control` elements to render at different sizes, allowing more `.state-control` elements to render in each row ('medium' only changes width of `.pvInput`; 'small' also changes widths of buttons and font-size of state names)
 
 # Styles
 

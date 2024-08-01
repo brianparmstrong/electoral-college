@@ -22,7 +22,9 @@ const States = (states: IfcStates) => {
     handleStateWinner,
     hasClearedSavedData,
     isFromStorage,
+    mapSize,
     popVotesData,
+    stateControlSize,
     statesData,
   } = states;
   const HIDE_POP_VOTES_TEXT = 'Hide Popular Votes';
@@ -118,7 +120,10 @@ const States = (states: IfcStates) => {
     return statesDataToUse.map((state, i) => {
       if (state.name.indexOf('-CD') === -1) {
         return (
-          <div key={`state-${i}`}>
+          <div
+            className={`state-control ${stateControlSize}`}
+            key={`state-${i}`}
+          >
             <State
               evs={state.evs}
               isFromStorage={isFromStorage}
@@ -149,7 +154,10 @@ const States = (states: IfcStates) => {
         );
       } else {
         return (
-          <div key={`state-${i}`}>
+          <div
+            className={`state-control ${stateControlSize}`}
+            key={`state-${i}`}
+          >
             <State
               evs={state.evs}
               isFromStorage={isFromStorage}
@@ -180,6 +188,7 @@ const States = (states: IfcStates) => {
       <Map
         handleMapStateClick={handleMapStateClick}
         hasClearedSavedData={clearMapWinners}
+        mapSize={mapSize}
         newStateData={newStateData}
         stateWinnerNames={stateWinnerNames}
         statesData={statesDataToUse}

@@ -31,7 +31,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <svg
-      class=""
+      class="undefined "
       enable-background="new 174 100 959 593"
       height="593px"
       id="us-map"
@@ -435,7 +435,9 @@ exports[`renders correctly 1`] = `
     >
       Hide Popular Votes
     </button>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Alabama"
@@ -541,7 +543,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Alaska"
@@ -647,7 +651,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Arizona"
@@ -753,7 +759,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Arkansas"
@@ -859,7 +867,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="California"
@@ -965,7 +975,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Colorado"
@@ -1071,7 +1083,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Connecticut"
@@ -1177,7 +1191,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Delaware"
@@ -1283,7 +1299,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Florida"
@@ -1389,7 +1407,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Georgia"
@@ -1495,7 +1515,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Hawaii"
@@ -1601,7 +1623,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Idaho"
@@ -1707,7 +1731,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Illinois"
@@ -1813,7 +1839,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Indiana"
@@ -1919,7 +1947,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Iowa"
@@ -2025,7 +2055,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Kansas"
@@ -2131,7 +2163,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Kentucky"
@@ -2237,7 +2271,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Louisiana"
@@ -2343,7 +2379,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="ME-CD1"
@@ -2370,7 +2408,9 @@ exports[`renders correctly 1`] = `
         </p>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="ME-CD2"
@@ -2397,7 +2437,9 @@ exports[`renders correctly 1`] = `
         </p>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Maine"
@@ -2504,7 +2546,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Maryland"
@@ -2610,7 +2654,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Massachusetts"
@@ -2716,7 +2762,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Michigan"
@@ -2822,7 +2870,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Minnesota"
@@ -2928,7 +2978,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Mississippi"
@@ -3034,7 +3086,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Missouri"
@@ -3140,7 +3194,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Montana"
@@ -3246,7 +3302,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="NE-CD1"
@@ -3273,7 +3331,9 @@ exports[`renders correctly 1`] = `
         </p>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="NE-CD2"
@@ -3300,7 +3360,9 @@ exports[`renders correctly 1`] = `
         </p>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="NE-CD3"
@@ -3327,7 +3389,9 @@ exports[`renders correctly 1`] = `
         </p>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Nebraska"
@@ -3434,7 +3498,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Nevada"
@@ -3540,7 +3606,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="New Hampshire"
@@ -3646,7 +3714,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="New Jersey"
@@ -3752,7 +3822,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="New Mexico"
@@ -3858,7 +3930,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="New York"
@@ -3964,7 +4038,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="North Carolina"
@@ -4070,7 +4146,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="North Dakota"
@@ -4176,7 +4254,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Ohio"
@@ -4282,7 +4362,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Oklahoma"
@@ -4388,7 +4470,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Oregon"
@@ -4494,7 +4578,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Pennsylvania"
@@ -4600,7 +4686,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Rhode Island"
@@ -4706,7 +4794,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="South Carolina"
@@ -4812,7 +4902,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="South Dakota"
@@ -4918,7 +5010,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Tennessee"
@@ -5024,7 +5118,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Texas"
@@ -5130,7 +5226,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Utah"
@@ -5236,7 +5334,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Vermont"
@@ -5342,7 +5442,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Virginia"
@@ -5448,7 +5550,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Washington"
@@ -5554,7 +5658,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Washington, D.C."
@@ -5660,7 +5766,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="West Virginia"
@@ -5766,7 +5874,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Wisconsin"
@@ -5872,7 +5982,9 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div>
+    <div
+      class="state-control undefined"
+    >
       <div
         class="stateWrapper"
         id="Wyoming"

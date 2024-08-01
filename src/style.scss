@@ -14,8 +14,27 @@
     width: 100%;
     z-index: 100;
 
+    h2 {
+      font-size: 1.35em;
+      margin-block: 0.5em;
+    }
+
+    .candidate {
+      height: 100%;
+      margin: 0;
+    }
+
     img {
       display: none;
+    }
+
+    .electoralVotes {
+      font-size: 25px;
+      height: 30px;
+    }
+
+    .electoralVotesLabel {
+      margin-block: 0.5em;
     }
   }
 }
@@ -119,25 +138,51 @@
   button {
     cursor: pointer;
   }
+}
 
-  > div {
-    margin-top: 10px;
+.state-control {
+  flex: 0;
+  margin-top: 10px;
+
+  .state {
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 30px;
+    margin: 0 auto;
+    width: 100px;
+  }
+
+  &.small {
+    .state {
+      width: 70px;
+    }
+
+    .evs {
+      font-size: 20px;
+    }
+
+    .stateName {
+      font-size: 0.75em;
+      height: 25px;
+    }
+
+    .pvInput {
+      width: 85%;
+    }
+  }
+
+  &.medium {
+    .pvInput {
+      width: 90%;
+    }
   }
 }
 
 .stateWrapper {
   margin: 5px;
   text-align: center;
-}
-
-.state {
-  background-color: none;
-  border: 1px solid #000000;
-  border-radius: 3px;
-  cursor: pointer;
-  height: 30px;
-  margin: 0 auto;
-  width: 100px;
 }
 
 .wta-winner,
@@ -259,11 +304,24 @@
 
 #us-map {
   display: block;
-  height: 100%;
-  width: 100%;
 
   &.hide {
     display: none;
+  }
+
+  &.small {
+    height: 50%;
+    width: 50%;
+  }
+
+  &.medium {
+    height: 75%;
+    width: 75%;
+  }
+
+  &.large {
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -290,7 +348,7 @@ circle:hover {
   position: fixed;
   right: 0;
   top: 0;
-  width: 25%;
+  width: 20%;
   z-index: 1000;
 
   &.show {

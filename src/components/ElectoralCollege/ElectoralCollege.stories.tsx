@@ -44,5 +44,7 @@ export const Example: Story = {
   args: {
     candidateImageSources,
     candidatesData,
+    mapSize: 'medium',
+    stateControlSize: 'small',
   },
 };

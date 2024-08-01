@@ -10,6 +10,7 @@ const Map = (mapData: IfcMap) => {
   const {
     handleMapStateClick,
     hasClearedSavedData,
+    mapSize,
     newStateData,
     stateWinnerNames,
     statesData,
@@ -26,7 +27,7 @@ const Map = (mapData: IfcMap) => {
   >(stateWinnerNames as StateWinnerNames);
   const [updatedStateClassNames, setUpdatedStateClassNames] =
     useState<UpdatedStateClassNames>({});
-  const svgMapClass = showMap ? '' : 'hide';
+  const svgShowHideMapClass = showMap ? '' : 'hide';
 
   useEffect(() => {
     if (hasClearedSavedData) {
@@ -168,7 +169,7 @@ const Map = (mapData: IfcMap) => {
         {renderCurrentInfo(currentInfo)}
       </div>
       <svg
-        className={svgMapClass}
+        className={`${mapSize} ${svgShowHideMapClass}`}
         xmlns="http://www.w3.org/2000/svg"
         xlinkHref="http://www.w3.org/1999/xlink"
         version="1.1"

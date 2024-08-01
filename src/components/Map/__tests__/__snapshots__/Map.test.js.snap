@@ -28,7 +28,7 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <svg
-    class=""
+    class="undefined "
     enable-background="new 174 100 959 593"
     height="593px"
     id="us-map"

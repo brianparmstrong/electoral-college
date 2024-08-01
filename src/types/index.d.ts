@@ -13,10 +13,14 @@ type CandidateData = {
 
 type CandidatesData = Array<CandidateData>;
 
+type Size = 'small' | 'medium' | 'large';
+
 export interface IfcElectoralCollegeProps {
   candidateImageSources?: CandidateImageSrc;
   candidatesData: CandidatesData;
   enableStickyEVCounter?: boolean;
+  mapSize?: Size;
+  stateControlSize?: Size;
 }
 
 type NewStateData = {
@@ -82,6 +86,7 @@ export interface IfcElectoralVotes {
 export interface IfcMap {
   handleMapStateClick: (state: string) => void;
   hasClearedSavedData: 'false' | 'true';
+  mapSize: Size;
   newStateData: NewStateData;
   stateWinnerNames?: StateWinnerNames | Partial<StateWinnerNames> | undefined;
   statesData: StatesData;
@@ -137,6 +142,8 @@ export interface IfcStates {
   handleStateWinner: (newEVTotals: Array<number>) => void;
   hasClearedSavedData: 'false' | 'true';
   isFromStorage: boolean;
+  mapSize: Size;
   popVotesData?: PopVotesData;
+  stateControlSize: Size;
   statesData: StatesData;
 }
