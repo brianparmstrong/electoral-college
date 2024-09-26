@@ -74259,7 +74259,7 @@ var Oo = te(Cte(), 1),
   Ate = te(Ai(), 1);
 
 // src/manager-api/version.ts
-var Dte = '8.2.5';
+var Dte = '8.2.4';
 
 // src/manager-api/modules/versions.ts
 var { VERSIONCHECK: aHe } = xe,

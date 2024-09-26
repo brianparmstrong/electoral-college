@@ -8,16 +8,25 @@
       "importPath": "./src/stories/Configure.mdx",
       "storiesImports": [],
       "type": "docs",
-      "tags": ["dev", "test", "unattached-mdx"]
+      "tags": ["dev", "test", "autodocs", "unattached-mdx"]
     },
-    "reactcomponent-electoralcollege--electoral-college-test": {
-      "type": "story",
-      "id": "reactcomponent-electoralcollege--electoral-college-test",
-      "name": "Electoral College Test",
-      "title": "ReactComponent/ElectoralCollege",
+    "electoral-college--docs": {
+      "id": "electoral-college--docs",
+      "title": "Electoral College",
+      "name": "Docs",
       "importPath": "./src/components/ElectoralCollege/ElectoralCollege.stories.tsx",
-      "componentPath": "./src/components/ElectoralCollege",
-      "tags": ["dev", "test"]
+      "type": "docs",
+      "tags": ["dev", "test", "autodocs"],
+      "storiesImports": []
+    },
+    "electoral-college--example": {
+      "type": "story",
+      "id": "electoral-college--example",
+      "name": "Example",
+      "title": "Electoral College",
+      "importPath": "./src/components/ElectoralCollege/ElectoralCollege.stories.tsx",
+      "componentPath": "./src",
+      "tags": ["dev", "test", "autodocs"]
     },
     "example-button--docs": {
       "id": "example-button--docs",
@@ -91,6 +100,15 @@
       "componentPath": "./src/stories/Header.tsx",
       "tags": ["dev", "test", "autodocs"]
     },
+    "example-page--docs": {
+      "id": "example-page--docs",
+      "title": "Example/Page",
+      "name": "Docs",
+      "importPath": "./src/stories/Page.stories.ts",
+      "type": "docs",
+      "tags": ["dev", "test", "autodocs"],
+      "storiesImports": []
+    },
     "example-page--logged-out": {
       "type": "story",
       "id": "example-page--logged-out",
@@ -98,7 +116,7 @@
       "title": "Example/Page",
       "importPath": "./src/stories/Page.stories.ts",
       "componentPath": "./src/stories/Page.tsx",
-      "tags": ["dev", "test"]
+      "tags": ["dev", "test", "autodocs"]
     },
     "example-page--logged-in": {
       "type": "story",
@@ -107,7 +125,7 @@
       "title": "Example/Page",
       "importPath": "./src/stories/Page.stories.ts",
       "componentPath": "./src/stories/Page.tsx",
-      "tags": ["dev", "test", "play-fn"]
+      "tags": ["dev", "test", "autodocs", "play-fn"]
     }
   }
 }

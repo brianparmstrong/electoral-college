@@ -37,6 +37,8 @@ it('renders without crashing', () => {
     <ElectoralCollege
       candidateImageSources={CANDIDATE_IMAGE_SOURCES}
       candidatesData={CANDIDATES_DATA}
+      mapSize="small"
+      stateControlSize="small"
     />
   );
 });
@@ -46,6 +48,8 @@ it('renders correctly when localStorage is empty', () => {
     <ElectoralCollege
       candidateImageSources={CANDIDATE_IMAGE_SOURCES}
       candidatesData={CANDIDATES_DATA}
+      mapSize="medium"
+      stateControlSize="medium"
     />
   );
   expect(container.firstChild).toMatchSnapshot();
@@ -81,6 +85,50 @@ it('renders correctly when localStorage is empty, no candidateImageSources', () 
     <ElectoralCollege
       candidatesData={CANDIDATES_DATA}
       enableStickyEVCounter={false}
+    />
+  );
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+it('renders without crashing, no mapSize', () => {
+  render(
+    <ElectoralCollege
+      candidateImageSources={CANDIDATE_IMAGE_SOURCES}
+      candidatesData={CANDIDATES_DATA}
+      stateControlSize="small"
+    />
+  );
+});
+
+it('renders correctly when localStorage is empty, no mapSize', () => {
+  const { container } = render(
+    <ElectoralCollege
+      candidatesData={CANDIDATES_DATA}
+      candidateImageSources={CANDIDATE_IMAGE_SOURCES}
+      enableStickyEVCounter={false}
+      stateControlSize="medium"
+    />
+  );
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+it('renders without crashing, no mapSize', () => {
+  render(
+    <ElectoralCollege
+      candidateImageSources={CANDIDATE_IMAGE_SOURCES}
+      candidatesData={CANDIDATES_DATA}
+      mapSize="small"
+    />
+  );
+});
+
+it('renders correctly when localStorage is empty, no mapSize', () => {
+  const { container } = render(
+    <ElectoralCollege
+      candidatesData={CANDIDATES_DATA}
+      candidateImageSources={CANDIDATE_IMAGE_SOURCES}
+      enableStickyEVCounter={false}
+      mapSize="medium"
     />
   );
   expect(container.firstChild).toMatchSnapshot();

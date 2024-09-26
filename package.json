@@ -1,6 +1,6 @@
 {
   "name": "electoral-college",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "license": "See LICENSE.md",
   "description": "A module to track and predict Electoral College results in U.S. Presidential Elections",
   "dependencies": {
@@ -69,9 +69,7 @@
     "storybook:run": "storybook dev -p 6006",
     "test": "jest --collectCoverage",
     "test:watch": "jest --watch --collectCoverage",
-    "typecheck": "tsc",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "typecheck": "tsc"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

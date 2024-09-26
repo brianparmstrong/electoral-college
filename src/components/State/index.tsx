@@ -72,7 +72,7 @@ const State = (stateInfo: IfcState) => {
   }, [winner]);
 
   return (
-    <div className="stateWrapper" id={name}>
+    <div className="stateWrapper" id={name.trim()}>
       <div
         className={`state ${winningPartyClass}`}
         data-evs={evs}

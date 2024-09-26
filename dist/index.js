@@ -2052,7 +2052,7 @@ var s = t.exports,
       c = a.party,
       d = a.percent,
       u = a.stateEvs,
-      p = '0' !== d ? d : '',
+      p = Number(d) > 0 ? d : '',
       f = l.useState(0),
       v = f[0],
       m = f[1],
@@ -2066,7 +2066,7 @@ var s = t.exports,
       N = ''.concat(c.toUpperCase(), ' %');
     l.useEffect(
       function () {
-        r && y('');
+        'true' === r && y('');
       },
       [r]
     );
@@ -2121,6 +2121,7 @@ var s = t.exports,
             'data-evsawarded': String(C(null, g)),
             'data-party': c,
             'data-statename': i,
+            defaultValue: g,
             id: x,
             onBlur: function (l) {
               l.persist();
@@ -2168,7 +2169,6 @@ var s = t.exports,
             pattern: '^(100(?:\\.00)?|0(?:\\.\\d\\d)?|\\d?\\d(?:\\.\\d\\d)?)$',
             placeholder: N,
             type: 'text',
-            value: g,
           }),
         }
       )
@@ -2314,7 +2314,7 @@ var s = t.exports,
       s.jsxs(
         'div',
         e(
-          { className: 'stateWrapper', id: o },
+          { className: 'stateWrapper', id: o.trim() },
           {
             children: [
               s.jsx(

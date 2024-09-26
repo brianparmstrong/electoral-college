@@ -26,23 +26,20 @@ const PopularVotes = (popularVotes: IfcPopularVotes) => {
     setClearInputs(hasClearedSavedData);
   }, [hasClearedSavedData]);
 
-  const renderPopVoteInput = () => {
-    return popVotesDataValues.map((value: string, i: number) => {
-      return (
-        <PopularVoteInput
-          currentPVTotals={currentPVTotals}
-          evs={evs}
-          handlePropVotes={handlePropVotes}
-          hasClearedSavedData={clearInputs}
-          key={`${name}-${PARTY_MAP[i]}`}
-          name={name}
-          party={PARTY_MAP[i]}
-          percent={clearInputs === 'true' ? '0' : popVotesData && value}
-          stateEvs={stateEvs}
-        />
-      );
-    });
-  };
+  const renderPopVoteInput = () =>
+    popVotesDataValues.map((value: string, i: number) => (
+      <PopularVoteInput
+        currentPVTotals={currentPVTotals}
+        evs={evs}
+        handlePropVotes={handlePropVotes}
+        hasClearedSavedData={clearInputs}
+        key={`${name}-${PARTY_MAP[i]}`}
+        name={name}
+        party={PARTY_MAP[i]}
+        percent={clearInputs === 'true' ? '0' : popVotesData && value}
+        stateEvs={stateEvs}
+      />
+    ));
 
   return (
     <div className={`popVotesWrapper ${wrapperClass}`}>

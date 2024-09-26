@@ -12,7 +12,7 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
     percent,
     stateEvs,
   } = popularVoteInput;
-  const initialInputValue = percent !== '0' ? percent : '';
+  const initialInputValue = Number(percent) > 0 ? percent : '';
   const [evsAwarded, setEvsAwarded] = useState<number>(0);
   const [inputValue, setInputValue] = useState<string>(initialInputValue);
   const [savedValue, setSavedValue] = useState<string>('');
@@ -20,7 +20,7 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
   const inputPlaceholder = `${party.toUpperCase()} %`;
 
   useEffect(() => {
-    if (hasClearedSavedData) {
+    if (hasClearedSavedData === 'true') {
       setInputValue('');
     }
   }, [hasClearedSavedData]);
@@ -171,6 +171,7 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
         data-evsawarded={String(calculateProportionalVotes(null, inputValue))}
         data-party={party}
         data-statename={name}
+        defaultValue={inputValue}
         id={inputId}
         onBlur={handleInputBlur}
         onChange={handleInputChange}
@@ -178,7 +179,6 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
         pattern="^(100(?:\.00)?|0(?:\.\d\d)?|\d?\d(?:\.\d\d)?)$"
         placeholder={inputPlaceholder}
         type="text"
-        value={inputValue}
       />
     </div>
   );

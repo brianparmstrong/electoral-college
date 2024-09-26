@@ -90,7 +90,7 @@
           './node_modules/@storybook/test/dist sync recursive'),
         (module.exports = webpackEmptyContext);
     },
-    './node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].use[1]!./src/stories/button.css':
+    './node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[13].use[1]!./src/stories/button.css':
       (module, __webpack_exports__, __webpack_require__) => {
         'use strict';
         __webpack_require__.d(__webpack_exports__, {
@@ -138,10 +138,14 @@
     ) => {
       'use strict';
       __webpack_require__.d(__webpack_exports__, { $: () => Button });
-      var react = __webpack_require__('./node_modules/react/index.js'),
-        injectStylesIntoStyleTag = __webpack_require__(
-          './node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js'
+      var jsx_runtime = __webpack_require__(
+          './node_modules/react/jsx-runtime.js'
         ),
+        injectStylesIntoStyleTag =
+          (__webpack_require__('./node_modules/react/index.js'),
+          __webpack_require__(
+            './node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js'
+          )),
         injectStylesIntoStyleTag_default = __webpack_require__.n(
           injectStylesIntoStyleTag
         ),
@@ -168,7 +172,7 @@
         ),
         styleTagTransform_default = __webpack_require__.n(styleTagTransform),
         stories_button = __webpack_require__(
-          './node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].use[1]!./src/stories/button.css'
+          './node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[13].use[1]!./src/stories/button.css'
         ),
         options = {};
       (options.styleTagTransform = styleTagTransform_default()),
@@ -188,20 +192,17 @@
         const mode = primary
           ? 'storybook-button--primary'
           : 'storybook-button--secondary';
-        return react.createElement(
-          'button',
-          {
-            type: 'button',
-            className: [
-              'storybook-button',
-              `storybook-button--${size}`,
-              mode,
-            ].join(' '),
-            style: { backgroundColor },
-            ...props,
-          },
-          label
-        );
+        return (0, jsx_runtime.jsx)('button', {
+          type: 'button',
+          className: [
+            'storybook-button',
+            `storybook-button--${size}`,
+            mode,
+          ].join(' '),
+          style: { backgroundColor },
+          ...props,
+          children: label,
+        });
       };
       Button.__docgenInfo = {
         description: 'Primary UI component for user interaction',

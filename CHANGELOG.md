@@ -2,6 +2,20 @@
 
 Semver versioning is followed.
 
+[3.1.1]
+
+### FIX
+
+- use `defaultValue` instead of `value` for `PopularVoteInput` to fix bug where entered or saved popular vote percentages were not being rendered
+- trim `.stateWrapper` element id to remove spaces
+- add tests for new props added in `v3.1.0`
+- remove superfluous storybook commands
+- remove unnecessary `return` statements from `PopularVotes` `renderPopVoteInput()`
+
+### DOCS
+
+- updating Storybook docs re: Robert F. Kennedy, Jr. having endorsed Trump
+
 [3.1.0]
 
 ### UPGRADE

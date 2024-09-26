@@ -1,13 +1,13 @@
+'use strict';
 (self.webpackChunkelectoral_college =
   self.webpackChunkelectoral_college || []).push([
-  [438],
+  [864],
   {
     './node_modules/@storybook/addon-docs/dist/DocsRenderer-PKQXORMH.mjs': (
       __unused_webpack_module,
       __webpack_exports__,
       __webpack_require__
     ) => {
-      'use strict';
       __webpack_require__.d(__webpack_exports__, {
         DocsRenderer: () => DocsRenderer,
       });
@@ -80,40 +80,6 @@
       __webpack_require__(
         './node_modules/@storybook/addon-docs/dist/chunk-H6MOWX77.mjs'
       );
-    },
-    './node_modules/@storybook/core/dist/components sync recursive': (
-      module
-    ) => {
-      function webpackEmptyContext(req) {
-        var e = new Error("Cannot find module '" + req + "'");
-        throw ((e.code = 'MODULE_NOT_FOUND'), e);
-      }
-      (webpackEmptyContext.keys = () => []),
-        (webpackEmptyContext.resolve = webpackEmptyContext),
-        (webpackEmptyContext.id =
-          './node_modules/@storybook/core/dist/components sync recursive'),
-        (module.exports = webpackEmptyContext);
-    },
-    './node_modules/@storybook/core/dist/theming sync recursive': (module) => {
-      function webpackEmptyContext(req) {
-        var e = new Error("Cannot find module '" + req + "'");
-        throw ((e.code = 'MODULE_NOT_FOUND'), e);
-      }
-      (webpackEmptyContext.keys = () => []),
-        (webpackEmptyContext.resolve = webpackEmptyContext),
-        (webpackEmptyContext.id =
-          './node_modules/@storybook/core/dist/theming sync recursive'),
-        (module.exports = webpackEmptyContext);
-    },
-    './node_modules/memoizerific sync recursive': (module) => {
-      function webpackEmptyContext(req) {
-        var e = new Error("Cannot find module '" + req + "'");
-        throw ((e.code = 'MODULE_NOT_FOUND'), e);
-      }
-      (webpackEmptyContext.keys = () => []),
-        (webpackEmptyContext.resolve = webpackEmptyContext),
-        (webpackEmptyContext.id = './node_modules/memoizerific sync recursive'),
-        (module.exports = webpackEmptyContext);
     },
   },
 ]);

@@ -1,5 +1,5 @@
 {
-  "generatedAt": 1721412911219,
+  "generatedAt": 1727361136652,
   "hasCustomBabel": false,
   "hasCustomWebpack": false,
   "hasStaticDirs": false,
@@ -28,7 +28,7 @@
     "@storybook/react-webpack5": { "version": "8.2.0" },
     "@storybook/test": { "version": "8.2.0" },
     "eslint-plugin-storybook": { "version": "0.8.0" },
-    "storybook": { "version": "8.2.4" }
+    "storybook": { "version": "8.2.5" }
   },
   "addons": {
     "@storybook/addon-webpack5-compiler-swc": { "version": "1.0.4" },
@@ -36,6 +36,7 @@
     "@storybook/addon-links": { "version": "8.2.0" },
     "@storybook/addon-essentials": { "version": "8.2.0" },
     "@chromatic-com/storybook": { "version": "1.6.1" },
-    "@storybook/addon-interactions": { "version": "8.2.0" }
+    "@storybook/addon-interactions": { "version": "8.2.0" },
+    "@storybook/addon-styling-webpack": { "version": "1.0.0" }
   }
 }

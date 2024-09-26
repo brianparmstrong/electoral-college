@@ -66,7 +66,7 @@
           './node_modules/@storybook/test/dist sync recursive'),
         (module.exports = webpackEmptyContext);
     },
-    './node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].use[1]!./src/stories/button.css':
+    './node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[13].use[1]!./src/stories/button.css':
       (module, __webpack_exports__, __webpack_require__) => {
         'use strict';
         __webpack_require__.d(__webpack_exports__, {
@@ -107,7 +107,7 @@
         ]);
         const __WEBPACK_DEFAULT_EXPORT__ = ___CSS_LOADER_EXPORT___;
       },
-    './node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].use[1]!./src/stories/header.css':
+    './node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[13].use[1]!./src/stories/header.css':
       (module, __webpack_exports__, __webpack_require__) => {
         'use strict';
         __webpack_require__.d(__webpack_exports__, {
@@ -155,10 +155,14 @@
     ) => {
       'use strict';
       __webpack_require__.d(__webpack_exports__, { $: () => Button });
-      var react = __webpack_require__('./node_modules/react/index.js'),
-        injectStylesIntoStyleTag = __webpack_require__(
-          './node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js'
+      var jsx_runtime = __webpack_require__(
+          './node_modules/react/jsx-runtime.js'
         ),
+        injectStylesIntoStyleTag =
+          (__webpack_require__('./node_modules/react/index.js'),
+          __webpack_require__(
+            './node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js'
+          )),
         injectStylesIntoStyleTag_default = __webpack_require__.n(
           injectStylesIntoStyleTag
         ),
@@ -185,7 +189,7 @@
         ),
         styleTagTransform_default = __webpack_require__.n(styleTagTransform),
         stories_button = __webpack_require__(
-          './node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].use[1]!./src/stories/button.css'
+          './node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[13].use[1]!./src/stories/button.css'
         ),
         options = {};
       (options.styleTagTransform = styleTagTransform_default()),
@@ -205,20 +209,17 @@
         const mode = primary
           ? 'storybook-button--primary'
           : 'storybook-button--secondary';
-        return react.createElement(
-          'button',
-          {
-            type: 'button',
-            className: [
-              'storybook-button',
-              `storybook-button--${size}`,
-              mode,
-            ].join(' '),
-            style: { backgroundColor },
-            ...props,
-          },
-          label
-        );
+        return (0, jsx_runtime.jsx)('button', {
+          type: 'button',
+          className: [
+            'storybook-button',
+            `storybook-button--${size}`,
+            mode,
+          ].join(' '),
+          style: { backgroundColor },
+          ...props,
+          children: label,
+        });
       };
       Button.__docgenInfo = {
         description: 'Primary UI component for user interaction',
@@ -275,8 +276,12 @@
     ) => {
       'use strict';
       __webpack_require__.d(__webpack_exports__, { Y: () => Header });
-      var react = __webpack_require__('./node_modules/react/index.js'),
-        Button = __webpack_require__('./src/stories/Button.tsx'),
+      var jsx_runtime = __webpack_require__(
+          './node_modules/react/jsx-runtime.js'
+        ),
+        Button =
+          (__webpack_require__('./node_modules/react/index.js'),
+          __webpack_require__('./src/stories/Button.tsx')),
         injectStylesIntoStyleTag = __webpack_require__(
           './node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js'
         ),
@@ -306,7 +311,7 @@
         ),
         styleTagTransform_default = __webpack_require__.n(styleTagTransform),
         header = __webpack_require__(
-          './node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].use[1]!./src/stories/header.css'
+          './node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[13].use[1]!./src/stories/header.css'
         ),
         options = {};
       (options.styleTagTransform = styleTagTransform_default()),
@@ -317,80 +322,77 @@
       injectStylesIntoStyleTag_default()(header.A, options);
       header.A && header.A.locals && header.A.locals;
       const Header = ({ user, onLogin, onLogout, onCreateAccount }) =>
-        react.createElement(
-          'header',
-          null,
-          react.createElement(
-            'div',
-            { className: 'storybook-header' },
-            react.createElement(
-              'div',
-              null,
-              react.createElement(
-                'svg',
-                {
-                  width: '32',
-                  height: '32',
-                  viewBox: '0 0 32 32',
-                  xmlns: 'http://www.w3.org/2000/svg',
-                },
-                react.createElement(
-                  'g',
-                  { fill: 'none', fillRule: 'evenodd' },
-                  react.createElement('path', {
-                    d: 'M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z',
-                    fill: '#FFF',
-                  }),
-                  react.createElement('path', {
-                    d: 'M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z',
-                    fill: '#555AB9',
-                  }),
-                  react.createElement('path', {
-                    d: 'M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z',
-                    fill: '#91BAF8',
-                  })
-                )
-              ),
-              react.createElement('h1', null, 'Acme')
-            ),
-            react.createElement(
-              'div',
-              null,
-              user
-                ? react.createElement(
-                    react.Fragment,
-                    null,
-                    react.createElement(
-                      'span',
-                      { className: 'welcome' },
-                      'Welcome, ',
-                      react.createElement('b', null, user.name),
-                      '!'
-                    ),
-                    react.createElement(Button.$, {
-                      size: 'small',
-                      onClick: onLogout,
-                      label: 'Log out',
-                    })
-                  )
-                : react.createElement(
-                    react.Fragment,
-                    null,
-                    react.createElement(Button.$, {
-                      size: 'small',
-                      onClick: onLogin,
-                      label: 'Log in',
+        (0, jsx_runtime.jsx)('header', {
+          children: (0, jsx_runtime.jsxs)('div', {
+            className: 'storybook-header',
+            children: [
+              (0, jsx_runtime.jsxs)('div', {
+                children: [
+                  (0, jsx_runtime.jsx)('svg', {
+                    width: '32',
+                    height: '32',
+                    viewBox: '0 0 32 32',
+                    xmlns: 'http://www.w3.org/2000/svg',
+                    children: (0, jsx_runtime.jsxs)('g', {
+                      fill: 'none',
+                      fillRule: 'evenodd',
+                      children: [
+                        (0, jsx_runtime.jsx)('path', {
+                          d: 'M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z',
+                          fill: '#FFF',
+                        }),
+                        (0, jsx_runtime.jsx)('path', {
+                          d: 'M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z',
+                          fill: '#555AB9',
+                        }),
+                        (0, jsx_runtime.jsx)('path', {
+                          d: 'M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z',
+                          fill: '#91BAF8',
+                        }),
+                      ],
                     }),
-                    react.createElement(Button.$, {
-                      primary: !0,
-                      size: 'small',
-                      onClick: onCreateAccount,
-                      label: 'Sign up',
+                  }),
+                  (0, jsx_runtime.jsx)('h1', { children: 'Acme' }),
+                ],
+              }),
+              (0, jsx_runtime.jsx)('div', {
+                children: user
+                  ? (0, jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+                      children: [
+                        (0, jsx_runtime.jsxs)('span', {
+                          className: 'welcome',
+                          children: [
+                            'Welcome, ',
+                            (0, jsx_runtime.jsx)('b', { children: user.name }),
+                            '!',
+                          ],
+                        }),
+                        (0, jsx_runtime.jsx)(Button.$, {
+                          size: 'small',
+                          onClick: onLogout,
+                          label: 'Log out',
+                        }),
+                      ],
                     })
-                  )
-            )
-          )
-        );
+                  : (0, jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+                      children: [
+                        (0, jsx_runtime.jsx)(Button.$, {
+                          size: 'small',
+                          onClick: onLogin,
+                          label: 'Log in',
+                        }),
+                        (0, jsx_runtime.jsx)(Button.$, {
+                          primary: !0,
+                          size: 'small',
+                          onClick: onCreateAccount,
+                          label: 'Sign up',
+                        }),
+                      ],
+                    }),
+              }),
+            ],
+          }),
+        });
       Header.__docgenInfo = {
         description: '',
         methods: [],
