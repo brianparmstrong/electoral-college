@@ -14,6 +14,7 @@ const CandidatesWrapper = (candidatesWrapper: IfcCandidatesWrapper) => {
     evPct,
     popVoteTotals,
     pvPct,
+    renderPropErrorMessage,
     winnerTakeAllTotals,
   } = candidatesWrapper;
   const [wtaWinnerIndex, setWtaWinnerIndex] = useState<number>(
@@ -117,6 +118,7 @@ const CandidatesWrapper = (candidatesWrapper: IfcCandidatesWrapper) => {
         candidateImageSources={candidateImageSources}
         candidatesData={candidates}
         popularVoteTotals={popVoteTotals}
+        renderPropErrorMessage={renderPropErrorMessage}
         winnerTakeAllTotals={winnerTakeAllTotals}
       />
     </div>

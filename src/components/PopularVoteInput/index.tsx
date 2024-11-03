@@ -7,6 +7,7 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
     evs,
     handlePropVotes,
     hasClearedSavedData,
+    isReadOnly,
     name,
     party,
     percent,
@@ -178,6 +179,7 @@ const PopularVoteInput = (popularVoteInput: IfcPopularVoteInput) => {
         onFocus={handleInputFocus}
         pattern="^(100(?:\.00)?|0(?:\.\d\d)?|\d?\d(?:\.\d\d)?)$"
         placeholder={inputPlaceholder}
+        readOnly={isReadOnly}
         type="text"
       />
     </div>

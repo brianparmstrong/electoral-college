@@ -15,14 +15,27 @@ type CandidateData = {
 
 type CandidatesData = Array<CandidateData>;
 
+type DataMode = 'manual' | 'auto';
+
+type PopVotesData = {
+  name: string;
+  values: Array<string>;
+};
+
+type ProportionalReawardMode = 'stateWinner' | 'topTwoShare';
+
 type Size = 'small' | 'medium' | 'large';
 
 interface IfcElectoralCollegeProps {
   candidateImageSources?: CandidateImageSrc;
   candidatesData: CandidatesData;
+  dataMode?: DataMode;
   enableStickyEVCounter?: boolean;
+  handlePropError?: (prop: string, errorMessage: string) => void;
   mapSize?: Size;
+  proportionalReawardMode?: ProportionalReawardMode;
   stateControlSize?: Size;
+  voteTotals?: PopVotesData[];
 }
 
 declare const ElectoralCollege: (

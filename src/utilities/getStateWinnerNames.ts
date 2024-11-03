@@ -1,7 +1,7 @@
 import getWinnerName from './getWinnerName';
 import { StatesData, StateWinnerNames } from '../types';
 
-const getStateWinnerNames = (data: StatesData) => {
+const getStateWinnerNames = (data: StatesData[]) => {
   const stateWinnerNames: StateWinnerNames = {};
 
   data.map((state) => {

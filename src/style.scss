@@ -1,5 +1,18 @@
 .electoral-college-root {
   font-family: Helvetica;
+
+  &.data-mode-auto {
+    .state-control {
+      .state {
+        cursor: default;
+      }
+    }
+
+    path:hover,
+    circle:hover {
+      cursor: default;
+    }
+  }
 }
 
 .candidatesWrapper {

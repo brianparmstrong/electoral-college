@@ -1,4 +1,4 @@
-import { getWinnerName } from '../';
+import { getWinnerName } from '..';
 
 it('should return correct state winner name', () => {
   expect(getWinnerName('1')).toEqual('Republican');

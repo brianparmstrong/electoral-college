@@ -13,14 +13,29 @@ type CandidateData = {
 
 type CandidatesData = Array<CandidateData>;
 
+type DataMode = 'manual' | 'auto';
+
+type PopVotesData = {
+  name: string;
+  values: Array<string>;
+};
+
+type ProportionalReawardMode = 'stateWinner' | 'topTwoShare';
+
 type Size = 'small' | 'medium' | 'large';
+
+type RenderPropErrorMessage = (prop: string, errorMessage: string) => void;
 
 export interface IfcElectoralCollegeProps {
   candidateImageSources?: CandidateImageSrc;
   candidatesData: CandidatesData;
+  dataMode?: DataMode;
   enableStickyEVCounter?: boolean;
+  handlePropError?: (prop: string, errorMessage: string) => void;
   mapSize?: Size;
+  proportionalReawardMode?: ProportionalReawardMode;
   stateControlSize?: Size;
+  voteTotals?: PopVotesData[];
 }
 
 type NewStateData = {
@@ -28,26 +43,25 @@ type NewStateData = {
   stateId: string;
 } | null;
 
-type PopVotesData = {
+export type StatesData = {
+  evs: string;
   name: string;
-  values: Array<string>;
+  stateCode: string;
+  stateEvs?: string;
+  winner?: string;
 };
-
-export type StatesData = [
-  {
-    evs: string;
-    name: string;
-    stateCode: string;
-    stateEvs?: string;
-    winner?: string;
-  },
-];
 
 type StateWinnerNames = {
   [key: string]: string;
 };
 
 export type WinnerData = {
+  evs: number;
+  newWinningParty: string;
+  stateId: string;
+};
+
+export type AutoModeWinnerData = {
   evs: number;
   newWinningParty: string;
   stateId: string;
@@ -65,6 +79,7 @@ export interface IfcCandidates {
   candidateImageSources?: CandidateImageSrc;
   candidatesData: CandidatesData;
   popularVoteTotals: Array<number>;
+  renderPropErrorMessage: RenderPropErrorMessage;
   winnerTakeAllTotals: Array<number>;
 }
 
@@ -74,6 +89,7 @@ export interface IfcCandidatesWrapper {
   evPct: Array<number>;
   popVoteTotals: Array<number>;
   pvPct: Array<number>;
+  renderPropErrorMessage: RenderPropErrorMessage;
   winnerTakeAllTotals: Array<number>;
 }
 
@@ -84,12 +100,13 @@ export interface IfcElectoralVotes {
 }
 
 export interface IfcMap {
+  dataMode: DataMode;
   handleMapStateClick: (state: string) => void;
   hasClearedSavedData: 'false' | 'true';
   mapSize: Size;
   newStateData: NewStateData;
   stateWinnerNames?: StateWinnerNames | Partial<StateWinnerNames> | undefined;
-  statesData: StatesData;
+  statesData: StatesData[];
 }
 
 export interface IfcPopularVoteInput {
@@ -97,6 +114,7 @@ export interface IfcPopularVoteInput {
   evs: string;
   handlePropVotes: (newPVTotals: Array<number>) => void;
   hasClearedSavedData: 'false' | 'true';
+  isReadOnly: boolean;
   name: string;
   party: string;
   percent: string;
@@ -104,12 +122,15 @@ export interface IfcPopularVoteInput {
 }
 
 export interface IfcPopularVotes {
+  autoModeToggleWinner: (data: AutoModeWinnerData) => void;
   currentPVTotals: Array<number>;
+  dataMode: DataMode;
   evs: string;
   handlePropVotes: (newPVTotals: Array<number>) => void;
   hasClearedSavedData: 'false' | 'true';
   name: string;
   popVotesData: PopVotesData;
+  proportionalReawardMode: ProportionalReawardMode;
   showPopVotes: boolean;
   stateEvs: string;
 }
@@ -125,12 +146,14 @@ export interface IfcSaveButton {
 }
 
 export interface IfcState {
+  dataMode: string;
   evs: string;
   isFromStorage: boolean;
   name: string;
   stateClickedFromMap: string;
   stateCode: string;
   stateEvs?: string;
+  stateWinnerData: NewStateData[] | null;
   toggleWinner: (data: WinnerData) => void;
   winner?: string;
 }
@@ -138,12 +161,27 @@ export interface IfcState {
 export interface IfcStates {
   currentEVTotals: Array<number>;
   currentPVTotals: Array<number>;
+  dataMode: DataMode;
   handlePropVotes: (newPVTotals: Array<number>) => void;
-  handleStateWinner: (newEVTotals: Array<number>) => void;
+  handleStateWinner: (newEVTotals: Array<number>, data?: WinnerData) => void;
   hasClearedSavedData: 'false' | 'true';
   isFromStorage: boolean;
   mapSize: Size;
   popVotesData?: PopVotesData;
+  proportionalReawardMode: ProportionalReawardMode;
   stateControlSize: Size;
-  statesData: StatesData;
+  statesData: StatesData[];
 }
+
+export type CalculateStateEVsFromPVs = {
+  proportionalReawardMode: ProportionalReawardMode;
+  stateEVs: number;
+  voteTotals: string[];
+};
+
+export type ReawardEVs = {
+  calculatedEVTotals: number[];
+  convertedVoteTotals: number[];
+  difference: number;
+  proportionalReawardMode: ProportionalReawardMode;
+};

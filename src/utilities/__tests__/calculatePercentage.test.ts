@@ -1,4 +1,4 @@
-import { calculateEVPercentage } from '../';
+import { calculateEVPercentage } from '..';
 
 it('should calculate percentage based on value passed in', () => {
   expect(calculateEVPercentage(100)).toEqual(18.587360594795538);

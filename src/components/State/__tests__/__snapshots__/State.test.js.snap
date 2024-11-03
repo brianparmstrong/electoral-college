@@ -6,12 +6,12 @@ exports[`renders correctly 1`] = `
   id="North Carolina"
 >
   <div
-    class="state gop"
+    class="state lib"
     data-evs="15"
     data-fromstorage="false"
     data-statecode="NC"
     data-statename="North Carolina"
-    data-winner="1"
+    data-winner="3"
     tabindex="0"
   >
     <span

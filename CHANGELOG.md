@@ -2,6 +2,18 @@
 
 Semver versioning is followed.
 
+[4.0.0-alpha]
+
+### UPGRADE
+
+- Allow for passing in of vote percentages for each candidate in each state (see `./.storybook/DocumentationTemplate.mdx` for more information on how to do this as well as everything else in this `4.x` version)
+- New props `dataMode`, `handlePropError`, `proportionalReawardMode`, `voteTotals`
+- calculate the state winners when vote percentages are passed in
+- do not show `Save` nor `Clear` buttons when vote percentages are passed in (everything will be auto-saved)
+- make `PopularVoteInput` readonly when vote percentages are passed in, `State` buttons not clickable, `Map` not clickable
+- NOTE: 3.x behavior is now represented by `dataMode: 'manual'`. This module defaults to 3.x behavior so no changes should be needed to integration with this module unless you want to use the 4.x `dataMode: 'auto'` behavior.
+- Prop errors (i.e. required props not passed and/or props are malformed) will result in the module rendering an error message instead of the Electoral College widget. See [DocumentationTemplate](./.storybook/DocumentationTemplate.mdx) for more information.
+
 [3.1.1]
 
 ### FIX

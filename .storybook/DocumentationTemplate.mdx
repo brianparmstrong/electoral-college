@@ -4,7 +4,11 @@ import { Meta, Title, Primary, Controls, Stories } from '@storybook/blocks';
 
 # How To Use This Module
 
+NOTE: As of 4.x, when `dataMode` is 'auto' it is assumed there are no ties in the popular vote totals passed in to this module. See below for more information.
+3.x behavior is the default of this module and is represented by `dataMode: 'manual'`. If you prefer this mode you should not need to change your integration.
+
 As of 3.x this module is now a true npm module that can be imported into and used in any application.
+
 This module expects that there will be one and only one candidate each for:
 
 Republican
@@ -47,13 +51,123 @@ import ElectoralCollege from 'electoral-college/dist';
   },
 ]
 // must include one object for each of the five parties: dem, gop, grn, ind, lib
+
+The module will render an error message instead of the candidates, map, and states, and will call `handlePropError` callback, if this prop is not passed.
+If the prop is malformed then the candidates component will not render correctly, instead rendering an error message.
 ```
+
+`dataMode` - 'manual' | 'auto' - optional (defaults to 'manual') - 'manual' is pre-existing behavior before 4.x; 'auto' is for passing in vote percentages. When set to 'auto' the `Map` and `State` buttons will not be clickable; the `PopularVoteInput` components will be readonly
 
 `enableStickyEVCounter` - boolean - optional (defaults to Boolean(true)) - causes EV Counter at top of screen to act as a sticky header
 
+`handlePropError` - (prop: string, errorMessage: string) => void - optional - callback for if your props have an error to help gracefully handle malformed or missing prop values
+
 `mapSize` - 'small' | 'medium' | 'large' - optional (defaults to 'large') - causes SVG map to render at a different size ('small' = 50% height & width; 'medium' = 75% height & width, 'large' = 100% height & width)
 
+`proportionalReawardMode` - 'stateWinner' | 'topTwoShare' - optional, but required if `dataMode` is set to 'auto'; defaults to 'stateWinner' - what to do with a state's proportionally-awarded EVs when these EVs don't add up to exactly 100% of the state's available EVs; has no effect when `dataMode` is 'manual'
+
+```js
+// explanation of each `proportionalRewardMode`
+// Let's use California as an example, which has 54 EVs.  Imagine the popular vote in California was awarded as follows:
+
+{
+  Republican: 40%
+  Democratic: 53%
+  Libertarian: 1%
+  Green: 5%
+  Independent: 1%
+}
+
+In this case the number of EVs awarded would be 56 -- 2 more than what are available:
+
+{
+  Republican: 22
+  Democratic: 29
+  Libertarian: 1
+  Green: 3
+  Independent: 1
+}
+
+`stateWinner`
+
+If the proportional EVs are less than the available EVs then the remaining EVs would be awarded only to the state winner.
+
+So in the example above the Libertarian and Independent candidates would lose their EVs.  No one gets these EVs because the resulting total EVs awarded would be 54.
+Result:
+
+{
+  Republican: 22
+  Democratic: 29
+  Libertarian: 0
+  Green: 3
+  Independent: 0
+}
+
+`topTwoShare`
+
+For this mode only the top two candidates receive the extra EVs. (NOTE: In 1992 this would have meant a few states where the Independent candidate and either the Republican or the Democratic candidate would have received the extra EVs.)
+
+In all cases for `topTwoShare` when there are an even number of extra EVs to award they will be split evenly.
+When there are an odd number of EVs to be awarded the extra EV will be awarded to the state winner.
+
+REMEMBER: the `proportionalVoteMode` prop is used only when the total EVs awarded do not equal the available EVs.
+
+NOTE: This prop has no effect on the Congressional districts in Maine and Nebraska, which are awarded based on who receives the most votes in those districts
+
+WHAT IF THERE'S A TIE?  This module assumes no ties when `dataMode` is 'auto'.  This is to avoid having to make assumptions about how to reaward proportionally-based EVs.
+If you want to allow for ties in the popular vote you must use `dataMode` 'manual' and manually adjust the totals as desired.
+```
+
 `stateControlSize` - 'small' | 'medium' | 'large' - optional (defaults to 'large') - causes the `.state-control` elements to render at different sizes, allowing more `.state-control` elements to render in each row ('medium' only changes width of `.pvInput`; 'small' also changes widths of buttons and font-size of state names)
+
+`voteTotals` - json[] - optional, but required when `dataMode` is 'auto' - the vote totals for all States. Must pass data for every State. Required to be in the same format as how data is saved to Storage in `PopularVoteStatus` when `dataMode` is 'manual'.
+
+```js
+/**
+  * Each state must be included in this Array otherwise a runtime error will be thrown.
+  * If this prop is not passed when `dataMode` is 'auto' a runtime error will be thrown.
+  * Updated `voteTotals` prop will be reflected in the module.
+  * Arrays are assumed to be in alphabetical order by State i.e. [Alabama, Alaska, Arizona, Arkansas, ...]
+  * Do not pass data for Congressional Districts as the EVs awarded will be based on total EVs for those States
+  * Each state's data is required to be in the following format:
+  */
+
+{
+  name: string of State name -- must match the name in `./src/constants/statesData`,
+  values: Array<string> of the vote totals for each candidate in the state; assumed to be in the following order: [Republican, Democratic, Libertarian, Green, Independent]
+}
+
+// For a State
+
+{
+  name: "Ohio",
+  values: [ "54.7", "44", "0.2", "1", "0.1" ]
+}
+
+// For Washington, D.C.
+
+{
+  name: "Washington, D.C.",
+  values: [ "7.2", "91", "0.5", "1", "0.3" ]
+}
+
+NOTE: Because this module assumes no ties, it is recommended to calculate the `values` by using (numberOfVotesCastForCandidate / totalVotesCastForState) and pass in the resulting decimal-based values that are long enough to ensure no ties.
+Or e.g. if one candidate has 49.999999% of the vote and another has 49.9999998 percent, then use Math.ceil() for candidate 1 and Math.floor() for candidate 2 (resulting in 50 for candidate 1 and 49 for candidate 2).
+How you handle this, so that there are unique values in the `values` array, is up to you!
+
+
+// For States with no data
+
+{
+  name: "Alaska",
+  values: [ "", "", "", "", "" ]
+}
+
+The module will render an error message instead of the candidates, map, and states, and will call `handlePropError` callback, if:
+
+You do not pass exactly 51 objects in `voteTotals` array.
+Any of your State values arrays have vote percentages && there are ties in any of those vote percentages.
+```
 
 # Styles
 
@@ -73,6 +187,8 @@ These should now be automatically picked up so you shouldn't need to modify your
 
 ### Using the Map
 
+NOTE: This works only when `dataMode` is 'manual'.
+
 Click on each state to toggle the winner. You'll see the state change colors to match the political party, as well as the Winner-Take-All total change. The `Electoral Votes Counter` will update accordingly.
 
 Maine and Nebraska award their EVs as follows:
@@ -86,11 +202,15 @@ When clicking on a state you should see the corresponding state update according
 
 ### Using the list of states
 
+NOTE: This works only when `dataMode` is 'manual'.
+
 Click on the box with the number of EVs above each state name to toggle the winner. This works the same for Maine and Nebraska's CDs.
 
 When clicking on a state's EV box you should see the corresponding state update accordingly in the map above the list.
 
 ## Proportional Representation
+
+# For `dataMode` 'manual':
 
 Enter the percentage of votes won by each candidate. This will calculate how many EVs the candidate would win if EVs were awarded proportionally.
 In some cases the total EVs awarded will not quite add up to 100% of that State's EVs, due to rounding. In this case you'll have to fudge the numbers until 100% of EVs for that state have been awarded.
@@ -105,13 +225,25 @@ You're free to fudge the numbers however you wish. Maybe you want to give a cand
 
 However you do it, the `Proportional` total changes, as well as the `Popular Votes Counter`.
 
-For both counters there is a black arrow pointing at the line a winner must cross.
+# For `dataMode` 'auto':
+
+Set the desired value for `proportionalVoteMode`. The component will do the rest.
+
+## Who wins?
+
+For both counters (winner-take-all and proportional) there is a black arrow pointing at the line a winner must cross.
+The political party whose candidate receives at least a majority of EVs will be the winner, shown by a colored bar above the EV counter.
 
 ## Saving Results
 
-Click the `Save` button. This will save the results to localStorage. The next time you try to load the application it will use this data instead of loading blank.
+NOTE: This is only for `dataMode` 'manual'.
+
+Click the `Save` button. This will save the results to localStorage. The next time you try to load the application in 'manual' mode it will use this data instead of loading blank.
+NOTE: Saving data in 'manual' mode will not affect the way the module works in 'auto' mode. This module will not clear localStorage data from 'manual' mode when 'auto' mode is used.
 
 ## Clearing Results
+
+NOTE: This is only for `dataMode` 'manual'.
 
 Click the `Clear` button (shows only if data has previously been saved). This will clear the current results as well as your localStorage data.
 

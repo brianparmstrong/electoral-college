@@ -4,19 +4,21 @@ import { getWinnerClassName } from '../../utilities';
 
 const State = (stateInfo: IfcState) => {
   const {
+    dataMode,
     evs,
     isFromStorage,
     name,
     stateClickedFromMap,
     stateCode,
     stateEvs,
+    stateWinnerData,
     toggleWinner,
     winner,
   } = stateInfo;
 
   const stateNode = useRef(null);
   const [winningParty, setWinningParty] = useState<number>(
-    isFromStorage ? Number(winner) : 0
+    isFromStorage || dataMode === 'auto' ? Number(winner) : 0
   );
   const [winningPartyClass, setWinningPartyClass] = useState(
     getWinnerClassName(winner)
@@ -28,47 +30,35 @@ const State = (stateInfo: IfcState) => {
     stateClickedFromMap !== 'false' && stateNode?.current?.click();
   }, [stateClickedFromMap]);
 
-  const updateWinningParty = (event: MouseEvent<HTMLDivElement>) => {
-    const newWinningParty = winningParty === 5 ? 0 : winningParty + 1;
-    let newWinningPartyClass = '';
-
-    switch (newWinningParty) {
-      case 1:
-        newWinningPartyClass = 'gop';
-        break;
-      case 2:
-        newWinningPartyClass = 'dem';
-        break;
-      case 3:
-        newWinningPartyClass = 'lib';
-        break;
-      case 4:
-        newWinningPartyClass = 'grn';
-        break;
-      case 5:
-        newWinningPartyClass = 'ind';
-        break;
-      default:
-        newWinningPartyClass = '';
-        break;
+  useEffect(() => {
+    if (stateWinnerData?.[0]?.stateId === stateCode) {
+      const newWinningParty = stateWinnerData?.[0].newWinningParty;
+      const newWinningPartyClass = getWinnerClassName(newWinningParty);
+      setWinningParty(Number(newWinningParty));
+      setWinningPartyClass(newWinningPartyClass);
     }
+  }, [stateWinnerData]);
 
-    const newData = {
-      evs: parseInt(evs),
-      newWinningParty: String(newWinningParty),
-      stateId: event.currentTarget.dataset.statecode as string,
-    };
+  const updateWinningParty = (event: MouseEvent<HTMLDivElement>) => {
+    if (dataMode === 'manual') {
+      const newWinningParty = winningParty === 5 ? 0 : winningParty + 1;
+      const newWinningPartyClass = getWinnerClassName(String(newWinningParty));
 
-    setWinningParty(newWinningParty);
-    setWinningPartyClass(newWinningPartyClass);
-    toggleWinner(newData);
+      const newData = {
+        evs: Number(evs),
+        newWinningParty: String(newWinningParty),
+        stateId: event.currentTarget.dataset.statecode as string,
+      };
+
+      setWinningParty(newWinningParty);
+      setWinningPartyClass(newWinningPartyClass);
+      toggleWinner(newData);
+    }
   };
 
   useEffect(() => {
-    if (winner === '0') {
-      setWinningParty(0);
-      setWinningPartyClass('');
-    }
+    setWinningParty(Number(winner));
+    setWinningPartyClass(getWinnerClassName(winner));
   }, [winner]);
 
   return (

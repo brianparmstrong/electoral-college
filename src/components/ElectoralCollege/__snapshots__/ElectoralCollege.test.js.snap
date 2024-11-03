@@ -2,7 +2,7 @@
 
 exports[`renders correctly when localStorage is empty 1`] = `
 <div
-  class="electoral-college-root"
+  class="electoral-college-root data-mode-manual"
 >
   <div>
     <h1>
@@ -6410,7 +6410,7 @@ exports[`renders correctly when localStorage is empty 1`] = `
 
 exports[`renders correctly when localStorage is empty, disabling sticky EV Counter 1`] = `
 <div
-  class="electoral-college-root"
+  class="electoral-college-root data-mode-manual"
 >
   <div>
     <h1>
@@ -12818,7 +12818,7 @@ exports[`renders correctly when localStorage is empty, disabling sticky EV Count
 
 exports[`renders correctly when localStorage is empty, no candidateImageSources 1`] = `
 <div
-  class="electoral-college-root"
+  class="electoral-college-root data-mode-manual"
 >
   <div>
     <h1>
@@ -19206,7 +19206,7 @@ exports[`renders correctly when localStorage is empty, no candidateImageSources 
 
 exports[`renders correctly when localStorage is empty, no mapSize 1`] = `
 <div
-  class="electoral-college-root"
+  class="electoral-college-root data-mode-manual"
 >
   <div>
     <h1>
@@ -25614,7 +25614,7 @@ exports[`renders correctly when localStorage is empty, no mapSize 1`] = `
 
 exports[`renders correctly when localStorage is empty, no mapSize 2`] = `
 <div
-  class="electoral-college-root"
+  class="electoral-college-root data-mode-manual"
 >
   <div>
     <h1>

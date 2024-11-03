@@ -5,6 +5,7 @@ import State from '../State';
 import {
   IfcStates,
   NewStateData,
+  StatesData,
   StateWinnerNames,
   WinnerData,
 } from '../../types';
@@ -18,12 +19,14 @@ const States = (states: IfcStates) => {
   const {
     currentEVTotals,
     currentPVTotals,
+    dataMode,
     handlePropVotes,
     handleStateWinner,
     hasClearedSavedData,
     isFromStorage,
     mapSize,
     popVotesData,
+    proportionalReawardMode,
     stateControlSize,
     statesData,
   } = states;
@@ -43,11 +46,24 @@ const States = (states: IfcStates) => {
   const [clearPopularVotes, setClearPopularVotes] = useState<'false' | 'true'>(
     hasClearedSavedData
   );
+  const [hasRenderedAllStates, setHasRenderedAllStates] =
+    useState<boolean>(false);
+  let autoModeStateWinnerNames: StateWinnerNames = {};
+
+  useEffect(() => {
+    if (dataMode === 'auto' && !hasRenderedAllStates) {
+      setStateWinnerNames(autoModeStateWinnerNames);
+      setHasRenderedAllStates(true);
+    }
+  });
 
   useEffect(() => {
     setStatesDataToUse(statesData);
-    setStateWinnerNames(getStateWinnerNames(statesData));
+    if (dataMode === 'manual') {
+      setStateWinnerNames(getStateWinnerNames(statesData));
+    }
   }, [
+    dataMode,
     getStateWinnerNames,
     setStateWinnerNames,
     setStatesDataToUse,
@@ -77,22 +93,32 @@ const States = (states: IfcStates) => {
         break;
       case '2':
         newDemTotal += data.evs;
-        newGopTotal -= data.evs;
+        if (dataMode === 'manual') {
+          newGopTotal -= data.evs;
+        }
         break;
       case '3':
         newLibTotal += data.evs;
-        newDemTotal -= data.evs;
+        if (dataMode === 'manual') {
+          newDemTotal -= data.evs;
+        }
         break;
       case '4':
         newGrnTotal += data.evs;
-        newLibTotal -= data.evs;
+        if (dataMode === 'manual') {
+          newLibTotal -= data.evs;
+        }
         break;
       case '5':
         newIndTotal += data.evs;
-        newGrnTotal -= data.evs;
+        if (dataMode === 'manual') {
+          newGrnTotal -= data.evs;
+        }
         break;
       default:
-        newIndTotal -= data.evs;
+        if (dataMode === 'manual') {
+          newIndTotal -= data.evs;
+        }
         break;
     }
 
@@ -104,7 +130,7 @@ const States = (states: IfcStates) => {
       newIndTotal,
     ];
 
-    handleStateWinner(newEVTotals);
+    handleStateWinner(newEVTotals, data);
 
     const updateObj: UpdateObj = {
       [data.stateId]: getWinnerName(data.newWinningParty),
@@ -113,19 +139,30 @@ const States = (states: IfcStates) => {
       newWinningParty: data.newWinningParty,
       stateId: data.stateId,
     });
-    setStateWinnerNames({ ...stateWinnerNames, ...updateObj });
+    if (dataMode === 'manual') {
+      setStateWinnerNames({ ...stateWinnerNames, ...updateObj });
+    } else {
+      autoModeStateWinnerNames = { ...autoModeStateWinnerNames, ...updateObj };
+    }
   };
 
-  const renderStates = (stateClicked: string) => {
-    return statesDataToUse.map((state, i) => {
+  const renderStates = (stateClicked: string, data: StatesData[]) => {
+    // `indexOffset` avoids having to use different `data` from `/constants/statesData` based on dataMode
+    let indexOffset = 0;
+    return data.map((state, i) => {
       if (state.name.indexOf('-CD') === -1) {
         return (
           <div
             className={`state-control ${stateControlSize}`}
-            key={`state-${i}`}
+            key={`state-${i - indexOffset}`}
           >
             <State
-              evs={state.evs}
+              dataMode={dataMode}
+              evs={
+                state.stateEvs && dataMode === 'auto'
+                  ? state.stateEvs
+                  : state.evs
+              }
               isFromStorage={isFromStorage}
               name={state.name}
               stateClickedFromMap={
@@ -135,36 +172,48 @@ const States = (states: IfcStates) => {
               }
               stateCode={state.stateCode}
               stateEvs={state.stateEvs}
+              stateWinnerData={[newStateData]}
               toggleWinner={toggleWinner}
-              winner={state.winner ?? '0'}
+              winner={state.winner || '0'}
             />
             <PopularVotes
+              autoModeToggleWinner={toggleWinner}
               currentPVTotals={currentPVTotals}
-              evs={state.evs}
+              dataMode={dataMode}
+              evs={
+                state.stateEvs && dataMode === 'auto'
+                  ? state.stateEvs
+                  : state.evs
+              }
               handlePropVotes={handlePropVotes}
               hasClearedSavedData={clearPopularVotes}
               name={state.name}
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore for `i`, which is the index in the array
-              popVotesData={popVotesData?.[i]}
+              popVotesData={popVotesData?.[i - indexOffset]}
+              proportionalReawardMode={proportionalReawardMode}
               stateEvs={state.stateEvs as string}
               showPopVotes={showPopVotes}
             />
           </div>
         );
-      } else {
+      } else if (dataMode === 'auto') {
+        indexOffset++;
+      } else if (dataMode === 'manual') {
         return (
           <div
             className={`state-control ${stateControlSize}`}
             key={`state-${i}`}
           >
             <State
+              dataMode={dataMode}
               evs={state.evs}
               isFromStorage={isFromStorage}
               name={state.name}
               stateClickedFromMap={'false'}
               stateCode={state.stateCode}
               stateEvs={state.stateEvs}
+              stateWinnerData={[newStateData]}
               toggleWinner={toggleWinner}
               winner={state.winner ?? '0'}
             />
@@ -186,6 +235,7 @@ const States = (states: IfcStates) => {
   return (
     <div className="statesPopVotes">
       <Map
+        dataMode={dataMode}
         handleMapStateClick={handleMapStateClick}
         hasClearedSavedData={clearMapWinners}
         mapSize={mapSize}
@@ -197,7 +247,7 @@ const States = (states: IfcStates) => {
         <button type="button" onClick={showHidePopVotes}>
           {buttonText}
         </button>
-        {renderStates(stateClickedFromMap)}
+        {renderStates(stateClickedFromMap, statesDataToUse)}
       </div>
     </div>
   );

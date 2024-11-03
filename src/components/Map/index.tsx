@@ -8,6 +8,7 @@ type UpdatedStateClassNames = {
 
 const Map = (mapData: IfcMap) => {
   const {
+    dataMode,
     handleMapStateClick,
     hasClearedSavedData,
     mapSize,
@@ -36,23 +37,43 @@ const Map = (mapData: IfcMap) => {
   }, [hasClearedSavedData]);
 
   useEffect(() => {
-    const stateId = newStateData?.stateId;
-    const newWinningPartyClass = getWinnerClassName(
-      newStateData?.newWinningParty
-    );
+    if (dataMode === 'manual') {
+      const stateId = newStateData?.stateId;
+      const newWinningPartyClass = getWinnerClassName(
+        newStateData?.newWinningParty
+      );
 
-    if (stateId) {
-      const updateObj = {
-        [stateId]: newWinningPartyClass,
-      };
-      setUpdatedStateClassNames((updatedStateClassNames) => ({
-        ...updatedStateClassNames,
-        ...updateObj,
-      }));
+      if (stateId) {
+        const updateObj = {
+          [stateId]: newWinningPartyClass,
+        };
+        setUpdatedStateClassNames((updatedStateClassNames) => ({
+          ...updatedStateClassNames,
+          ...updateObj,
+        }));
+      }
     }
   }, [newStateData]);
 
   useEffect(() => {
+    if (dataMode === 'auto') {
+      let autoModeUpdateObj = {};
+
+      for (const state in stateWinnerNames) {
+        const newWinningPartyClass = getWinnerClassName(
+          stateWinnerNames[state]
+        );
+        const stateUpdateObj = {
+          [state]: newWinningPartyClass,
+        };
+        autoModeUpdateObj = { ...autoModeUpdateObj, ...stateUpdateObj };
+      }
+
+      setUpdatedStateClassNames((updatedStateClassNames) => ({
+        ...updatedStateClassNames,
+        ...autoModeUpdateObj,
+      }));
+    }
     setInfoBoxWinnerNames(stateWinnerNames as StateWinnerNames);
     setCurrentInfo((currentInfo) => {
       const winnerNames = stateWinnerNames;
@@ -66,14 +87,17 @@ const Map = (mapData: IfcMap) => {
   }, [currentHoveredStateId, stateWinnerNames]);
 
   const handleClick = (event: MouseEvent<SVGPathElement>) => {
-    const { id } = event.target as SVGPathElement;
-    handleMapStateClick(`${id}-${event.currentTarget.classList}`);
+    if (dataMode === 'manual') {
+      const { id } = event.target as SVGPathElement;
+      handleMapStateClick(`${id}-${event.currentTarget.classList}`);
+    }
   };
 
   const handleDCClick = (event: MouseEvent<SVGCircleElement>) => {
-    const { id } = event.target as SVGCircleElement;
-
-    handleMapStateClick(`${id}-${event.currentTarget.classList}`);
+    if (dataMode === 'manual') {
+      const { id } = event.target as SVGCircleElement;
+      handleMapStateClick(`${id}-${event.currentTarget.classList}`);
+    }
   };
 
   const handleMouseEnter = (event: MouseEvent<SVGPathElement>) => {
