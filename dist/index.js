@@ -113,9 +113,9 @@ var r,
             var b,
               k = !1,
               x = !1,
+              E = !1,
               N = !1,
-              C = !1,
-              E = !1;
+              C = !1;
             function S(l) {
               return l.displayName || 'Context';
             }
@@ -199,7 +199,7 @@ var r,
             var F,
               H = !1,
               K = 'function' == typeof WeakMap ? WeakMap : Map;
-            function $(l, e) {
+            function Y(l, e) {
               if (!l || H) return '';
               var a,
                 t = F.get(l);
@@ -332,10 +332,10 @@ var r,
                 f = p ? _(p) : '';
               return 'function' == typeof l && F.set(l, f), f;
             }
-            function Y(l, e, a) {
+            function $(l, e, a) {
               if (null == l) return '';
               if ('function' == typeof l)
-                return $(l, !(!(t = l.prototype) || !t.isReactComponent));
+                return Y(l, !(!(t = l.prototype) || !t.isReactComponent));
               var t;
               if ('string' == typeof l) return _(l);
               switch (l) {
@@ -347,15 +347,15 @@ var r,
               if ('object' == typeof l)
                 switch (l.$$typeof) {
                   case d:
-                    return $(l.render, !1);
+                    return Y(l.render, !1);
                   case f:
-                    return Y(l.type, e, a);
+                    return $(l.type, e, a);
                   case v:
                     var n = l,
                       o = n._payload,
                       r = n._init;
                     try {
-                      return Y(r(o), e, a);
+                      return $(r(o), e, a);
                     } catch (l) {}
                 }
               return '';
@@ -367,7 +367,7 @@ var r,
             function G(l) {
               if (l) {
                 var e = l._owner,
-                  a = Y(l.type, l._source, e ? e.type : null);
+                  a = $(l.type, l._source, e ? e.type : null);
                 B.setExtraStackFrame(a);
               } else B.setExtraStackFrame(null);
             }
@@ -533,7 +533,7 @@ var r,
             function dl(l) {
               if (l) {
                 var e = l._owner,
-                  a = Y(l.type, l._source, e ? e.type : null);
+                  a = $(l.type, l._source, e ? e.type : null);
                 cl.setExtraStackFrame(a);
               } else cl.setExtraStackFrame(null);
             }
@@ -689,15 +689,15 @@ var r,
                   !!(
                     l === n ||
                     l === r ||
-                    E ||
+                    C ||
                     l === o ||
                     l === u ||
                     l === p ||
-                    C ||
+                    N ||
                     l === m ||
                     k ||
                     x ||
-                    N
+                    E
                   ) ||
                   ('object' == typeof l &&
                     null !== l &&
@@ -814,16 +814,16 @@ var i = n.exports,
   },
   d = function (l) {
     var e = l.proportionalReawardMode,
-      t = l.stateEVs,
-      n = l.voteTotals,
-      o = a([], n, !0).map(function (l) {
+      t = l.renderPropErrorMessage,
+      n = l.stateEVs,
+      o = a([], l.voteTotals, !0).map(function (l) {
         return Number(l);
       }),
       r = (function (l, e) {
         return e.map(function (e) {
           return Math.round((e / 100) * l);
         });
-      })(t, o),
+      })(n, o),
       s = 0,
       i = a([], r, !0);
     return (
@@ -831,14 +831,14 @@ var i = n.exports,
         return (s += l);
       }),
       s > 0 &&
-        s !== t &&
-        (console.log(t, n),
+        s !== n &&
         (i = m({
           calculatedEVTotals: i,
           convertedVoteTotals: o,
-          difference: t - s,
+          difference: n - s,
           proportionalReawardMode: e,
-        }))),
+          renderPropErrorMessage: t,
+        })),
       i
     );
   },
@@ -916,48 +916,50 @@ var i = n.exports,
       t = l.convertedVoteTotals,
       n = l.difference,
       o = l.proportionalReawardMode,
-      r = a([], e, !0),
-      s = n > 0,
-      i = Math.abs(n),
-      c = (function (l) {
+      r = l.renderPropErrorMessage,
+      s = a([], e, !0),
+      i = n > 0,
+      c = Math.abs(n),
+      d = (function (l, e) {
         for (
-          var e,
-            a,
-            t = -1 / 0,
+          var a,
+            t,
             n = -1 / 0,
-            o = 1 / 0,
+            o = -1 / 0,
             r = 1 / 0,
             s = 1 / 0,
-            i = 0,
-            c = l;
-          i < c.length;
-          i++
+            i = 1 / 0,
+            c = 0,
+            d = l;
+          c < d.length;
+          c++
         ) {
-          var d = c[i];
-          d > t
-            ? ((n = (e = [t, d])[0]), (t = e[1]))
-            : d < t && d > n && (n = d),
-            d < s
-              ? ((o = r), (r = (a = [s, d])[0]), (s = a[1]))
-              : d > s && d < r
-                ? ((o = r), (r = d))
-                : d > s && d > r && (o = d);
+          var u = d[c];
+          u > n
+            ? ((o = (a = [n, u])[0]), (n = a[1]))
+            : u < n && u > o && (o = u),
+            u < i
+              ? ((r = s), (s = (t = [i, u])[0]), (i = t[1]))
+              : u > i && u < s
+                ? ((r = s), (s = u))
+                : u > i && u > s && (r = u);
         }
-        if (
-          (console.log(t, n, o, r, s), t === n || n === o || o === r || r === s)
-        )
-          throw new Error(
-            'The vote totals passed for each state in voteTotals must be unique. Please check your data and try again.'
-          );
-        return { first: t, second: n, third: o, fourth: r, fifth: s };
-      })(t),
-      d = t.findIndex(function (l) {
-        return l === c.first;
-      }),
+        return (
+          (n !== o && o !== r && r !== s && s !== i) ||
+            e(
+              'voteTotals',
+              'You must pass unique vote totals for every candidate in every state even if they have not received any votes.'
+            ),
+          { first: n, second: o, third: r, fourth: s, fifth: i }
+        );
+      })(t, r),
       u = t.findIndex(function (l) {
-        return l === c.second;
+        return l === d.first;
       }),
-      p = function (l) {
+      p = t.findIndex(function (l) {
+        return l === d.second;
+      }),
+      f = function (l) {
         switch (l) {
           case 'fifth':
             return 'fourth';
@@ -967,25 +969,25 @@ var i = n.exports,
             return 'second';
         }
       },
-      f = function (l, e) {
+      v = function (l, e) {
         void 0 === e && (e = 'fifth');
         var a = t.findIndex(function (l) {
-            return l === c[e];
+            return l === d[e];
           }),
-          n = r[a];
+          n = s[a];
         n && n < l
-          ? ((r[a] = 0), f(l - n, p(e)))
+          ? ((s[a] = 0), v(l - n, f(e)))
           : n
-            ? (r[a] -= l)
-            : f(l, p(e));
+            ? (s[a] -= l)
+            : v(l, f(e));
       };
     return (
-      s
+      i
         ? 'stateWinner' === o
-          ? (r[d] += i)
-          : ((r[d] += Math.ceil(n / 2)), (r[u] += Math.floor(n / 2)))
-        : f(i),
-      r
+          ? (s[u] += c)
+          : ((s[u] += Math.ceil(n / 2)), (s[p] += Math.floor(n / 2)))
+        : v(c),
+      s
     );
   },
   h = function (l) {
@@ -1092,10 +1094,10 @@ var i = n.exports,
       b = g[1],
       k = l.useState(p(String(m + 1))),
       x = k[0],
-      N = k[1],
-      C = l.useState(p(String(M + 1))),
-      E = C[0],
-      S = C[1],
+      E = k[1],
+      N = l.useState(p(String(M + 1))),
+      C = N[0],
+      S = N[1],
       w = l.useState(v(String(m + 1))),
       j = w[0],
       L = w[1],
@@ -1126,7 +1128,7 @@ var i = n.exports,
         function () {
           var l = String(m + 1),
             e = p(l);
-          N(e), L(v(l));
+          E(e), L(v(l));
         },
         [m]
       );
@@ -1221,7 +1223,7 @@ var i = n.exports,
                         .concat(T, ' ')
                         .concat(M > -1 ? 'show' : 'hide'),
                     },
-                    { children: 'Winner: '.concat(E) }
+                    { children: 'Winner: '.concat(C) }
                   )
                 ),
                 i.jsxs('div', {
@@ -1414,11 +1416,11 @@ var i = n.exports,
       b = M[0],
       k = M[1],
       x = l.useState(''),
-      N = x[0],
-      C = x[1],
-      E = l.useState(c),
-      S = E[0],
-      w = E[1],
+      E = x[0],
+      N = x[1],
+      C = l.useState(c),
+      S = C[0],
+      w = C[1],
       j = l.useState({}),
       L = j[0],
       V = j[1],
@@ -1460,7 +1462,7 @@ var i = n.exports,
             });
           }
           w(c),
-            C(function (l) {
+            N(function (l) {
               var e,
                 a = c,
                 t = [''];
@@ -1489,10 +1491,10 @@ var i = n.exports,
       },
       P = function (l) {
         var e = l.target.id;
-        k(e), C(l.currentTarget.dataset.info);
+        k(e), N(l.currentTarget.dataset.info);
       },
       R = function () {
-        C('');
+        N('');
       },
       _ = function (l) {
         var e = d.find(function (e) {
@@ -1528,7 +1530,7 @@ var i = n.exports,
               e(
                 {
                   id: 'info-box',
-                  className: N
+                  className: E
                     ? 'show '.concat(
                         (function (l) {
                           var e = '';
@@ -1549,13 +1551,13 @@ var i = n.exports,
                               e = '5';
                           }
                           return v(e);
-                        })(N)
+                        })(E)
                       )
                     : '',
                 },
                 {
                   children:
-                    ((I = N),
+                    ((I = E),
                     (A = I.split('--')),
                     (D = A[0]),
                     (O = A[1]),
@@ -2151,7 +2153,7 @@ var i = n.exports,
                                       },
                                       onMouseEnter: function (l) {
                                         var e = l.target.id;
-                                        k(e), C(l.currentTarget.dataset.info);
+                                        k(e), N(l.currentTarget.dataset.info);
                                       },
                                       onMouseLeave: R,
                                       'data-info':
@@ -2188,7 +2190,7 @@ var i = n.exports,
       )
     );
   },
-  N = function (a) {
+  E = function (a) {
     var t = a.currentPVTotals,
       n = a.evs,
       o = a.handlePropVotes,
@@ -2208,15 +2210,15 @@ var i = n.exports,
       b = l.useState(''),
       k = b[0],
       x = b[1],
-      N = ''.concat(d, 'PopVoteInput'),
-      C = ''.concat(d.toUpperCase(), ' %');
+      E = ''.concat(d, 'PopVoteInput'),
+      N = ''.concat(d.toUpperCase(), ' %');
     l.useEffect(
       function () {
         'true' === r && M('');
       },
       [r]
     );
-    var E = function (l, e) {
+    var C = function (l, e) {
       var a = null == l ? void 0 : l.target,
         r = null == a ? void 0 : a.value,
         s = e ? Number(e) : a ? Number(r) : 0,
@@ -2264,15 +2266,15 @@ var i = n.exports,
         {
           children: i.jsx('input', {
             className: 'pvInput',
-            'data-evsawarded': String(E(null, y)),
+            'data-evsawarded': String(C(null, y)),
             'data-party': d,
             'data-statename': c,
             defaultValue: y,
-            id: N,
+            id: E,
             onBlur: function (l) {
               l.persist();
               var e = l.currentTarget.value;
-              '' !== y && '' === e ? (M(k), E(null, k)) : E(l);
+              '' !== y && '' === e ? (M(k), C(null, k)) : C(l);
             },
             onChange: function (l) {
               var e = l.target;
@@ -2313,7 +2315,7 @@ var i = n.exports,
                 })(l, a);
             },
             pattern: '^(100(?:\\.00)?|0(?:\\.\\d\\d)?|\\d?\\d(?:\\.\\d\\d)?)$',
-            placeholder: C,
+            placeholder: N,
             readOnly: s,
             type: 'text',
           }),
@@ -2321,8 +2323,8 @@ var i = n.exports,
       )
     );
   },
-  C = ['gop', 'dem', 'lib', 'grn', 'ind'],
-  E = [
+  N = ['gop', 'dem', 'lib', 'grn', 'ind'],
+  C = [
     { name: 'Alabama', stateCode: 'AL', evs: '9' },
     { name: 'Alaska', stateCode: 'AK', evs: '3' },
     { name: 'Arizona', stateCode: 'AZ', evs: '11' },
@@ -2390,19 +2392,20 @@ var i = n.exports,
       u = a.name,
       p = a.popVotesData,
       f = a.proportionalReawardMode,
-      v = a.showPopVotes,
-      m = a.stateEvs,
-      h = p ? p.values : ['0', '0', '0', '0', '0'],
-      g = v ? '' : 'hide',
-      y = l.useState(c),
-      M = y[0],
-      b = y[1],
-      k = l.useState(!1),
-      x = k[0],
-      S = k[1];
+      v = a.renderPropErrorMessage,
+      m = a.showPopVotes,
+      h = a.stateEvs,
+      g = p ? p.values : ['0', '0', '0', '0', '0'],
+      y = m ? '' : 'hide',
+      M = l.useState(c),
+      b = M[0],
+      k = M[1],
+      x = l.useState(!1),
+      S = x[0],
+      w = x[1];
     l.useEffect(
       function () {
-        b(c);
+        k(c);
       },
       [c]
     ),
@@ -2411,20 +2414,20 @@ var i = n.exports,
           var l;
           if (
             'auto' === o &&
-            !x &&
-            h.filter(function (l) {
+            !S &&
+            g.filter(function (l) {
               return Number(l) > 0;
             }).length > 0
           ) {
-            S(!0);
+            w(!0);
             var e =
                 null ===
-                  (l = E.find(function (l) {
+                  (l = C.find(function (l) {
                     return l.name === u;
                   })) || void 0 === l
                   ? void 0
                   : l.stateCode,
-              a = h.map(function (l) {
+              a = g.map(function (l) {
                 return Number(l);
               }),
               n = Math.max.apply(Math, a),
@@ -2435,34 +2438,35 @@ var i = n.exports,
               ),
               c = d({
                 proportionalReawardMode: f,
+                renderPropErrorMessage: v,
                 stateEVs: Number(r),
-                voteTotals: h,
+                voteTotals: g,
               });
             s(c), t({ evs: Number(r), newWinningParty: i, stateId: e });
           }
         },
-        [o, r, s, x, f, h, S]
+        [o, r, s, S, f, g, w]
       );
     return i.jsx(
       'div',
       e(
-        { className: 'popVotesWrapper '.concat(g) },
+        { className: 'popVotesWrapper '.concat(y) },
         {
-          children: h.map(function (l, e) {
+          children: g.map(function (l, e) {
             return i.jsx(
-              N,
+              E,
               {
                 currentPVTotals: n,
                 evs: r,
                 handlePropVotes: s,
-                hasClearedSavedData: M,
+                hasClearedSavedData: b,
                 isReadOnly: 'auto' === o,
                 name: u,
-                party: C[e],
-                percent: 'true' === M ? '0' : p && l,
-                stateEvs: m,
+                party: N[e],
+                percent: 'true' === b ? '0' : p && l,
+                stateEvs: h,
               },
-              ''.concat(u, '-').concat(C[e])
+              ''.concat(u, '-').concat(N[e])
             );
           }),
         }
@@ -2577,56 +2581,57 @@ var i = n.exports,
       u = a.mapSize,
       v = a.popVotesData,
       m = a.proportionalReawardMode,
-      h = a.stateControlSize,
-      g = a.statesData,
-      y = 'Hide Popular Votes',
-      M = l.useState(y),
-      b = M[0],
-      k = M[1],
+      h = a.renderPropErrorMessage,
+      g = a.stateControlSize,
+      y = a.statesData,
+      M = 'Hide Popular Votes',
+      b = l.useState(M),
+      k = b[0],
+      E = b[1],
       N = l.useState(!0),
       C = N[0],
-      E = N[1],
-      j = l.useState(g),
-      L = j[0],
-      V = j[1],
-      T = l.useState(null),
-      I = T[0],
-      A = T[1],
-      D = l.useState(f(g)),
-      O = D[0],
-      z = D[1],
-      W = l.useState(''),
-      P = W[0],
-      R = W[1],
-      _ = l.useState(c),
-      F = _[0],
-      H = _[1],
-      K = l.useState(c),
-      $ = K[0],
-      Y = K[1],
-      J = l.useState(!1),
-      U = J[0],
-      B = J[1],
-      G = {};
+      j = N[1],
+      L = l.useState(y),
+      V = L[0],
+      T = L[1],
+      I = l.useState(null),
+      A = I[0],
+      D = I[1],
+      O = l.useState(f(y)),
+      z = O[0],
+      W = O[1],
+      P = l.useState(''),
+      R = P[0],
+      _ = P[1],
+      F = l.useState(c),
+      H = F[0],
+      K = F[1],
+      Y = l.useState(c),
+      $ = Y[0],
+      J = Y[1],
+      U = l.useState(!1),
+      B = U[0],
+      G = U[1],
+      q = {};
     l.useEffect(function () {
-      'auto' !== o || U || (z(G), B(!0));
+      'auto' !== o || B || (W(q), G(!0));
     }),
       l.useEffect(
         function () {
-          V(g), 'manual' === o && z(f(g));
+          T(y), 'manual' === o && W(f(y));
         },
-        [o, f, z, V, g]
+        [o, f, W, T, y]
       ),
       l.useEffect(
         function () {
-          H(c), Y(c);
+          K(c), J(c);
         },
         [c]
       );
-    var q,
-      X,
+    var X,
       Z,
-      Q = function (l) {
+      Q,
+      ll = function (l) {
         var a,
           n = t[0],
           r = t[1],
@@ -2654,8 +2659,8 @@ var i = n.exports,
         }
         s([n, r, i, c, d], l);
         var u = (((a = {})[l.stateId] = p(l.newWinningParty)), a);
-        A({ newWinningParty: l.newWinningParty, stateId: l.stateId }),
-          'manual' === o ? z(e(e({}, O), u)) : (G = e(e({}, G), u));
+        D({ newWinningParty: l.newWinningParty, stateId: l.stateId }),
+          'manual' === o ? W(e(e({}, z), u)) : (q = e(e({}, q), u));
       };
     return i.jsxs(
       'div',
@@ -2666,13 +2671,13 @@ var i = n.exports,
             i.jsx(x, {
               dataMode: o,
               handleMapStateClick: function (l) {
-                R(l);
+                _(l);
               },
-              hasClearedSavedData: F,
+              hasClearedSavedData: H,
               mapSize: u,
-              newStateData: I,
-              stateWinnerNames: O,
-              statesData: L,
+              newStateData: A,
+              stateWinnerNames: z,
+              statesData: V,
             }),
             i.jsxs(
               'div',
@@ -2686,23 +2691,23 @@ var i = n.exports,
                         {
                           type: 'button',
                           onClick: function () {
-                            var l = y;
-                            C && (l = 'Show Popular Votes'), k(l), E(!C);
+                            var l = M;
+                            C && (l = 'Show Popular Votes'), E(l), j(!C);
                           },
                         },
-                        { children: b }
+                        { children: k }
                       )
                     ),
-                    ((q = P),
-                    (X = L),
-                    (Z = 0),
-                    X.map(function (l, a) {
+                    ((X = R),
+                    (Z = V),
+                    (Q = 0),
+                    Z.map(function (l, a) {
                       var t;
                       if (-1 === l.name.indexOf('-CD'))
                         return i.jsxs(
                           'div',
                           e(
-                            { className: 'state-control '.concat(h) },
+                            { className: 'state-control '.concat(g) },
                             {
                               children: [
                                 i.jsx(w, {
@@ -2714,18 +2719,18 @@ var i = n.exports,
                                   isFromStorage: d,
                                   name: l.name,
                                   stateClickedFromMap:
-                                    (null == q ? void 0 : q.split('-')[0]) ===
+                                    (null == X ? void 0 : X.split('-')[0]) ===
                                     l.stateCode
-                                      ? q
+                                      ? X
                                       : 'false',
                                   stateCode: l.stateCode,
                                   stateEvs: l.stateEvs,
-                                  stateWinnerData: [I],
-                                  toggleWinner: Q,
+                                  stateWinnerData: [A],
+                                  toggleWinner: ll,
                                   winner: l.winner || '0',
                                 }),
                                 i.jsx(S, {
-                                  autoModeToggleWinner: Q,
+                                  autoModeToggleWinner: ll,
                                   currentPVTotals: n,
                                   dataMode: o,
                                   evs:
@@ -2735,22 +2740,23 @@ var i = n.exports,
                                   handlePropVotes: r,
                                   hasClearedSavedData: $,
                                   name: l.name,
-                                  popVotesData: null == v ? void 0 : v[a - Z],
+                                  popVotesData: null == v ? void 0 : v[a - Q],
                                   proportionalReawardMode: m,
+                                  renderPropErrorMessage: h,
                                   stateEvs: l.stateEvs,
                                   showPopVotes: C,
                                 }),
                               ],
                             }
                           ),
-                          'state-'.concat(a - Z)
+                          'state-'.concat(a - Q)
                         );
-                      if ('auto' === o) Z++;
+                      if ('auto' === o) Q++;
                       else if ('manual' === o)
                         return i.jsx(
                           'div',
                           e(
-                            { className: 'state-control '.concat(h) },
+                            { className: 'state-control '.concat(g) },
                             {
                               children: i.jsx(w, {
                                 dataMode: o,
@@ -2760,8 +2766,8 @@ var i = n.exports,
                                 stateClickedFromMap: 'false',
                                 stateCode: l.stateCode,
                                 stateEvs: l.stateEvs,
-                                stateWinnerData: [I],
-                                toggleWinner: Q,
+                                stateWinnerData: [A],
+                                toggleWinner: ll,
                                 winner:
                                   null !== (t = l.winner) && void 0 !== t
                                     ? t
@@ -2829,14 +2835,14 @@ module.exports = function (t) {
     g = t.stateControlSize,
     y = void 0 === g ? 'large' : g,
     x = t.voteTotals,
-    N = function () {
+    E = function () {
       return i.jsx(i.Fragment, {
         children:
           'This application is currently unable to display the Electoral College widget.',
       });
     };
   if (!o)
-    return p && p('candidatesData', 'candidatesData prop is required'), N();
+    return p && p('candidatesData', 'candidatesData prop is required'), E();
   if ('auto' === s && 51 !== (null == x ? void 0 : x.length))
     return (
       p &&
@@ -2844,11 +2850,11 @@ module.exports = function (t) {
           'voteTotals',
           'voteTotals prop is required in auto mode and must contain data for all 50 states plus Washington, D.C. Do not include data for the Congressional Districts of Maine and Nebraska'
         ),
-      N()
+      E()
     );
-  var C = l.useState(!1),
-    S = C[0],
-    w = C[1],
+  var N = l.useState(!1),
+    S = N[0],
+    w = N[1],
     L = l.useState(
       'manual' === s &&
         Boolean(
@@ -2885,10 +2891,10 @@ module.exports = function (t) {
     F = R[1],
     H = l.useState(I[2]),
     K = H[0],
-    $ = H[1],
-    Y = l.useState(I[3]),
-    J = Y[0],
-    U = Y[1],
+    Y = H[1],
+    $ = l.useState(I[3]),
+    J = $[0],
+    U = $[1],
     B = l.useState(I[4]),
     G = B[0],
     q = B[1],
@@ -2919,7 +2925,7 @@ module.exports = function (t) {
     fl = pl[0],
     vl = pl[1],
     ml = l.useState(
-      V ? JSON.parse(localStorage.getItem('ElectoralCollegeStatus')) : E
+      V ? JSON.parse(localStorage.getItem('ElectoralCollegeStatus')) : C
     ),
     hl = ml[0],
     gl = ml[1],
@@ -2934,9 +2940,9 @@ module.exports = function (t) {
     bl = yl[1],
     kl = l.useState(!1),
     xl = kl[0],
-    Nl = kl[1],
+    El = kl[1],
+    Nl = [0, 0, 0, 0, 0],
     Cl = [0, 0, 0, 0, 0],
-    El = [0, 0, 0, 0, 0],
     Sl = a([], hl, !0);
   l.useEffect(function () {
     if (
@@ -2954,25 +2960,25 @@ module.exports = function (t) {
         }),
       'auto' === s && !xl)
     ) {
-      Nl(!0);
-      var l = c(El[0]),
-        e = c(El[1]),
-        a = c(El[2]),
-        t = c(El[3]),
-        n = c(El[4]),
-        o = c(Cl[0]),
-        r = c(Cl[1]),
-        i = c(Cl[2]),
-        d = c(Cl[3]),
-        p = c(Cl[4]);
-      O(Cl),
+      El(!0);
+      var l = c(Cl[0]),
+        e = c(Cl[1]),
+        a = c(Cl[2]),
+        t = c(Cl[3]),
+        n = c(Cl[4]),
+        o = c(Nl[0]),
+        r = c(Nl[1]),
+        i = c(Nl[2]),
+        d = c(Nl[3]),
+        p = c(Nl[4]);
+      O(Nl),
         ol([o, r, i, d, p]),
-        P(El[0]),
-        F(El[1]),
-        $(El[2]),
-        U(El[3]),
-        q(El[4]),
-        Q(El),
+        P(Cl[0]),
+        F(Cl[1]),
+        Y(Cl[2]),
+        U(Cl[3]),
+        q(Cl[4]),
+        Q(Cl),
         al([l, e, a, t, n]),
         gl(Sl);
     }
@@ -3009,10 +3015,13 @@ module.exports = function (t) {
         t = c(l[2]),
         n = c(l[3]),
         o = c(l[4]);
-      P(l[0]), F(l[1]), $(l[2]), U(l[3]), q(l[4]), Q(l), al([e, a, t, n, o]);
+      P(l[0]), F(l[1]), Y(l[2]), U(l[3]), q(l[4]), Q(l), al([e, a, t, n, o]);
+    },
+    Ll = function (l, e) {
+      p && p(l, e), w(!0);
     };
   return S
-    ? N()
+    ? E()
     : i.jsxs(
         'div',
         e(
@@ -3025,9 +3034,7 @@ module.exports = function (t) {
                 evPct: el,
                 pvPct: nl,
                 popVoteTotals: D,
-                renderPropErrorMessage: function (l, e) {
-                  p && p(l, e), w(!0);
-                },
+                renderPropErrorMessage: Ll,
                 winnerTakeAllTotals: Z,
               }),
               i.jsx(j, {
@@ -3038,21 +3045,21 @@ module.exports = function (t) {
                   'manual' === s
                     ? wl
                     : function (l) {
-                        (Cl[0] += l[0]),
-                          (Cl[1] += l[1]),
-                          (Cl[2] += l[2]),
-                          (Cl[3] += l[3]),
-                          (Cl[4] += l[4]);
+                        (Nl[0] += l[0]),
+                          (Nl[1] += l[1]),
+                          (Nl[2] += l[2]),
+                          (Nl[3] += l[3]),
+                          (Nl[4] += l[4]);
                       },
                 handleStateWinner:
                   'manual' === s
                     ? jl
                     : function (l, e) {
-                        (El[0] += l[0]),
-                          (El[1] += l[1]),
-                          (El[2] += l[2]),
-                          (El[3] += l[3]),
-                          (El[4] += l[4]);
+                        (Cl[0] += l[0]),
+                          (Cl[1] += l[1]),
+                          (Cl[2] += l[2]),
+                          (Cl[3] += l[3]),
+                          (Cl[4] += l[4]);
                         var a = null == e ? void 0 : e.stateId,
                           t = Sl.findIndex(function (l) {
                             return l.stateCode === a;
@@ -3068,6 +3075,7 @@ module.exports = function (t) {
                 mapSize: v,
                 popVotesData: Ml,
                 proportionalReawardMode: h,
+                renderPropErrorMessage: Ll,
                 stateControlSize: y,
                 statesData: hl,
               }),
@@ -3106,7 +3114,7 @@ module.exports = function (t) {
                                 localStorage.removeItem('WinnerTakeAllTotals'),
                                 jl([0, 0, 0, 0, 0]),
                                 wl([0, 0, 0, 0, 0]),
-                                gl(E),
+                                gl(C),
                                 bl([]),
                                 O([0, 0, 0, 0, 0]),
                                 vl('true'),

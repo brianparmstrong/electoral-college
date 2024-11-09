@@ -24,7 +24,10 @@ type ProportionalReawardMode = 'stateWinner' | 'topTwoShare';
 
 type Size = 'small' | 'medium' | 'large';
 
-type RenderPropErrorMessage = (prop: string, errorMessage: string) => void;
+export type RenderPropErrorMessage = (
+  prop: string,
+  errorMessage: string
+) => void;
 
 export interface IfcElectoralCollegeProps {
   candidateImageSources?: CandidateImageSrc;
@@ -131,6 +134,7 @@ export interface IfcPopularVotes {
   name: string;
   popVotesData: PopVotesData;
   proportionalReawardMode: ProportionalReawardMode;
+  renderPropErrorMessage: RenderPropErrorMessage;
   showPopVotes: boolean;
   stateEvs: string;
 }
@@ -169,12 +173,14 @@ export interface IfcStates {
   mapSize: Size;
   popVotesData?: PopVotesData;
   proportionalReawardMode: ProportionalReawardMode;
+  renderPropErrorMessage: RenderPropErrorMessage;
   stateControlSize: Size;
   statesData: StatesData[];
 }
 
 export type CalculateStateEVsFromPVs = {
   proportionalReawardMode: ProportionalReawardMode;
+  renderPropErrorMessage: RenderPropErrorMessage;
   stateEVs: number;
   voteTotals: string[];
 };
@@ -184,4 +190,5 @@ export type ReawardEVs = {
   convertedVoteTotals: number[];
   difference: number;
   proportionalReawardMode: ProportionalReawardMode;
+  renderPropErrorMessage: RenderPropErrorMessage;
 };

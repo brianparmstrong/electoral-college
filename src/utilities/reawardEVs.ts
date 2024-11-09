@@ -7,11 +7,15 @@ const reawardEVs = ({
   convertedVoteTotals,
   difference,
   proportionalReawardMode,
+  renderPropErrorMessage,
 }: ReawardEVs) => {
   const reawardedEVs = [...calculatedEVTotals];
   const fewerEVsPreliminarilyAwarded = difference > 0;
   const absDifference = Math.abs(difference);
-  const orderedVoteTotals = getOrderedVoteTotals(convertedVoteTotals);
+  const orderedVoteTotals = getOrderedVoteTotals(
+    convertedVoteTotals,
+    renderPropErrorMessage
+  );
   const stateWinnerIndex = convertedVoteTotals.findIndex(
     (total) => total === orderedVoteTotals.first
   );

@@ -3,6 +3,7 @@ import { CalculateStateEVsFromPVs } from '../types';
 
 const calculateStateEVsFromPVs = ({
   proportionalReawardMode,
+  renderPropErrorMessage,
   stateEVs,
   voteTotals,
 }: CalculateStateEVsFromPVs) => {
@@ -19,13 +20,13 @@ const calculateStateEVsFromPVs = ({
   preliminaryEVsAwarded.forEach((evs) => (preliminaryEVsTotal += evs));
 
   if (preliminaryEVsTotal > 0 && preliminaryEVsTotal !== stateEVs) {
-    console.log(stateEVs, voteTotals);
     difference = stateEVs - preliminaryEVsTotal;
     calculatedEVTotals = reawardEVs({
       calculatedEVTotals,
       convertedVoteTotals,
       difference,
       proportionalReawardMode,
+      renderPropErrorMessage,
     });
   }
 

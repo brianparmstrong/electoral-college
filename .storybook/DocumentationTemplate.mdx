@@ -163,6 +163,15 @@ How you handle this, so that there are unique values in the `values` array, is u
   values: [ "", "", "", "", "" ]
 }
 
+// For candidates who do not receive votes
+
+You should still pass a unique value for all candidates.  I recommend doing something like this when at least two of the candidates have not received votes:
+
+{
+  name: "New York"
+  values: ['44.2', '55.8', '.001', '.002', '.003']
+}
+
 The module will render an error message instead of the candidates, map, and states, and will call `handlePropError` callback, if:
 
 You do not pass exactly 51 objects in `voteTotals` array.

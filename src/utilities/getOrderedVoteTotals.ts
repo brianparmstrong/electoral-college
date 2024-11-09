@@ -3,7 +3,12 @@
  * and modified for my needs
  */
 
-const getOrderedVoteTotals = (voteTotals: number[]) => {
+import { RenderPropErrorMessage } from '../types';
+
+const getOrderedVoteTotals = (
+  voteTotals: number[],
+  renderPropErrorMessage: RenderPropErrorMessage
+) => {
   let first = -Infinity,
     second = -Infinity,
     third = Infinity,
@@ -28,15 +33,15 @@ const getOrderedVoteTotals = (voteTotals: number[]) => {
     }
   }
 
-  console.log(first, second, third, fourth, fifth);
   if (
     first === second ||
     second === third ||
     third === fourth ||
     fourth === fifth
   ) {
-    throw new Error(
-      'The vote totals passed for each state in voteTotals must be unique. Please check your data and try again.'
+    renderPropErrorMessage(
+      'voteTotals',
+      'You must pass unique vote totals for every candidate in every state even if they have not received any votes.'
     );
   }
 

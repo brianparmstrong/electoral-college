@@ -77,8 +77,6 @@ In 1992 and 1996, Independent candidate Ross Perot received a substantial portio
 
 # What Else Would I Like To Do With This Module?
 
-I'd like to support passing in state-by-state voting data so you don't have to manually enter the vote percentages in each state. Am currently designing this for 4.x.
-
 Enhance test coverage (especially end-to-end testing). Currently have full test coverage for `utilities` and `constants` and basic snapshot tests for everything else. Would like to use Playwright but that has minimum OS version requirements that I do not meet at this time. Could use Cypress but the tech community seems to be moving away from Cypress to Playwright.
 
 # Why Rollup for bundling?

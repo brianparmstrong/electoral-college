@@ -15,6 +15,7 @@ const PopularVotes = (popularVotes: IfcPopularVotes) => {
     name,
     popVotesData,
     proportionalReawardMode,
+    renderPropErrorMessage,
     showPopVotes,
     stateEvs,
   } = popularVotes;
@@ -50,6 +51,7 @@ const PopularVotes = (popularVotes: IfcPopularVotes) => {
       );
       const evsFromPVs = calculateStateEVsFromPVs({
         proportionalReawardMode,
+        renderPropErrorMessage,
         stateEVs: Number(evs),
         voteTotals: popVotesDataValues,
       });

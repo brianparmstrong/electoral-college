@@ -27,6 +27,7 @@ const States = (states: IfcStates) => {
     mapSize,
     popVotesData,
     proportionalReawardMode,
+    renderPropErrorMessage,
     stateControlSize,
     statesData,
   } = states;
@@ -192,6 +193,7 @@ const States = (states: IfcStates) => {
               // @ts-ignore for `i`, which is the index in the array
               popVotesData={popVotesData?.[i - indexOffset]}
               proportionalReawardMode={proportionalReawardMode}
+              renderPropErrorMessage={renderPropErrorMessage}
               stateEvs={state.stateEvs as string}
               showPopVotes={showPopVotes}
             />

@@ -282,6 +282,7 @@ const ElectoralCollege = (props: IfcElectoralCollegeProps) => {
         mapSize={mapSize}
         popVotesData={popVotesData}
         proportionalReawardMode={proportionalReawardMode}
+        renderPropErrorMessage={handleSubComponentPropError}
         stateControlSize={stateControlSize}
         statesData={statesData}
       />

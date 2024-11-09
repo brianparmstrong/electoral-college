@@ -2,6 +2,19 @@
 
 Semver versioning is followed.
 
+[4.0.0-alpha-1]
+
+### FIX
+
+- Remove console.log statements
+- Render "unable to display" message instead of throwing an error if `getOrderedVoteTotals` is called for a state where at least two candidates have the same vote totals
+
+### DOCUMENTATION
+
+- Add documentation re: what to do with candidates who receive no votes
+- Add 2024 election results
+- Update Storybook example with 2024 election results (as of afternoon of 8 November 2024)
+
 [4.0.0-alpha]
 
 ### UPGRADE
